@@ -13,7 +13,8 @@
 		7552168121066EFF0022E2C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7552167F21066EFF0022E2C1 /* LaunchScreen.storyboard */; };
 		75521690210674980022E2C1 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7552168F210674980022E2C1 /* Home.storyboard */; };
 		75521692210797B50022E2C1 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75521691210797B50022E2C1 /* Trip.swift */; };
-		75521694210798850022E2C1 /* Trip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75521693210798850022E2C1 /* Trip.storyboard */; };
+		75521694210798850022E2C1 /* TripCreation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75521693210798850022E2C1 /* TripCreation.storyboard */; };
+		755216962107A11E0022E2C1 /* TripCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755216952107A11E0022E2C1 /* TripCreation.swift */; };
 		8B7AC0280E74754345842C38 /* Pods_BART_Alarm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C2FA8A3B0F8220C4BA2CE2 /* Pods_BART_Alarm.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +28,8 @@
 		7552168221066EFF0022E2C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7552168F210674980022E2C1 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		75521691210797B50022E2C1 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
-		75521693210798850022E2C1 /* Trip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trip.storyboard; sourceTree = "<group>"; };
+		75521693210798850022E2C1 /* TripCreation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TripCreation.storyboard; sourceTree = "<group>"; };
+		755216952107A11E0022E2C1 /* TripCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCreation.swift; sourceTree = "<group>"; };
 		C2C2FA8A3B0F8220C4BA2CE2 /* Pods_BART_Alarm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BART_Alarm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D3DCDB5F56BC8C62D7098E /* Pods-BART-Alarm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BART-Alarm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BART-Alarm/Pods-BART-Alarm.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,7 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				7552168F210674980022E2C1 /* Home.storyboard */,
-				75521693210798850022E2C1 /* Trip.storyboard */,
+				75521693210798850022E2C1 /* TripCreation.storyboard */,
 				7552167F21066EFF0022E2C1 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -108,6 +110,7 @@
 		7552168A210673800022E2C1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				755216952107A11E0022E2C1 /* TripCreation.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -211,7 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75521690210674980022E2C1 /* Home.storyboard in Resources */,
-				75521694210798850022E2C1 /* Trip.storyboard in Resources */,
+				75521694210798850022E2C1 /* TripCreation.storyboard in Resources */,
 				7552168121066EFF0022E2C1 /* LaunchScreen.storyboard in Resources */,
 				7552167E21066EFF0022E2C1 /* Assets.xcassets in Resources */,
 			);
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7552167C21066EFD0022E2C1 /* BART_Alarm.xcdatamodeld in Sources */,
+				755216962107A11E0022E2C1 /* TripCreation.swift in Sources */,
 				7552167421066EFD0022E2C1 /* AppDelegate.swift in Sources */,
 				75521692210797B50022E2C1 /* Trip.swift in Sources */,
 			);
@@ -403,7 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "BART-Alarm/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/BART-Alarm/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -421,7 +425,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "BART-Alarm/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/BART-Alarm/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

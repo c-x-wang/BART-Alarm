@@ -9,8 +9,8 @@
 import UIKit
 
 struct Trip {
-    var startLocation
-    var endLocation
-    var travelTime
-    var alarmTime
+    var startLocation: String
+    var endLocation: String
+    var travelTime: Int
+    var alarmTime: Int // change time file types?
 }
