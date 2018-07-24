@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		7552167421066EFD0022E2C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552167321066EFD0022E2C1 /* AppDelegate.swift */; };
-		7552167621066EFD0022E2C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552167521066EFD0022E2C1 /* ViewController.swift */; };
-		7552167921066EFD0022E2C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7552167721066EFD0022E2C1 /* Main.storyboard */; };
 		7552167C21066EFD0022E2C1 /* BART_Alarm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7552167A21066EFD0022E2C1 /* BART_Alarm.xcdatamodeld */; };
 		7552167E21066EFF0022E2C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7552167D21066EFF0022E2C1 /* Assets.xcassets */; };
 		7552168121066EFF0022E2C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7552167F21066EFF0022E2C1 /* LaunchScreen.storyboard */; };
-		75521690210674980022E2C1 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7552168F210674980022E2C1 /* Login.storyboard */; };
+		75521690210674980022E2C1 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7552168F210674980022E2C1 /* Home.storyboard */; };
+		75521692210797B50022E2C1 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75521691210797B50022E2C1 /* Trip.swift */; };
+		75521694210798850022E2C1 /* Trip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75521693210798850022E2C1 /* Trip.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7552167021066EFD0022E2C1 /* BART-Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BART-Alarm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7552167321066EFD0022E2C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7552167521066EFD0022E2C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7552167821066EFD0022E2C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7552167B21066EFD0022E2C1 /* BART_Alarm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BART_Alarm.xcdatamodel; sourceTree = "<group>"; };
 		7552167D21066EFF0022E2C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7552168021066EFF0022E2C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7552168221066EFF0022E2C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7552168F210674980022E2C1 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		7552168F210674980022E2C1 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		75521691210797B50022E2C1 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		75521693210798850022E2C1 /* Trip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trip.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +83,8 @@
 		75521689210673780022E2C1 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				7552168F210674980022E2C1 /* Login.storyboard */,
-				7552167721066EFD0022E2C1 /* Main.storyboard */,
+				7552168F210674980022E2C1 /* Home.storyboard */,
+				75521693210798850022E2C1 /* Trip.storyboard */,
 				7552167F21066EFF0022E2C1 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -93,7 +93,6 @@
 		7552168A210673800022E2C1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7552167521066EFD0022E2C1 /* ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -108,6 +107,7 @@
 		7552168C2106738F0022E2C1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				75521691210797B50022E2C1 /* Trip.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,10 +184,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75521690210674980022E2C1 /* Login.storyboard in Resources */,
+				75521690210674980022E2C1 /* Home.storyboard in Resources */,
+				75521694210798850022E2C1 /* Trip.storyboard in Resources */,
 				7552168121066EFF0022E2C1 /* LaunchScreen.storyboard in Resources */,
 				7552167E21066EFF0022E2C1 /* Assets.xcassets in Resources */,
-				7552167921066EFD0022E2C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,23 +198,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7552167621066EFD0022E2C1 /* ViewController.swift in Sources */,
 				7552167C21066EFD0022E2C1 /* BART_Alarm.xcdatamodeld in Sources */,
 				7552167421066EFD0022E2C1 /* AppDelegate.swift in Sources */,
+				75521692210797B50022E2C1 /* Trip.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7552167721066EFD0022E2C1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7552167821066EFD0022E2C1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7552167F21066EFF0022E2C1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
