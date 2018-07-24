@@ -6,8 +6,13 @@
 //  Copyright © 2018 cxw. All rights reserved.
 //
 
+//import Foundation
 import UIKit
 import DropDown
+import SwiftyJSON
+import Alamofire
+import AlamofireImage
+import AlamofireNetworkActivityIndicator
 
 class TripCreation: UIViewController {
     
@@ -48,7 +53,27 @@ class TripCreation: UIViewController {
         
         routeDropDown.bottomOffset = CGPoint(x: 0, y: 30) // chooseRouteButton.bounds.height)
         
-        routeDropDown.dataSource = ["uh", "pls", "work"]
+        let apiToContact = "http://api.bart.gov/api/route.aspx?cmd=routes&key=MW9S-E7SL-26DU-VV8V&json=y"
+        var routesArray = [String]()
+        
+        Alamofire.request(apiToContact).validate().responseJSON() { response in
+            switch response.result {
+            case .success:
+                if let value = response.result.value {
+                    let json = JSON(value)
+                    
+                    let routesData = json["root"]["routes"]["route"].arrayValue
+                    
+                    for route in routesData {
+                        routesArray.append(route["name"].stringValue)
+                    }
+                    
+                    self.routeDropDown.dataSource = routesArray
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
         
         routeDropDown.selectionAction = { [weak self] (index, item) in
             self?.chooseRouteButton.setTitle(item, for: .normal)
