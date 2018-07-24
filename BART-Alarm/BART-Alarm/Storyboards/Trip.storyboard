@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,13 +18,44 @@
                     <view key="view" contentMode="scaleToFill" id="N8H-eH-G5r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BART_cc_map" translatesAutoresizingMaskIntoConstraints="NO" id="66v-CB-B0E">
+                                <rect key="frame" x="16" y="304" width="343" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="343" id="Btj-Jl-73O"/>
+                                    <constraint firstAttribute="width" constant="343" id="R0H-bS-goE"/>
+                                    <constraint firstAttribute="width" secondItem="66v-CB-B0E" secondAttribute="height" multiplier="1:1" id="XNC-zW-FGr"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the route you are traveling on:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdc-vt-o9r">
+                                <rect key="frame" x="16" y="90" width="281" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pzq-o2-1Qb" firstAttribute="trailing" secondItem="66v-CB-B0E" secondAttribute="trailing" constant="16" id="Uer-dw-9qc"/>
+                            <constraint firstItem="qdc-vt-o9r" firstAttribute="leading" secondItem="pzq-o2-1Qb" secondAttribute="leading" constant="16" id="UuK-ZZ-8O0"/>
+                            <constraint firstItem="pzq-o2-1Qb" firstAttribute="bottom" secondItem="66v-CB-B0E" secondAttribute="bottom" constant="20" id="lce-i6-ZgL"/>
+                            <constraint firstItem="66v-CB-B0E" firstAttribute="leading" secondItem="pzq-o2-1Qb" secondAttribute="leading" constant="16" id="of9-7u-wvX"/>
+                            <constraint firstItem="qdc-vt-o9r" firstAttribute="top" secondItem="pzq-o2-1Qb" secondAttribute="top" constant="26" id="thm-J7-Cb5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pzq-o2-1Qb"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Select Route" id="ESX-tk-NCA">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="AHD-86-cwN"/>
+                        <barButtonItem key="rightBarButtonItem" title="Next" style="plain" id="qlh-km-CGg">
+                            <connections>
+                                <segue destination="l3k-oh-Uyb" kind="show" id="TId-Nc-tV3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eDW-Fk-rOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="161" y="171"/>
+            <point key="canvasLocation" x="1078" y="170"/>
         </scene>
         <!--Time Selection-->
         <scene sceneID="iip-va-hNf">
@@ -32,13 +64,36 @@
                     <view key="view" contentMode="scaleToFill" id="4CM-mv-C5d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BART_cc_map" translatesAutoresizingMaskIntoConstraints="NO" id="cqs-Ky-Q5M">
+                                <rect key="frame" x="16" y="304" width="343" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="0Hg-NZ-LIP"/>
+                                    <constraint firstAttribute="width" secondItem="cqs-Ky-Q5M" secondAttribute="height" multiplier="1:1" id="FI7-C0-laq"/>
+                                    <constraint firstAttribute="height" constant="343" id="Y4s-x2-Slq"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cqs-Ky-Q5M" firstAttribute="leading" secondItem="bUH-0n-OWF" secondAttribute="leading" constant="16" id="281-ze-0sk"/>
+                            <constraint firstItem="bUH-0n-OWF" firstAttribute="bottom" secondItem="cqs-Ky-Q5M" secondAttribute="bottom" constant="20" id="UbA-T5-VWV"/>
+                            <constraint firstItem="bUH-0n-OWF" firstAttribute="trailing" secondItem="cqs-Ky-Q5M" secondAttribute="trailing" constant="16" id="hdi-YT-JLf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bUH-0n-OWF"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Select Route" id="ThW-Jb-2Bx">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="smH-dt-lhb"/>
+                        <barButtonItem key="rightBarButtonItem" title="Next" style="plain" id="AZW-UR-ayD">
+                            <connections>
+                                <segue destination="WIj-3K-wSA" kind="show" id="TgZ-sG-tP6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4g7-oR-3A7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="975" y="170"/>
+            <point key="canvasLocation" x="1912.8" y="169.56521739130437"/>
         </scene>
         <!--Alarm Selection-->
         <scene sceneID="MHh-NZ-sNQ">
@@ -47,13 +102,52 @@
                     <view key="view" contentMode="scaleToFill" id="PpM-x5-iNh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BART_cc_map" translatesAutoresizingMaskIntoConstraints="NO" id="fNT-9Y-Pea">
+                                <rect key="frame" x="16" y="304" width="343" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="343" id="HMA-hO-Bht"/>
+                                    <constraint firstAttribute="width" secondItem="fNT-9Y-Pea" secondAttribute="height" multiplier="1:1" id="UIf-uX-lvs"/>
+                                    <constraint firstAttribute="width" constant="343" id="rgj-jT-UuV"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2dk-Dr-8K7" firstAttribute="bottom" secondItem="fNT-9Y-Pea" secondAttribute="bottom" constant="20" id="Dmp-Ss-RUd"/>
+                            <constraint firstItem="fNT-9Y-Pea" firstAttribute="leading" secondItem="2dk-Dr-8K7" secondAttribute="leading" constant="16" id="WZX-8F-gNq"/>
+                            <constraint firstItem="2dk-Dr-8K7" firstAttribute="trailing" secondItem="fNT-9Y-Pea" secondAttribute="trailing" constant="16" id="jbz-t9-FGP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2dk-Dr-8K7"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Create Alarm" id="V5k-t1-et8">
+                        <barButtonItem key="rightBarButtonItem" title="Save" style="plain" id="rYl-pz-GEG"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jz2-BU-Fmx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1775" y="170"/>
+            <point key="canvasLocation" x="2712.8000000000002" y="169.56521739130437"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="j58-bH-fPl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hLo-lv-CIM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JJc-L7-7Hx">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2TO-wp-VvU" kind="relationship" relationship="rootViewController" id="dHt-cJ-QNa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8J7-tS-uFz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="160.80000000000001" y="170.46476761619192"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="BART_cc_map" width="1000" height="948"/>
+    </resources>
 </document>
