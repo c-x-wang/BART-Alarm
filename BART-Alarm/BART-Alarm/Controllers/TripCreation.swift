@@ -12,6 +12,8 @@ import DropDown
 class TripCreation: UIViewController {
     
     @IBOutlet weak var chooseRouteButton: UIButton!
+    @IBOutlet weak var chooseStartButton: UIButton!
+    @IBOutlet weak var chooseEndButton: UIButton!
     
     let routeDropDown = DropDown()
     let startStationDropDown = DropDown()
@@ -28,26 +30,53 @@ class TripCreation: UIViewController {
     @IBAction func chooseRouteTapped(_ sender: Any) {
         routeDropDown.show()
     }
+    @IBAction func chooseStartTapped(_ sender: Any) {
+        startStationDropDown.show()
+    }
+    @IBAction func chooseEndTapped(_ sender: Any) {
+        endStationDropDown.show()
+    }
     
     func setupDropDowns() {
         setupRouteDropDown()
-        
-        // dataSource setup
-        startStationDropDown.dataSource = ["station", "station2", "uh"]
-        endStationDropDown.dataSource = ["end pls", "station of death", "no"]
+        setupStartStationDropDown()
+        setupEndStationDropDown()
     }
     
     func setupRouteDropDown() {
         routeDropDown.anchorView = chooseRouteButton
         
-        routeDropDown.bottomOffset = CGPoint(x: 0, y: chooseRouteButton.bounds.height)
+        routeDropDown.bottomOffset = CGPoint(x: 0, y: 30) // chooseRouteButton.bounds.height)
         
         routeDropDown.dataSource = ["uh", "pls", "work"]
         
         routeDropDown.selectionAction = { [weak self] (index, item) in
             self?.chooseRouteButton.setTitle(item, for: .normal)
         }
+    }
+    
+    func setupStartStationDropDown() {
+        startStationDropDown.anchorView = chooseStartButton
         
+        startStationDropDown.bottomOffset = CGPoint(x: 0, y: 30) // chooseStartButton.bounds.height)
+        
+        startStationDropDown.dataSource = ["station", "station2", "uh"]
+        
+        startStationDropDown.selectionAction = { [weak self] (index, item) in
+            self?.chooseStartButton.setTitle(item, for: .normal)
+        }
+    }
+    
+    func setupEndStationDropDown() {
+        endStationDropDown.anchorView = chooseEndButton
+        
+        endStationDropDown.bottomOffset = CGPoint(x: 0, y: 30) //chooseEndButton.bounds.height)
+        
+        endStationDropDown.dataSource = ["end pls", "station of death", "no"]
+        
+        endStationDropDown.selectionAction = { [weak self] (index, item) in
+            self?.chooseEndButton.setTitle(item, for: .normal)
+        }
     }
     
     override func viewDidLoad() {
