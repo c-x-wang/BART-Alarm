@@ -1,0 +1,6 @@
+framework module Pods_BART_Alarm {
+  umbrella header "Pods-BART-Alarm-umbrella.h"
+
+  export *
+  module * { export * }
+}

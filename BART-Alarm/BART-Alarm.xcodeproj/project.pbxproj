@@ -14,9 +14,11 @@
 		75521690210674980022E2C1 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7552168F210674980022E2C1 /* Home.storyboard */; };
 		75521692210797B50022E2C1 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75521691210797B50022E2C1 /* Trip.swift */; };
 		75521694210798850022E2C1 /* Trip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75521693210798850022E2C1 /* Trip.storyboard */; };
+		8B7AC0280E74754345842C38 /* Pods_BART_Alarm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C2FA8A3B0F8220C4BA2CE2 /* Pods_BART_Alarm.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3749C41D19198BC422767169 /* Pods-BART-Alarm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BART-Alarm.release.xcconfig"; path = "Pods/Target Support Files/Pods-BART-Alarm/Pods-BART-Alarm.release.xcconfig"; sourceTree = "<group>"; };
 		7552167021066EFD0022E2C1 /* BART-Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BART-Alarm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7552167321066EFD0022E2C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7552167B21066EFD0022E2C1 /* BART_Alarm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BART_Alarm.xcdatamodel; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		7552168F210674980022E2C1 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		75521691210797B50022E2C1 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		75521693210798850022E2C1 /* Trip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trip.storyboard; sourceTree = "<group>"; };
+		C2C2FA8A3B0F8220C4BA2CE2 /* Pods_BART_Alarm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BART_Alarm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2D3DCDB5F56BC8C62D7098E /* Pods-BART-Alarm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BART-Alarm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BART-Alarm/Pods-BART-Alarm.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B7AC0280E74754345842C38 /* Pods_BART_Alarm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AF4DDF5A504EAE9BA0E9979 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C2C2FA8A3B0F8220C4BA2CE2 /* Pods_BART_Alarm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7552166721066EFD0022E2C1 = {
 			isa = PBXGroup;
 			children = (
 				7552167221066EFD0022E2C1 /* BART-Alarm */,
 				7552167121066EFD0022E2C1 /* Products */,
+				C8C5297B2251387DE2407234 /* Pods */,
+				1AF4DDF5A504EAE9BA0E9979 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +141,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		C8C5297B2251387DE2407234 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2D3DCDB5F56BC8C62D7098E /* Pods-BART-Alarm.debug.xcconfig */,
+				3749C41D19198BC422767169 /* Pods-BART-Alarm.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -133,9 +157,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7552168521066EFF0022E2C1 /* Build configuration list for PBXNativeTarget "BART-Alarm" */;
 			buildPhases = (
+				37E828A7A9B2FC3316DFE797 /* [CP] Check Pods Manifest.lock */,
 				7552166C21066EFD0022E2C1 /* Sources */,
 				7552166D21066EFD0022E2C1 /* Frameworks */,
 				7552166E21066EFD0022E2C1 /* Resources */,
+				A6991AAAB7A88475FC54C369 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,6 +218,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		37E828A7A9B2FC3316DFE797 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BART-Alarm-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6991AAAB7A88475FC54C369 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BART-Alarm/Pods-BART-Alarm-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BART-Alarm/Pods-BART-Alarm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7552166C21066EFD0022E2C1 /* Sources */ = {
@@ -334,6 +399,7 @@
 		};
 		7552168621066EFF0022E2C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2D3DCDB5F56BC8C62D7098E /* Pods-BART-Alarm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -351,6 +417,7 @@
 		};
 		7552168721066EFF0022E2C1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3749C41D19198BC422767169 /* Pods-BART-Alarm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
