@@ -12,7 +12,9 @@ struct Trip {
     var route: String
     var routeNumber: String
     var startLocation: String
+    var startLocationIndex: Int
     var endLocation: String
+    var endLocationIndex: Int
     var tripLength: String
     var alarmMinutes: Int // change to time file types?
     
@@ -20,7 +22,9 @@ struct Trip {
         self.route = "default"
         self.routeNumber = "default"
         self.startLocation = "default"
+        self.startLocationIndex = -1
         self.endLocation = "default"
+        self.endLocationIndex = -1
         self.tripLength = "default"
         self.alarmMinutes = -1
     }
