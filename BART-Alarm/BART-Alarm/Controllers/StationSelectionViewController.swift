@@ -19,6 +19,8 @@ class StationSelectionViewController: UIViewController {
     @IBOutlet weak var chooseStartButton: UIButton!
     @IBOutlet weak var chooseEndButton: UIButton!
     
+    var trip = Trip()
+    
     let startStationDropDown = DropDown()
     let endStationDropDown = DropDown()
     
@@ -37,38 +39,38 @@ class StationSelectionViewController: UIViewController {
     }
     
     func setupStartStationDropDown() {
-//        print("route " + self.trip.route)
-//        routeLabel.text = "x"
-//        routeLabel.text = self.trip.route
+        print("route: " + self.trip.route)
+        print("route number: " + self.trip.routeNumber)
         
         startStationDropDown.anchorView = chooseStartButton
         
         startStationDropDown.bottomOffset = CGPoint(x: 0, y: 30) // chooseStartButton.bounds.height)
         
-//                let apiToContact = "http://api.bart.gov/api/route.aspx?cmd=routes&key=MW9S-E7SL-26DU-VV8V&json=y"
-//                var stationsArray = [String]()
-//
-//                Alamofire.request(apiToContact).validate().responseJSON() { response in
-//                    switch response.result {
-//                    case .success:
-//                        if let value = response.result.value {
-//                            let json = JSON(value)
-//
-//                            let routesData = json["root"]["routes"]["route"].arrayValue
-//
-//                            for route in routesData {
-//                                stationsArray.append(route["name"].stringValue)
-//                            }
-//
-//                            self.routeDropDown.dataSource = stationsArray
-//                        }
-//                    case .failure(let error):
-//                        print(error)
-//                    }
-//                }
+        let apiToContact = "http://api.bart.gov/api/route.aspx?cmd=routes&key=MW9S-E7SL-26DU-VV8V&json=y"
+        var stationsArray = [String]()
+
+        Alamofire.request(apiToContact).validate().responseJSON() { response in
+            switch response.result {
+            case .success:
+                if let value = response.result.value {
+                    let json = JSON(value)
+
+                    let stationsData = json["root"]["routes"]["route"].arrayValue
+
+                    for station in stationsData {
+                        stationsArray.append(station["name"].stringValue)
+                    }
+
+                    self.startStationDropDown.dataSource = stationsArray
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
 //        var stationsArray = ["station", "station2", "uh"]
-        //        stationsArray.append(self.trip.route)
-        startStationDropDown.dataSource = ["station", "station2", "uh"]
+//        stationsArray.append(self.trip.route)
+//        startStationDropDown.dataSource = ["station", "station2", "uh"]
         
         startStationDropDown.selectionAction = { [weak self] (index, item) in
             self?.chooseStartButton.setTitle(item, for: .normal)
@@ -89,6 +91,8 @@ class StationSelectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        routeLabel.text = trip.route
         
         setupStartStationDropDown()
         setupEndStationDropDown()

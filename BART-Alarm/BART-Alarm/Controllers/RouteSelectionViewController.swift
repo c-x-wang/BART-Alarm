@@ -37,7 +37,8 @@ class RouteSelectionViewController: UIViewController {
         routeDropDown.bottomOffset = CGPoint(x: 0, y: 30) // chooseRouteButton.bounds.height)
         
         let apiToContact = "http://api.bart.gov/api/route.aspx?cmd=routes&key=MW9S-E7SL-26DU-VV8V&json=y"
-        var routesArray = [String]()
+        var routeNames = [String]()
+        var routeNumbers = [String]()
         
         Alamofire.request(apiToContact).validate().responseJSON() { response in
             switch response.result {
@@ -48,10 +49,12 @@ class RouteSelectionViewController: UIViewController {
                     let routesData = json["root"]["routes"]["route"].arrayValue
                     
                     for route in routesData {
-                        routesArray.append(route["name"].stringValue)
+                        routeNames.append(route["name"].stringValue)
+                        routeNumbers.append(route["number"].stringValue)
+                        
                     }
                     
-                    self.routeDropDown.dataSource = routesArray
+                    self.routeDropDown.dataSource = routeNames
                 }
             case .failure(let error):
                 print(error)
@@ -61,7 +64,8 @@ class RouteSelectionViewController: UIViewController {
         routeDropDown.selectionAction = { [weak self] (index, item) in
             self?.chooseRouteButton.setTitle(item, for: .normal)
             self?.trip.route = item
-            print(self?.trip.route ?? "default val")
+            self?.trip.routeNumber = routeNumbers[index]
+//            print(self?.trip.route ?? "default val")
         }
     }
     
@@ -80,10 +84,9 @@ class RouteSelectionViewController: UIViewController {
     
      // MARK: - Navigation
      
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        _ = segue.destination as! StationSelectionViewController
-//        Pass the selected object to the new view controller.
+        let vc = segue.destination as! StationSelectionViewController
+        vc.trip = self.trip
      }
  
     
