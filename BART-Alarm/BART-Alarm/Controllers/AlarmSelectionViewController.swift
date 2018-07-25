@@ -21,7 +21,7 @@ class AlarmSelectionViewController: UIViewController {
 
         routeLabel.text = trip.route
         startEndStationsLabel.text = trip.startLocation + " to " + trip.endLocation
-        tripLengthLabel.text = "Trip length: " + trip.travelTime
+        tripLengthLabel.text = "Trip length: " + trip.tripLength
     }
 
     override func didReceiveMemoryWarning() {

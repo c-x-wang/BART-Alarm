@@ -109,6 +109,11 @@ class StationSelectionViewController: UIViewController {
         }
     }
     
+    func calculateTripTime() {
+        //
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -122,8 +127,6 @@ class StationSelectionViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
     
     
     // MARK: - Navigation
