@@ -9,11 +9,19 @@
 import UIKit
 
 class AlarmSelectionViewController: UIViewController {
-
+    
+    @IBOutlet weak var routeLabel: UILabel!
+    @IBOutlet weak var startEndStationsLabel: UILabel!
+    @IBOutlet weak var tripLengthLabel: UILabel!
+    
+    var trip = Trip()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        routeLabel.text = trip.route
+        startEndStationsLabel.text = trip.startLocation + " to " + trip.endLocation
+        tripLengthLabel.text = "very long"
     }
 
     override func didReceiveMemoryWarning() {
