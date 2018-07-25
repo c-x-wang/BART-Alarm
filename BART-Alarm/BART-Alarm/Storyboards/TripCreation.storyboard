@@ -14,7 +14,7 @@
         <!--Route Selection-->
         <scene sceneID="koX-DZ-wHM">
             <objects>
-                <viewController storyboardIdentifier="routeSelectionView" title="Route Selection" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2TO-wp-VvU" customClass="TripCreation" customModule="BART_Alarm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="routeSelectionView" title="Route Selection" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2TO-wp-VvU" customClass="RouteSelectionViewController" customModule="BART_Alarm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N8H-eH-G5r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,7 +56,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="AHD-86-cwN"/>
                         <barButtonItem key="rightBarButtonItem" title="Next" style="plain" id="qlh-km-CGg">
                             <connections>
-                                <segue destination="l3k-oh-Uyb" kind="show" id="TId-Nc-tV3"/>
+                                <segue destination="l3k-oh-Uyb" kind="show" identifier="showStationSelection" id="FKr-Xb-qI8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -68,10 +68,10 @@
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="169.56521739130437"/>
         </scene>
-        <!--Time Selection-->
+        <!--Station Selection-->
         <scene sceneID="iip-va-hNf">
             <objects>
-                <viewController title="Time Selection" id="l3k-oh-Uyb" customClass="TripCreation" customModule="BART_Alarm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Station Selection" id="l3k-oh-Uyb" customClass="StationSelectionViewController" customModule="BART_Alarm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4CM-mv-C5d">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,7 +117,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Choose start station"/>
                                 <connections>
-                                    <action selector="chooseStartTapped:" destination="l3k-oh-Uyb" eventType="touchUpInside" id="MfF-6d-93n"/>
+                                    <action selector="chooseStartTapped:" destination="l3k-oh-Uyb" eventType="touchUpInside" id="CxI-4F-Po4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3q-wi-n1h">
@@ -125,7 +125,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Choose end station"/>
                                 <connections>
-                                    <action selector="chooseEndTapped:" destination="l3k-oh-Uyb" eventType="touchUpInside" id="Oh1-b0-IyY"/>
+                                    <action selector="chooseEndTapped:" destination="l3k-oh-Uyb" eventType="touchUpInside" id="t7L-jG-KAd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -141,13 +141,14 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="smH-dt-lhb"/>
                         <barButtonItem key="rightBarButtonItem" title="Next" style="plain" id="AZW-UR-ayD">
                             <connections>
-                                <segue destination="WIj-3K-wSA" kind="show" id="TgZ-sG-tP6"/>
+                                <segue destination="WIj-3K-wSA" kind="show" identifier="showAlarmSelection" id="TgZ-sG-tP6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="chooseEndButton" destination="d3q-wi-n1h" id="9YP-cw-w9s"/>
-                        <outlet property="chooseStartButton" destination="hyS-F4-3qc" id="w3x-Wf-eqv"/>
+                        <outlet property="chooseEndButton" destination="d3q-wi-n1h" id="x73-dd-XBh"/>
+                        <outlet property="chooseStartButton" destination="hyS-F4-3qc" id="t3a-Sk-OkQ"/>
+                        <outlet property="routeLabel" destination="kw0-57-9fg" id="far-O1-x8f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4g7-oR-3A7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -157,7 +158,7 @@
         <!--Alarm Selection-->
         <scene sceneID="MHh-NZ-sNQ">
             <objects>
-                <viewController title="Alarm Selection" id="WIj-3K-wSA" sceneMemberID="viewController">
+                <viewController title="Alarm Selection" id="WIj-3K-wSA" customClass="AlarmSelectionViewController" customModule="BART_Alarm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PpM-x5-iNh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

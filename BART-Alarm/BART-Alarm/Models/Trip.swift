@@ -9,8 +9,19 @@
 import UIKit
 
 struct Trip {
+    var route: String
+    var trainID: String
     var startLocation: String
     var endLocation: String
     var travelTime: Int
-    var alarmTime: Int // change time file types?
+    var alarmTime: Int // change to time file types?
+    
+    init() {
+        self.route = "default"
+        self.trainID = "default"
+        self.startLocation = "default"
+        self.endLocation = "default"
+        self.travelTime = -1
+        self.alarmTime = -1
+    }
 }
