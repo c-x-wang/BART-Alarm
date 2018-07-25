@@ -82,12 +82,12 @@ class RouteSelectionViewController: UIViewController {
     
     
     
-     // MARK: - Navigation
+    // MARK: - Navigation
      
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! StationSelectionViewController
         vc.trip = self.trip
-     }
+    }
  
     
 }
