@@ -14,7 +14,7 @@ struct Trip {
     var trainID: String
     var startLocation: String
     var endLocation: String
-    var travelTime: Int
+    var travelTime: String
     var alarmTime: Int // change to time file types?
     
     init() {
@@ -23,7 +23,7 @@ struct Trip {
         self.trainID = "default"
         self.startLocation = "default"
         self.endLocation = "default"
-        self.travelTime = -1
+        self.travelTime = "default"
         self.alarmTime = -1
     }
 }
