@@ -11,7 +11,6 @@ import UIKit
 struct Trip {
     var route: String
     var routeNumber: String
-    var trainID: String
     var startLocation: String
     var endLocation: String
     var tripLength: String
@@ -20,7 +19,6 @@ struct Trip {
     init() {
         self.route = "default"
         self.routeNumber = "default"
-        self.trainID = "default"
         self.startLocation = "default"
         self.endLocation = "default"
         self.tripLength = "default"
