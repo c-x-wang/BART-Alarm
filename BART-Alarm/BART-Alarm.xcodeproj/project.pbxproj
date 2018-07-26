@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		752BC7A52109532B00792224 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752BC7A42109532B00792224 /* HomeViewController.swift */; };
 		7552167421066EFD0022E2C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552167321066EFD0022E2C1 /* AppDelegate.swift */; };
 		7552167C21066EFD0022E2C1 /* BART_Alarm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7552167A21066EFD0022E2C1 /* BART_Alarm.xcdatamodeld */; };
 		7552167E21066EFF0022E2C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7552167D21066EFF0022E2C1 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		3749C41D19198BC422767169 /* Pods-BART-Alarm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BART-Alarm.release.xcconfig"; path = "Pods/Target Support Files/Pods-BART-Alarm/Pods-BART-Alarm.release.xcconfig"; sourceTree = "<group>"; };
+		752BC7A42109532B00792224 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7552167021066EFD0022E2C1 /* BART-Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BART-Alarm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7552167321066EFD0022E2C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7552167B21066EFD0022E2C1 /* BART_Alarm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BART_Alarm.xcdatamodel; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		7552168A210673800022E2C1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				752BC7A42109532B00792224 /* HomeViewController.swift */,
 				755216952107A11E0022E2C1 /* RouteSelectionViewController.swift */,
 				755216972108FCA30022E2C1 /* StationSelectionViewController.swift */,
 				755216992108FD760022E2C1 /* AlarmSelectionViewController.swift */,
@@ -285,6 +288,7 @@
 				755216962107A11E0022E2C1 /* RouteSelectionViewController.swift in Sources */,
 				7552169A2108FD760022E2C1 /* AlarmSelectionViewController.swift in Sources */,
 				7552167421066EFD0022E2C1 /* AppDelegate.swift in Sources */,
+				752BC7A52109532B00792224 /* HomeViewController.swift in Sources */,
 				75521692210797B50022E2C1 /* Trip.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

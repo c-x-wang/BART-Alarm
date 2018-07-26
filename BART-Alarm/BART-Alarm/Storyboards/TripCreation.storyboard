@@ -231,7 +231,11 @@
                         <viewLayoutGuide key="safeArea" id="2dk-Dr-8K7"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create Alarm" id="V5k-t1-et8">
-                        <barButtonItem key="rightBarButtonItem" title="Create" style="plain" id="rYl-pz-GEG"/>
+                        <barButtonItem key="rightBarButtonItem" title="Create" style="plain" id="rYl-pz-GEG">
+                            <connections>
+                                <segue destination="1QI-0l-vJo" kind="show" id="u5p-9Y-Gzj"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="routeLabel" destination="rRY-Ja-535" id="Y3g-N9-wSd"/>
@@ -242,6 +246,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jz2-BU-Fmx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2712.8000000000002" y="169.56521739130437"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="aCI-RP-P1P">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="1QI-0l-vJo" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e3P-Ee-Xn6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3315" y="169"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="j58-bH-fPl">
