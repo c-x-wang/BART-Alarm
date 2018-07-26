@@ -25,6 +25,7 @@ class AlarmSelectionViewController: UIViewController {
         self.presentingViewController?.dismiss(animated: true)
         
         self.activateAlarm()
+        self.runTimer()
     }
     
     func calculateTripTime() {
@@ -100,31 +101,25 @@ class AlarmSelectionViewController: UIViewController {
     
     var seconds: TimeInterval = 5
     
-    var timer = Timer()
+//    var timer = Timer()
     var isTimerRunning = false
     
     func activateAlarm() {
         seconds = self.trip.tripLength - alarmMinutesPicker.countDownDuration
         print(seconds)
-
-//        func runTimer(){
-//            let alarmTime = trainDeparturePicker.date.addingTimeInterval(seconds)
-//            let timer = Timer(fireAt: alarmTime, interval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: false)
-//            RunLoop.main.add(timer, forMode: .commonModes)
-//        }
-//
-//        func updateTimer() {
-//            if seconds < 1 {
-//                timerRepeat! -= 1
-//                updateMealLeftLabel(numberOfMeal: timerRepeat)
-//                print("finished") //for testing
-//                resetTimer()
-//            }else{
-//                seconds -= 1
-//                print(seconds) //for testing
-//                updateTimerLabel()
-//            }
-//        }
+    }
+    
+    func runTimer() {
+//        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(AlarmSelectionViewController.updateTimer)), userInfo: nil, repeats: true)
+        let alarmTime = self.trainDeparturePicker.date + TimeInterval(20)
+        var timer = Timer(fireAt: alarmTime, interval: 5, target: self, selector: (#selector(AlarmSelectionViewController.updateTimer)), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer, forMode: .commonModes)
+    }
+    
+    @objc func updateTimer() {
+//        self.seconds -= 1
+//        timerLabel.text = “\(seconds)”
+        print("hell yeah")
     }
 
 }
