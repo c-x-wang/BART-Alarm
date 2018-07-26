@@ -11,6 +11,7 @@ import SwiftyJSON
 import Alamofire
 import AlamofireImage
 import AlamofireNetworkActivityIndicator
+import UserNotifications
 
 class AlarmSelectionViewController: UIViewController {
     
@@ -19,6 +20,12 @@ class AlarmSelectionViewController: UIViewController {
     @IBOutlet weak var tripLengthLabel: UILabel!
     
     var trip = Trip()
+    
+    @IBAction func CreateButtonTapped(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true)
+        
+        self.activateAlarm()
+    }
     
     func calculateTripTime() {
         
@@ -76,14 +83,48 @@ class AlarmSelectionViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+//        let vc = segue.destination as! HomeViewController
+//        vc.trip = self.trip
     }
-    */
+ 
+    
+    // ALARM
+    
+    @IBOutlet weak var trainDeparturePicker: UIDatePicker!
+    @IBOutlet weak var alarmMinutesPicker: UIDatePicker!
+    
+    var seconds: TimeInterval = 5
+    
+    var timer = Timer()
+    var isTimerRunning = false
+    
+    func activateAlarm() {
+        seconds = self.trip.tripLength - alarmMinutesPicker.countDownDuration
+        print(seconds)
+
+//        func runTimer(){
+//            let alarmTime = trainDeparturePicker.date.addingTimeInterval(seconds)
+//            let timer = Timer(fireAt: alarmTime, interval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: false)
+//            RunLoop.main.add(timer, forMode: .commonModes)
+//        }
+//
+//        func updateTimer() {
+//            if seconds < 1 {
+//                timerRepeat! -= 1
+//                updateMealLeftLabel(numberOfMeal: timerRepeat)
+//                print("finished") //for testing
+//                resetTimer()
+//            }else{
+//                seconds -= 1
+//                print(seconds) //for testing
+//                updateTimerLabel()
+//            }
+//        }
+    }
 
 }

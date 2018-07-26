@@ -9,6 +9,10 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+//    @IBAction func unwindToHome(segue:UIStoryboardSegue) { print("IM BACK!!!") }
+    
+    var trip = Trip()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +24,11 @@ class HomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+//    @IBAction func unwindToHomeScreen(_ segue: UIStoryboardSegue) {
+//        print("Here")
+//    }
+
     
 
     /*
