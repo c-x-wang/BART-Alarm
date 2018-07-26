@@ -15,7 +15,7 @@ struct Trip {
     var startLocationIndex: Int
     var endLocation: String
     var endLocationIndex: Int
-    var tripLength: String
+    var tripLength: TimeInterval
     var alarmMinutes: Int // change to time file types?
     
     init() {
@@ -25,7 +25,7 @@ struct Trip {
         self.startLocationIndex = -1
         self.endLocation = "default"
         self.endLocationIndex = -1
-        self.tripLength = "default"
+        self.tripLength = 0
         self.alarmMinutes = -1
     }
 }

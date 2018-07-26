@@ -23,7 +23,7 @@ class AlarmSelectionViewController: UIViewController {
     func calculateTripTime() {
         
         let apiToContact = "http://api.bart.gov/api/sched.aspx?cmd=routesched&route=" + self.trip.routeNumber + "&key=MW9S-E7SL-26DU-VV8V&json=y"
-        var stationTimesArray = [String]()
+        var stationTimesArray = [Date]()
         
         Alamofire.request(apiToContact).validate().responseJSON() { response in
             switch response.result {
@@ -34,9 +34,15 @@ class AlarmSelectionViewController: UIViewController {
                     let stationTimesData = json["root"]["route"]["train"][0]["stop"].arrayValue
                     
                     for station in stationTimesData {
-                        stationTimesArray.append(station["@origTime"].stringValue)
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "h:mm a"
+                        let date = dateFormatter.date(from: station["@origTime"].stringValue)
+                        stationTimesArray.append(date!)
                     }
                     print(stationTimesArray)
+                    self.trip.tripLength = stationTimesArray[self.trip.endLocationIndex].timeIntervalSince(stationTimesArray[self.trip.startLocationIndex])
+                    print(self.trip.tripLength)
+                    self.tripLengthLabel.text = "Trip length: " + String(Int(self.trip.tripLength / 60)) + " minutes"
                     
                 }
             case .failure(let error):
@@ -50,9 +56,19 @@ class AlarmSelectionViewController: UIViewController {
 
         routeLabel.text = trip.route
         startEndStationsLabel.text = trip.startLocation + " to " + trip.endLocation
-        tripLengthLabel.text = "Trip length: " + trip.tripLength
+        
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "h:mm"
+//        let formattedDate = formatter.string(from: trip.tripLength)
+//        tripLengthLabel.text = "Trip length: " + formattedDate
         calculateTripTime()
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(false)
+//
+//        calculateTripTime()
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
