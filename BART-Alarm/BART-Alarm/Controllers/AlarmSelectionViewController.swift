@@ -70,6 +70,9 @@ class AlarmSelectionViewController: UIViewController {
 //        let formattedDate = formatter.string(from: trip.tripLength)
 //        tripLengthLabel.text = "Trip length: " + formattedDate
         calculateTripTime()
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
+        })
     }
     
 //    override func viewWillAppear(_ animated: Bool) {
@@ -118,8 +121,22 @@ class AlarmSelectionViewController: UIViewController {
     
     @objc func updateTimer() {
 //        self.seconds -= 1
-//        timerLabel.text = “\(seconds)”
         print("hell yeah")
+        
+        
     }
-
+    
+    @IBAction func testButtonPressed(_ sender: Any) {
+        let content = UNMutableNotificationContent()
+        content.title = "title"
+        content.subtitle = "subtitle"
+        content.body = "body"
+        content.badge = 1
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
+        let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+    
 }
