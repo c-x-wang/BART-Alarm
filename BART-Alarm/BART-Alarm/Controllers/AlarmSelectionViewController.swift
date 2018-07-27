@@ -24,6 +24,7 @@ class AlarmSelectionViewController: UIViewController {
     var trip = Trip()
     
     @IBAction func CreateButtonTapped(_ sender: Any) {
+        
         self.presentingViewController?.dismiss(animated: true)
         
         let content = UNMutableNotificationContent()
@@ -55,14 +56,17 @@ class AlarmSelectionViewController: UIViewController {
             case .success:
                 if let value = response.result.value {
                     let json = JSON(value)
-                    
+                    print(json)
                     let stationTimesData = json["root"]["route"]["train"][0]["stop"].arrayValue
                     
                     for station in stationTimesData {
                         let dateFormatter = DateFormatter()
                         dateFormatter.dateFormat = "h:mm a"
-                        let date = dateFormatter.date(from: station["@origTime"].stringValue)
+                        let orignTime = station["@origTime"].stringValue
+                        if orignTime != ""{
+                        let date = dateFormatter.date(from: orignTime)
                         stationTimesArray.append(date!)
+                        }
                     }
                     print(stationTimesArray)
                     self.trip.tripLength = stationTimesArray[self.trip.endLocationIndex].timeIntervalSince(stationTimesArray[self.trip.startLocationIndex])

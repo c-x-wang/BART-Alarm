@@ -80,7 +80,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="nVh-BW-Syb"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home??" id="3jU-kM-lKt">
+                    <navigationItem key="navigationItem" title="Home" id="3jU-kM-lKt">
                         <barButtonItem key="rightBarButtonItem" title="New Alarm" id="Acc-4O-qnM">
                             <connections>
                                 <segue destination="FEd-Xb-4Ne" kind="showDetail" id="wgJ-E2-eOC"/>
