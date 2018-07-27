@@ -32,16 +32,14 @@ class AlarmSelectionViewController: UIViewController {
         content.body = "body"
         content.badge = 1
         
-        print(self.trip.tripLength - alarmMinutesPicker.countDownDuration)
         let calendar = NSCalendar.current
         let date = trainDeparturePicker.date.addingTimeInterval(self.trip.tripLength - alarmMinutesPicker.countDownDuration)
+        print(date)
+        
         let unitFlags: Set<Calendar.Component> = [.hour, .minute]
         let components = calendar.dateComponents(unitFlags, from: date)
-        //        var date = DateComponents()
-        //        date.hour = 8
-        //        date.minute = 30
+        
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
-        //        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: self.trip.tripLength - alarmMinutesPicker.countDownDuration, repeats: false)
         let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
@@ -84,10 +82,6 @@ class AlarmSelectionViewController: UIViewController {
         routeLabel.text = trip.route
         startEndStationsLabel.text = trip.startLocation + " to " + trip.endLocation
         
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "h:mm"
-//        let formattedDate = formatter.string(from: trip.tripLength)
-//        tripLengthLabel.text = "Trip length: " + formattedDate
         calculateTripTime()
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
