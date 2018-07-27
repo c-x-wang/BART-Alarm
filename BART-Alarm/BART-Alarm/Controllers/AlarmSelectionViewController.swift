@@ -28,9 +28,9 @@ class AlarmSelectionViewController: UIViewController {
         self.presentingViewController?.dismiss(animated: true)
         
         let content = UNMutableNotificationContent()
-        content.title = "title"
-        content.subtitle = "subtitle"
-        content.body = "body"
+        content.title = "Destination Approaching"
+//        content.subtitle = "subtitle"
+        content.body = "Train will arrive at \(trip.endLocation) in \(Int(alarmMinutesPicker.countDownDuration)/60) minutes"
         content.badge = 1
         
         let calendar = NSCalendar.current
