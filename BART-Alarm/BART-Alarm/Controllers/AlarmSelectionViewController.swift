@@ -18,14 +18,33 @@ class AlarmSelectionViewController: UIViewController {
     @IBOutlet weak var routeLabel: UILabel!
     @IBOutlet weak var startEndStationsLabel: UILabel!
     @IBOutlet weak var tripLengthLabel: UILabel!
+    @IBOutlet weak var trainDeparturePicker: UIDatePicker!
+    @IBOutlet weak var alarmMinutesPicker: UIDatePicker!
     
     var trip = Trip()
     
     @IBAction func CreateButtonTapped(_ sender: Any) {
         self.presentingViewController?.dismiss(animated: true)
         
-        self.activateAlarm()
-        self.runTimer()
+        let content = UNMutableNotificationContent()
+        content.title = "title"
+        content.subtitle = "subtitle"
+        content.body = "body"
+        content.badge = 1
+        
+        print(self.trip.tripLength - alarmMinutesPicker.countDownDuration)
+        let calendar = NSCalendar.current
+        let date = trainDeparturePicker.date.addingTimeInterval(self.trip.tripLength - alarmMinutesPicker.countDownDuration)
+        let unitFlags: Set<Calendar.Component> = [.hour, .minute]
+        let components = calendar.dateComponents(unitFlags, from: date)
+        //        var date = DateComponents()
+        //        date.hour = 8
+        //        date.minute = 30
+        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
+        //        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: self.trip.tripLength - alarmMinutesPicker.countDownDuration, repeats: false)
+        let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
     
     func calculateTripTime() {
@@ -74,12 +93,6 @@ class AlarmSelectionViewController: UIViewController {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
         })
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(false)
-//
-//        calculateTripTime()
-//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -94,49 +107,6 @@ class AlarmSelectionViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        let vc = segue.destination as! HomeViewController
 //        vc.trip = self.trip
-    }
- 
-    
-    // ALARM
-    
-    @IBOutlet weak var trainDeparturePicker: UIDatePicker!
-    @IBOutlet weak var alarmMinutesPicker: UIDatePicker!
-    
-    var seconds: TimeInterval = 5
-    
-//    var timer = Timer()
-    var isTimerRunning = false
-    
-    func activateAlarm() {
-        seconds = self.trip.tripLength - alarmMinutesPicker.countDownDuration
-        print(seconds)
-    }
-    
-    func runTimer() {
-//        timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(AlarmSelectionViewController.updateTimer)), userInfo: nil, repeats: true)
-        let alarmTime = self.trainDeparturePicker.date + TimeInterval(20)
-        var timer = Timer(fireAt: alarmTime, interval: 5, target: self, selector: (#selector(AlarmSelectionViewController.updateTimer)), userInfo: nil, repeats: true)
-        RunLoop.main.add(timer, forMode: .commonModes)
-    }
-    
-    @objc func updateTimer() {
-//        self.seconds -= 1
-        print("hell yeah")
-        
-        
-    }
-    
-    @IBAction func testButtonPressed(_ sender: Any) {
-        let content = UNMutableNotificationContent()
-        content.title = "title"
-        content.subtitle = "subtitle"
-        content.body = "body"
-        content.badge = 1
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 20, repeats: false)
-        let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
-        
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
     
 }
