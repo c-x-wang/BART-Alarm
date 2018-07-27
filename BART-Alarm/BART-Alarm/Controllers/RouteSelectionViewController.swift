@@ -27,6 +27,10 @@ class RouteSelectionViewController: UIViewController {
         ]
     }()
     
+    @IBAction func cancelButtonTapped(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true)
+    }
+    
     @IBAction func chooseRouteTapped(_ sender: Any) {
         routeDropDown.show()
     }

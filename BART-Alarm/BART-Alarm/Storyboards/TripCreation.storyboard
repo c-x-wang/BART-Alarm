@@ -54,6 +54,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Select Route" id="ESX-tk-NCA">
                         <barButtonItem key="backBarButtonItem" title="Back" id="AHD-86-cwN"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="qhB-tF-58E">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="2TO-wp-VvU" id="bXc-wQ-Caf"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" style="plain" id="qlh-km-CGg">
                             <connections>
                                 <segue destination="l3k-oh-Uyb" kind="show" identifier="showStationSelection" id="FKr-Xb-qI8"/>
