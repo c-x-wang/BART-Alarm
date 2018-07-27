@@ -56,19 +56,32 @@ class AlarmSelectionViewController: UIViewController {
             case .success:
                 if let value = response.result.value {
                     let json = JSON(value)
-                    print(json)
-                    let stationTimesData = json["root"]["route"]["train"][0]["stop"].arrayValue
                     
-                    for station in stationTimesData {
-                        let dateFormatter = DateFormatter()
-                        dateFormatter.dateFormat = "h:mm a"
-                        let orignTime = station["@origTime"].stringValue
-                        if orignTime != ""{
-                        let date = dateFormatter.date(from: orignTime)
-                        stationTimesArray.append(date!)
+                    for i in 1...300 {
+                        
+                        let stationTimesData = json["root"]["route"]["train"][i]["stop"].arrayValue
+                        var valid = false
+                        
+                        for station in stationTimesData {
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.dateFormat = "h:mm a"
+                            let origTime = station["@origTime"].stringValue
+                            
+                            if origTime != "" {
+                                let date = dateFormatter.date(from: origTime)
+                                stationTimesArray.append(date!)
+                                valid = true
+                            } else {
+//                                print(i)
+                                stationTimesArray = []
+                                valid = false
+                                break
+                            }
                         }
+                        
+                        if valid == true { break }
                     }
-                    print(stationTimesArray)
+                    
                     self.trip.tripLength = stationTimesArray[self.trip.endLocationIndex].timeIntervalSince(stationTimesArray[self.trip.startLocationIndex])
                     print(self.trip.tripLength)
                     self.tripLengthLabel.text = "Trip length: " + String(Int(self.trip.tripLength / 60)) + " minutes"
