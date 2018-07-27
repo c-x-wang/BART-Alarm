@@ -53,9 +53,10 @@ class RouteSelectionViewController: UIViewController {
                     let routesData = json["root"]["routes"]["route"].arrayValue
                     
                     for route in routesData {
-                        routeNames.append(route["name"].stringValue)
-                        routeNumbers.append(route["number"].stringValue)
-                        
+                        if route["number"].intValue % 2 == 0 {
+                            routeNames.append(route["name"].stringValue)
+                            routeNumbers.append(route["number"].stringValue)
+                        }
                     }
                     
                     self.routeDropDown.dataSource = routeNames
