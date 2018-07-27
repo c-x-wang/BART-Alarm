@@ -32,6 +32,7 @@ class AlarmSelectionViewController: UIViewController {
 //        content.subtitle = "subtitle"
         content.body = "Train will arrive at \(trip.endLocation) in \(Int(alarmMinutesPicker.countDownDuration)/60) minutes"
         content.badge = 1
+//        content.sound =
         
         let calendar = NSCalendar.current
         let date = trainDeparturePicker.date.addingTimeInterval(self.trip.tripLength - alarmMinutesPicker.countDownDuration)
@@ -101,8 +102,9 @@ class AlarmSelectionViewController: UIViewController {
         
         calculateTripTime()
         
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
-        })
+//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
+//            // Enable or disable features based on authorization.
+//        })
     }
 
     override func didReceiveMemoryWarning() {
