@@ -22,10 +22,12 @@ class AlarmSelectionViewController: UIViewController {
     @IBOutlet weak var alarmMinutesPicker: UIDatePicker!
     
     var trip = Trip()
+    var alarmWillRingTime = Date()
     
     @IBAction func CreateButtonTapped(_ sender: Any) {
         
-        self.presentingViewController?.dismiss(animated: true)
+//        self.presentingViewController?.dismiss(animated: true)
+        performSegue(withIdentifier: "unwindToHome", sender: sender)
         
         let content = UNMutableNotificationContent()
         content.title = "Destination Approaching"
@@ -35,11 +37,11 @@ class AlarmSelectionViewController: UIViewController {
 //        content.sound =
         
         let calendar = NSCalendar.current
-        let date = trainDeparturePicker.date.addingTimeInterval(self.trip.tripLength - alarmMinutesPicker.countDownDuration)
-        print(date)
+        alarmWillRingTime = trainDeparturePicker.date.addingTimeInterval(self.trip.tripLength - alarmMinutesPicker.countDownDuration)
+        print(alarmWillRingTime)
         
         let unitFlags: Set<Calendar.Component> = [.hour, .minute]
-        let components = calendar.dateComponents(unitFlags, from: date)
+        let components = calendar.dateComponents(unitFlags, from: alarmWillRingTime)
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
         let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
@@ -105,10 +107,6 @@ class AlarmSelectionViewController: UIViewController {
         startEndStationsLabel.text = trip.startLocation + " to " + trip.endLocation
         
         calculateTripTime()
-        
-//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
-//            // Enable or disable features based on authorization.
-//        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -122,8 +120,10 @@ class AlarmSelectionViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let vc = segue.destination as! HomeViewController
-//        vc.trip = self.trip
+        let vc = segue.destination as! HomeViewController
+        vc.trip = self.trip
+        vc.alarmWillRingTime = self.alarmWillRingTime
+//        vc.currentAlarmsTableView.reloadData()
     }
     
 }

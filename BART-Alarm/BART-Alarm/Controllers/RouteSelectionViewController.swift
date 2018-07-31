@@ -18,6 +18,7 @@ class RouteSelectionViewController: UIViewController {
     @IBOutlet weak var chooseRouteButton: UIButton!
     
     var trip = Trip()
+    var trips = [Trip]()
     
     let routeDropDown = DropDown()
     
@@ -27,9 +28,9 @@ class RouteSelectionViewController: UIViewController {
         ]
     }()
     
-    @IBAction func cancelButtonTapped(_ sender: Any) {
-        self.presentingViewController?.dismiss(animated: true)
-    }
+//    @IBAction func cancelButtonTapped(_ sender: Any) {
+////        self.presentingViewController?.dismiss(animated: true)
+//    }
     
     @IBAction func chooseRouteTapped(_ sender: Any) {
         routeDropDown.show()
@@ -90,8 +91,19 @@ class RouteSelectionViewController: UIViewController {
     // MARK: - Navigation
      
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! StationSelectionViewController
-        vc.trip = self.trip
+        guard let identifier = segue.identifier else { return }
+        
+        switch identifier {
+        case "showStationSelection":
+            let vc = segue.destination as! StationSelectionViewController
+            vc.trip = self.trip
+            
+        case "unwindToHome":
+            print("unwind to home")
+            
+        default:
+            print("unexpected segue identifier")
+        }
     }
  
     

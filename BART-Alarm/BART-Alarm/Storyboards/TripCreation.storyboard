@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2I0-J8-Xov">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2TO-wp-VvU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -56,7 +56,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="AHD-86-cwN"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="qhB-tF-58E">
                             <connections>
-                                <action selector="cancelButtonTapped:" destination="2TO-wp-VvU" id="bXc-wQ-Caf"/>
+                                <segue destination="BOq-D9-fXU" kind="unwind" identifier="unwindToHome" unwindAction="unwindToHomeScreen:" id="n3G-CI-gxf"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" style="plain" id="qlh-km-CGg">
@@ -71,6 +71,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eDW-Fk-rOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="BOq-D9-fXU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2016.8" y="169.56521739130437"/>
         </scene>
@@ -249,29 +250,13 @@
                         <outlet property="startEndStationsLabel" destination="sBS-ER-zyS" id="rfc-wa-3lN"/>
                         <outlet property="trainDeparturePicker" destination="sqO-sE-l3Q" id="ruC-Ix-AUJ"/>
                         <outlet property="tripLengthLabel" destination="OM2-G4-5ob" id="MdG-Cr-RkL"/>
+                        <segue destination="LUC-En-gXJ" kind="unwind" identifier="unwindToHome" unwindAction="unwindToHomeScreen:" id="f3f-9s-jGJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jz2-BU-Fmx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="LUC-En-gXJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3652" y="169.56521739130437"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="WXx-mZ-TNr">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2I0-J8-Xov" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0rv-4W-xA2">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="2TO-wp-VvU" kind="relationship" relationship="rootViewController" id="ABa-Gz-tFd"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dCV-Co-UNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1077.5999999999999" y="169.56521739130437"/>
         </scene>
     </scenes>
     <resources>

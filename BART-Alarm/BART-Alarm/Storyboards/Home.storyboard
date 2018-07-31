@@ -37,7 +37,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="CKB-81-TbK" customClass="CurrentAlarmsTableViewCell" customModule="BART_Alarm" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrentAlarmsCell" id="CKB-81-TbK" customClass="CurrentAlarmsTableViewCell" customModule="BART_Alarm" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CKB-81-TbK" id="McX-5Q-awl">
@@ -93,9 +93,9 @@
                         <viewLayoutGuide key="safeArea" id="nVh-BW-Syb"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="3jU-kM-lKt">
-                        <barButtonItem key="rightBarButtonItem" title="New Alarm" id="Acc-4O-qnM">
+                        <barButtonItem key="rightBarButtonItem" title="New Alarm" id="f0S-Y5-a9u">
                             <connections>
-                                <segue destination="FEd-Xb-4Ne" kind="showDetail" id="wgJ-E2-eOC"/>
+                                <segue destination="FEd-Xb-4Ne" kind="show" id="YBH-VV-Yc1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

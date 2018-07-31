@@ -111,31 +111,6 @@ class StationSelectionViewController: UIViewController {
         }
     }
     
-//    func calculateTripTime() {
-//        
-//        let apiToContact = "http://api.bart.gov/api/sched.aspx?cmd=routesched&route=" + self.trip.routeNumber + "&key=MW9S-E7SL-26DU-VV8V&json=y"
-//        var stationTimesArray = [String]()
-//        
-//        Alamofire.request(apiToContact).validate().responseJSON() { response in
-//            switch response.result {
-//            case .success:
-//                if let value = response.result.value {
-//                    let json = JSON(value)
-//                    
-//                    let stationTimesData = json["root"]["route"]["train"]["stop"].arrayValue
-//                    
-//                    for station in stationTimesData {
-//                        stationTimesArray.append(station["@origTime"].stringValue)
-//                    }
-//                    print(stationTimesArray)
-//                    
-//                }
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
