@@ -18,7 +18,8 @@
 		755216962107A11E0022E2C1 /* RouteSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755216952107A11E0022E2C1 /* RouteSelectionViewController.swift */; };
 		755216982108FCA30022E2C1 /* StationSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755216972108FCA30022E2C1 /* StationSelectionViewController.swift */; };
 		7552169A2108FD760022E2C1 /* AlarmSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755216992108FD760022E2C1 /* AlarmSelectionViewController.swift */; };
-		75F36125210A36FE003044D4 /* CurrentAlarmsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F36124210A36FE003044D4 /* CurrentAlarmsTableView.swift */; };
+		75E4A14B2110CCE300B65561 /* CurrentAlarmsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4A14A2110CCE300B65561 /* CurrentAlarmsTableView.swift */; };
+		75F36125210A36FE003044D4 /* CurrentAlarmsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F36124210A36FE003044D4 /* CurrentAlarmsTableViewCell.swift */; };
 		8B7AC0280E74754345842C38 /* Pods_BART_Alarm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C2FA8A3B0F8220C4BA2CE2 /* Pods_BART_Alarm.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +38,8 @@
 		755216952107A11E0022E2C1 /* RouteSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSelectionViewController.swift; sourceTree = "<group>"; };
 		755216972108FCA30022E2C1 /* StationSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSelectionViewController.swift; sourceTree = "<group>"; };
 		755216992108FD760022E2C1 /* AlarmSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSelectionViewController.swift; sourceTree = "<group>"; };
-		75F36124210A36FE003044D4 /* CurrentAlarmsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAlarmsTableView.swift; sourceTree = "<group>"; };
+		75E4A14A2110CCE300B65561 /* CurrentAlarmsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAlarmsTableView.swift; sourceTree = "<group>"; };
+		75F36124210A36FE003044D4 /* CurrentAlarmsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAlarmsTableViewCell.swift; sourceTree = "<group>"; };
 		C2C2FA8A3B0F8220C4BA2CE2 /* Pods_BART_Alarm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BART_Alarm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D3DCDB5F56BC8C62D7098E /* Pods-BART-Alarm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BART-Alarm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BART-Alarm/Pods-BART-Alarm.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,7 +153,8 @@
 		7552168E2106739C0022E2C1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				75F36124210A36FE003044D4 /* CurrentAlarmsTableView.swift */,
+				75E4A14A2110CCE300B65561 /* CurrentAlarmsTableView.swift */,
+				75F36124210A36FE003044D4 /* CurrentAlarmsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -290,8 +293,9 @@
 				7552167C21066EFD0022E2C1 /* BART_Alarm.xcdatamodeld in Sources */,
 				755216962107A11E0022E2C1 /* RouteSelectionViewController.swift in Sources */,
 				7552169A2108FD760022E2C1 /* AlarmSelectionViewController.swift in Sources */,
+				75E4A14B2110CCE300B65561 /* CurrentAlarmsTableView.swift in Sources */,
 				7552167421066EFD0022E2C1 /* AppDelegate.swift in Sources */,
-				75F36125210A36FE003044D4 /* CurrentAlarmsTableView.swift in Sources */,
+				75F36125210A36FE003044D4 /* CurrentAlarmsTableViewCell.swift in Sources */,
 				752BC7A52109532B00792224 /* HomeViewController.swift in Sources */,
 				75521692210797B50022E2C1 /* Trip.swift in Sources */,
 			);
