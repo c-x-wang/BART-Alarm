@@ -85,10 +85,6 @@ class AlarmSelectionViewController: UIViewController {
                     
                     self.trip.tripLength = stationTimesArray[self.trip.endLocationIndex].timeIntervalSince(stationTimesArray[self.trip.startLocationIndex])
                     print(self.trip.tripLength)
-                    if self.trip.tripLength <= 0 {
-                        self.trip.tripLength *= -1
-                    }
-                    print(self.trip.tripLength)
                     self.tripLengthLabel.text = "Trip length: " + String(Int(self.trip.tripLength / 60)) + " minutes"
                     
                 }
