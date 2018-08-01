@@ -16,7 +16,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var trips = [Trip]() {
         didSet {
-            currentAlarmsTableView.reloadData()
+            historyAlarmsTableView.reloadData()
         }
     }
 
