@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var currentAlarmsTableView: CurrentAlarmsTableView!
     
-    var trip = Trip()
+//    var trip = Trip()
     var alarmWillRingTime = Date()
     
     var trips = [Trip]() {
@@ -26,6 +27,17 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         currentAlarmsTableView.delegate = self
         currentAlarmsTableView.dataSource = self
+        
+        trips = CoreDataHelper.retrieveTrips()
+        
+//        let fetchRequest = NSFetchRequest(entityName: "Item")
+//        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+//        do {
+//            try persistentStoreCoordinator.destroyPersistentStoreAtURL(persistentStoreURL, withType: NSSQLiteStoreType, options: nil)
+//            
+//        } catch {
+//            // Error Handling
+//        }
         
 //        self.currentAlarmsTableView.reloadData()
     }
@@ -41,10 +53,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func unwindToHomeScreen(_ segue: UIStoryboardSegue) {
-        print("Here")
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        println("numberOfRowsInSection")
         return trips.count
@@ -53,13 +61,21 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CurrentAlarmsCell") as! CurrentAlarmsTableViewCell
 
-        let trip1 = trips[indexPath.row]
+        let trip = trips[indexPath.row]
+        
+//        guard let trip = trips[indexPath.row] else {
+//            return cell
+//        }
         
         let formatter = DateFormatter()
         formatter.dateFormat = "h:mm"
-        let formattedDate = formatter.string(from: alarmWillRingTime)
-        cell.alarmTimeLabel.text = formattedDate
+        guard let alarmTime = trip.alarmTime else {
+            return cell
+        }
+        let formattedDate = formatter.string(from: trip.alarmTime!)
+        cell.alarmTimeLabel.text = "Alarm will ring at: " + formattedDate
         return cell
+        
         
         
 //        let cell = tableView.dequeueReusableCell(withIdentifier: "listNotesTableViewCell", for: indexPath) as! ListNotesTableViewCell
@@ -91,6 +107,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+    }
+    
+    @IBAction func unwindToHomeScreen(_ segue: UIStoryboardSegue) {
+        print("Here")
+        trips = CoreDataHelper.retrieveTrips()
     }
  
 

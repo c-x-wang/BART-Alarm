@@ -19,7 +19,7 @@ class StationSelectionViewController: UIViewController {
     @IBOutlet weak var chooseStartButton: UIButton!
     @IBOutlet weak var chooseEndButton: UIButton!
     
-    var trip = Trip()
+    var trip: Trip?
     
     let startStationDropDown = DropDown()
     let endStationDropDown = DropDown()
@@ -31,6 +31,18 @@ class StationSelectionViewController: UIViewController {
         ]
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        if let trip = trip {
+//            titleTextField.text = note.title
+//            contentTextView.text = note.content
+//        } else {
+//            titleTextField.text = ""
+//            contentTextView.text = ""
+//        }
+    }
+    
     @IBAction func chooseStartTapped(_ sender: Any) {
         startStationDropDown.show()
     }
@@ -39,14 +51,14 @@ class StationSelectionViewController: UIViewController {
     }
     
     func setupStartStationDropDown() {
-        print("route: " + self.trip.route)
-        print("route number: " + self.trip.routeNumber)
+        print("route: " + (self.trip?.route)!)
+        print("route number: " + (self.trip?.routeNumber)!)
         
         startStationDropDown.anchorView = chooseStartButton
         
         startStationDropDown.bottomOffset = CGPoint(x: 0, y: 30) // chooseStartButton.bounds.height)
         
-        let apiToContact = "http://api.bart.gov/api/route.aspx?cmd=routeinfo&route=" + self.trip.routeNumber + "&key=MW9S-E7SL-26DU-VV8V&json=y"
+        let apiToContact = "http://api.bart.gov/api/route.aspx?cmd=routeinfo&route=" + (self.trip?.routeNumber)! + "&key=MW9S-E7SL-26DU-VV8V&json=y"
         var stationsArray = [String]()
 
         Alamofire.request(apiToContact).validate().responseJSON() { response in
@@ -70,9 +82,9 @@ class StationSelectionViewController: UIViewController {
         
         startStationDropDown.selectionAction = { [weak self] (index, item) in
             self?.chooseStartButton.setTitle(item, for: .normal)
-            self?.trip.startLocation = item
-            self?.trip.startLocationIndex = index
-            print(self?.trip.startLocation)
+            self?.trip?.startLocation = item
+            self?.trip?.startLocationIndex = Int64(index)
+            print(self?.trip?.startLocation)
         }
     }
     
@@ -81,7 +93,7 @@ class StationSelectionViewController: UIViewController {
         
         endStationDropDown.bottomOffset = CGPoint(x: 0, y: 30) //chooseEndButton.bounds.height)
         
-        let apiToContact = "http://api.bart.gov/api/route.aspx?cmd=routeinfo&route=" + self.trip.routeNumber + "&key=MW9S-E7SL-26DU-VV8V&json=y"
+        let apiToContact = "http://api.bart.gov/api/route.aspx?cmd=routeinfo&route=" + (self.trip?.routeNumber)! + "&key=MW9S-E7SL-26DU-VV8V&json=y"
         var stationsArray = [String]()
         
         Alamofire.request(apiToContact).validate().responseJSON() { response in
@@ -105,9 +117,9 @@ class StationSelectionViewController: UIViewController {
         
         endStationDropDown.selectionAction = { [weak self] (index, item) in
             self?.chooseEndButton.setTitle(item, for: .normal)
-            self?.trip.endLocation = item
-            self?.trip.endLocationIndex = index
-            print(self?.trip.endLocation)
+            self?.trip?.endLocation = item
+            self?.trip?.endLocationIndex = Int64(index)
+            print(self?.trip?.endLocation)
         }
     }
     
@@ -115,7 +127,7 @@ class StationSelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        routeLabel.text = trip.route
+        routeLabel.text = trip?.route
         
         setupStartStationDropDown()
         setupEndStationDropDown()
@@ -131,7 +143,7 @@ class StationSelectionViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! AlarmSelectionViewController
-        vc.trip = self.trip
+        vc.trip = self.trip!
     }
     
 

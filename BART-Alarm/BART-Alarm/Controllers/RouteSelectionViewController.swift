@@ -17,8 +17,10 @@ class RouteSelectionViewController: UIViewController {
     
     @IBOutlet weak var chooseRouteButton: UIButton!
     
-    var trip = Trip()
-    var trips = [Trip]()
+    var trip: Trip?
+//    var trips = [Trip]()
+    var route: String = ""
+    var routeNumber: String = ""
     
     let routeDropDown = DropDown()
     
@@ -69,8 +71,10 @@ class RouteSelectionViewController: UIViewController {
         
         routeDropDown.selectionAction = { [weak self] (index, item) in
             self?.chooseRouteButton.setTitle(item, for: .normal)
-            self?.trip.route = item
-            self?.trip.routeNumber = routeNumbers[index]
+//            self?.trip?.route = item
+//            self?.trip?.routeNumber = routeNumbers[index]
+            self?.route = item
+            self?.routeNumber = routeNumbers[index]
 //            print(self?.trip.route ?? "default val")
         }
     }
@@ -96,7 +100,20 @@ class RouteSelectionViewController: UIViewController {
         switch identifier {
         case "showStationSelection":
             let vc = segue.destination as! StationSelectionViewController
-            vc.trip = self.trip
+            let trip = CoreDataHelper.newTrip()
+            trip.route = self.route
+            trip.routeNumber = self.routeNumber
+//            var tripCD = CoreDataHelper.newTrip()
+//            tripCD = self.trip!
+//            vc.trip = tripCD
+//            trip.route = self.trip?.route
+            vc.trip = trip
+            
+//            note.title = titleTextField.text ?? ""
+//            note.content = contentTextView.text ?? ""
+//            note.modificationTime = Date()
+
+            CoreDataHelper.saveTrip()
             
         case "unwindToHome":
             print("unwind to home")

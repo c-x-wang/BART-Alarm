@@ -22,7 +22,7 @@ class AlarmSelectionViewController: UIViewController {
     @IBOutlet weak var alarmMinutesPicker: UIDatePicker!
     
     var trip = Trip()
-    var alarmWillRingTime = Date()
+//    var alarmWillRingTime = Date()
     
     @IBAction func CreateButtonTapped(_ sender: Any) {
         
@@ -37,11 +37,11 @@ class AlarmSelectionViewController: UIViewController {
 //        content.sound =
         
         let calendar = NSCalendar.current
-        alarmWillRingTime = trainDeparturePicker.date.addingTimeInterval(self.trip.tripLength - alarmMinutesPicker.countDownDuration)
-        print(alarmWillRingTime)
+        trip.alarmTime = trainDeparturePicker.date.addingTimeInterval(self.trip.tripLength - alarmMinutesPicker.countDownDuration)
+        print(trip.alarmTime)
         
         let unitFlags: Set<Calendar.Component> = [.hour, .minute]
-        let components = calendar.dateComponents(unitFlags, from: alarmWillRingTime)
+        let components = calendar.dateComponents(unitFlags, from: trip.alarmTime!)
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
         let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
@@ -51,7 +51,7 @@ class AlarmSelectionViewController: UIViewController {
     
     func calculateTripTime() {
         
-        let apiToContact = "http://api.bart.gov/api/sched.aspx?cmd=routesched&route=" + self.trip.routeNumber + "&key=MW9S-E7SL-26DU-VV8V&json=y"
+        let apiToContact = "http://api.bart.gov/api/sched.aspx?cmd=routesched&route=" + self.trip.routeNumber! + "&key=MW9S-E7SL-26DU-VV8V&json=y"
         var stationTimesArray = [Date]()
         
         Alamofire.request(apiToContact).validate().responseJSON() { response in
@@ -85,7 +85,7 @@ class AlarmSelectionViewController: UIViewController {
                         if valid == true { break }
                     }
                     
-                    self.trip.tripLength = stationTimesArray[self.trip.endLocationIndex].timeIntervalSince(stationTimesArray[self.trip.startLocationIndex])
+                    self.trip.tripLength = stationTimesArray[Int(self.trip.endLocationIndex)].timeIntervalSince(stationTimesArray[Int(self.trip.startLocationIndex)])
                     print(self.trip.tripLength)
                     if self.trip.tripLength <= 0 {
                         self.trip.tripLength *= -1
@@ -104,7 +104,7 @@ class AlarmSelectionViewController: UIViewController {
         super.viewDidLoad()
 
         routeLabel.text = trip.route
-        startEndStationsLabel.text = trip.startLocation + " to " + trip.endLocation
+        startEndStationsLabel.text = trip.startLocation! + " to " + trip.endLocation!
         
         calculateTripTime()
     }
@@ -120,10 +120,18 @@ class AlarmSelectionViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! HomeViewController
-        vc.trip = self.trip
-        vc.alarmWillRingTime = self.alarmWillRingTime
+//        let vc = segue.destination as! HomeViewController
+//        vc.trip = self.trip
+//        vc.alarmWillRingTime = self.alarmWillRingTime
 //        vc.currentAlarmsTableView.reloadData()
+        
+        var tripCD = CoreDataHelper.newTrip()
+        tripCD = self.trip
+//        note.title = titleTextField.text ?? ""
+//        note.content = contentTextView.text ?? ""
+//        note.modificationTime = Date()
+//
+        CoreDataHelper.saveTrip()
     }
     
 }
