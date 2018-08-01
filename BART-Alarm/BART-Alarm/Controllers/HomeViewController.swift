@@ -23,9 +23,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        currentAlarmsTableView.delegate = self
-//        currentAlarmsTableView.dataSource = self
-//        currentAlarmsTableView.rowHeight = 105
+        currentAlarmsTableView.delegate = self
+        currentAlarmsTableView.dataSource = self
+        currentAlarmsTableView.rowHeight = 105
+        
         historyAlarmsTableView.delegate = self
         historyAlarmsTableView.dataSource = self
         historyAlarmsTableView.rowHeight = 105
