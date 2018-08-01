@@ -13,9 +13,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var currentAlarmsTableView: CurrentAlarmsTableView!
     
-//    var trip = Trip()
-//    var alarmWillRingTime = Date()
-    
     var trips = [Trip]() {
         didSet {
             currentAlarmsTableView.reloadData()
@@ -29,24 +26,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         currentAlarmsTableView.dataSource = self
         
         trips = CoreDataHelper.retrieveTrips()
-        
-//        let fetchRequest = NSFetchRequest(entityName: "Item")
-//        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-//        do {
-//            try persistentStoreCoordinator.destroyPersistentStoreAtURL(persistentStoreURL, withType: NSSQLiteStoreType, options: nil)
-//            
-//        } catch {
-//            // Error Handling
-//        }
-        
-//        self.currentAlarmsTableView.reloadData()
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(true)
-//        
-////        self.currentAlarmsTableView.reloadData()
-//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -54,7 +34,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        println("numberOfRowsInSection")
         return trips.count
     }
     
@@ -63,41 +42,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         let trip = trips[indexPath.row]
         
-//        guard let trip = trips[indexPath.row] else {
-//            return cell
-//        }
-        
         let formatter = DateFormatter()
         formatter.dateFormat = "h:mm"
-//        guard let alarmTime = trip.alarmTime else {
-////            return cell
-//            enum MyError: Error {
-//                case runtimeError(String)
-//            }
-//            throw MyError.runtimeError("life is sad")
-//        }
         let formattedDate = formatter.string(from: trip.alarmTime!)
         cell.alarmTimeLabel.text = "Alarm will ring at: " + formattedDate
+        
         return cell
-        
-        
-        
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "listNotesTableViewCell", for: indexPath) as! ListNotesTableViewCell
-        
-//        let note = notes[indexPath.row]
-//        cell.noteTitleLabel.text = note.title
-//
-//        cell.noteModificationTimeLabel.text = note.modificationTime?.convertToString() ?? "unknown"
-//
-//        let content = note.content
-//        let contentLines = content?.components(separatedBy: "\n")
-//        if let contentLines = contentLines {
-//            cell.noteTruncatedLabel.text = contentLines[0]
-//        } else {
-//            cell.noteTruncatedLabel.text = content
-//        }
-//
-//        return cell
     }
     
     

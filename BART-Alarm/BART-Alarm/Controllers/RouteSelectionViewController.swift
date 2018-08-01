@@ -18,7 +18,6 @@ class RouteSelectionViewController: UIViewController {
     @IBOutlet weak var chooseRouteButton: UIButton!
     
     var trip: Trip?
-//    var trips = [Trip]()
     var route: String = ""
     var routeNumber: String = ""
     
@@ -29,10 +28,6 @@ class RouteSelectionViewController: UIViewController {
             self.routeDropDown
         ]
     }()
-    
-//    @IBAction func cancelButtonTapped(_ sender: Any) {
-////        self.presentingViewController?.dismiss(animated: true)
-//    }
     
     @IBAction func chooseRouteTapped(_ sender: Any) {
         routeDropDown.show()
@@ -71,11 +66,8 @@ class RouteSelectionViewController: UIViewController {
         
         routeDropDown.selectionAction = { [weak self] (index, item) in
             self?.chooseRouteButton.setTitle(item, for: .normal)
-//            self?.trip?.route = item
-//            self?.trip?.routeNumber = routeNumbers[index]
             self?.route = item
             self?.routeNumber = routeNumbers[index]
-//            print(self?.trip.route ?? "default val")
         }
     }
     
@@ -103,17 +95,7 @@ class RouteSelectionViewController: UIViewController {
             let trip = CoreDataHelper.newTrip()
             trip.route = self.route
             trip.routeNumber = self.routeNumber
-//            var tripCD = CoreDataHelper.newTrip()
-//            tripCD = self.trip!
-//            vc.trip = tripCD
-//            trip.route = self.trip?.route
             vc.trip = trip
-            
-//            note.title = titleTextField.text ?? ""
-//            note.content = contentTextView.text ?? ""
-//            note.modificationTime = Date()
-
-//            CoreDataHelper.saveTrip()
             
         case "unwindToHome":
             print("unwind to home")

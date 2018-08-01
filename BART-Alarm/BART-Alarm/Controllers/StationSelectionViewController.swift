@@ -31,18 +31,6 @@ class StationSelectionViewController: UIViewController {
         ]
     }()
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-//        if let trip = trip {
-//            titleTextField.text = note.title
-//            contentTextView.text = note.content
-//        } else {
-//            titleTextField.text = ""
-//            contentTextView.text = ""
-//        }
-    }
-    
     @IBAction func chooseStartTapped(_ sender: Any) {
         startStationDropDown.show()
     }

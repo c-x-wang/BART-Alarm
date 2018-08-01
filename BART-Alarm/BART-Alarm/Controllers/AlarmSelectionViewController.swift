@@ -22,11 +22,9 @@ class AlarmSelectionViewController: UIViewController {
     @IBOutlet weak var alarmMinutesPicker: UIDatePicker!
     
     var trip: Trip?
-//    var alarmWillRingTime = Date()
     
     @IBAction func CreateButtonTapped(_ sender: Any) {
         
-//        self.presentingViewController?.dismiss(animated: true)
         performSegue(withIdentifier: "unwindToHome", sender: sender)
         
         let content = UNMutableNotificationContent()
@@ -75,7 +73,6 @@ class AlarmSelectionViewController: UIViewController {
                                 stationTimesArray.append(date!)
                                 valid = true
                             } else {
-//                                print(i)
                                 stationTimesArray = []
                                 valid = false
                                 break
@@ -120,17 +117,6 @@ class AlarmSelectionViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let vc = segue.destination as! HomeViewController
-//        vc.trip = self.trip
-//        vc.alarmWillRingTime = self.alarmWillRingTime
-//        vc.currentAlarmsTableView.reloadData()
-        
-//        var tripCD = CoreDataHelper.newTrip()
-//        tripCD = self.trip!
-//        note.title = titleTextField.text ?? ""
-//        note.content = contentTextView.text ?? ""
-//        note.modificationTime = Date()
-        
         trip?.alarmTime = trainDeparturePicker.date.addingTimeInterval((self.trip?.tripLength)! - alarmMinutesPicker.countDownDuration)
         trip?.modificationTime = Date()
         CoreDataHelper.saveTrip()
