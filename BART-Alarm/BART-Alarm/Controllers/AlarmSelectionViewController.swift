@@ -117,6 +117,7 @@ class AlarmSelectionViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        trip?.trainDepartureTime = trainDeparturePicker.date
         trip?.alarmTime = trainDeparturePicker.date.addingTimeInterval((self.trip?.tripLength)! - alarmMinutesPicker.countDownDuration)
         trip?.modificationTime = Date()
         CoreDataHelper.saveTrip()

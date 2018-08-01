@@ -10,6 +10,9 @@ import UIKit
 
 class CurrentAlarmsTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var routeNameLabel: UILabel!
+    @IBOutlet weak var routeStationsLabel: UILabel!
+    @IBOutlet weak var trainDepartureTimeLabel: UILabel!
     @IBOutlet weak var alarmTimeLabel: UILabel!
     
     /*
