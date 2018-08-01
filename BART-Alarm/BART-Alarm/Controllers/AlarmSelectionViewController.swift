@@ -21,7 +21,7 @@ class AlarmSelectionViewController: UIViewController {
     @IBOutlet weak var trainDeparturePicker: UIDatePicker!
     @IBOutlet weak var alarmMinutesPicker: UIDatePicker!
     
-    var trip = Trip()
+    var trip: Trip?
 //    var alarmWillRingTime = Date()
     
     @IBAction func CreateButtonTapped(_ sender: Any) {
@@ -32,16 +32,16 @@ class AlarmSelectionViewController: UIViewController {
         let content = UNMutableNotificationContent()
         content.title = "Destination Approaching"
 //        content.subtitle = "subtitle"
-        content.body = "Train will arrive at \(trip.endLocation) in \(Int(alarmMinutesPicker.countDownDuration)/60) minutes"
+        content.body = "Train will arrive at \(trip?.endLocation) in \(Int(alarmMinutesPicker.countDownDuration)/60) minutes"
         content.badge = 1
 //        content.sound =
         
         let calendar = NSCalendar.current
-        trip.alarmTime = trainDeparturePicker.date.addingTimeInterval(self.trip.tripLength - alarmMinutesPicker.countDownDuration)
-        print(trip.alarmTime)
+        trip?.alarmTime = trainDeparturePicker.date.addingTimeInterval((self.trip?.tripLength)! - alarmMinutesPicker.countDownDuration)
+        print(trip?.alarmTime)
         
         let unitFlags: Set<Calendar.Component> = [.hour, .minute]
-        let components = calendar.dateComponents(unitFlags, from: trip.alarmTime!)
+        let components = calendar.dateComponents(unitFlags, from: (trip?.alarmTime)!)
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
         let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
@@ -51,7 +51,7 @@ class AlarmSelectionViewController: UIViewController {
     
     func calculateTripTime() {
         
-        let apiToContact = "http://api.bart.gov/api/sched.aspx?cmd=routesched&route=" + self.trip.routeNumber! + "&key=MW9S-E7SL-26DU-VV8V&json=y"
+        let apiToContact = "http://api.bart.gov/api/sched.aspx?cmd=routesched&route=" + (self.trip?.routeNumber)! + "&key=MW9S-E7SL-26DU-VV8V&json=y"
         var stationTimesArray = [Date]()
         
         Alamofire.request(apiToContact).validate().responseJSON() { response in
@@ -85,13 +85,13 @@ class AlarmSelectionViewController: UIViewController {
                         if valid == true { break }
                     }
                     
-                    self.trip.tripLength = stationTimesArray[Int(self.trip.endLocationIndex)].timeIntervalSince(stationTimesArray[Int(self.trip.startLocationIndex)])
-                    print(self.trip.tripLength)
-                    if self.trip.tripLength <= 0 {
-                        self.trip.tripLength *= -1
+                    self.trip?.tripLength = stationTimesArray[Int((self.trip?.endLocationIndex)!)].timeIntervalSince(stationTimesArray[Int((self.trip?.startLocationIndex)!)])
+                    print(self.trip?.tripLength)
+                    if (self.trip?.tripLength)! <= 0 {
+                        self.trip?.tripLength *= -1
                     }
-                    print(self.trip.tripLength)
-                    self.tripLengthLabel.text = "Trip length: " + String(Int(self.trip.tripLength / 60)) + " minutes"
+                    print(self.trip?.tripLength)
+                    self.tripLengthLabel.text = "Trip length: " + String(Int((self.trip?.tripLength)! / 60)) + " minutes"
                     
                 }
             case .failure(let error):
@@ -103,8 +103,8 @@ class AlarmSelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        routeLabel.text = trip.route
-        startEndStationsLabel.text = trip.startLocation! + " to " + trip.endLocation!
+        routeLabel.text = trip?.route
+        startEndStationsLabel.text = (trip?.startLocation)! + " to " + (trip?.endLocation)!
         
         calculateTripTime()
     }
@@ -125,12 +125,14 @@ class AlarmSelectionViewController: UIViewController {
 //        vc.alarmWillRingTime = self.alarmWillRingTime
 //        vc.currentAlarmsTableView.reloadData()
         
-        var tripCD = CoreDataHelper.newTrip()
-        tripCD = self.trip
+//        var tripCD = CoreDataHelper.newTrip()
+//        tripCD = self.trip!
 //        note.title = titleTextField.text ?? ""
 //        note.content = contentTextView.text ?? ""
 //        note.modificationTime = Date()
-//
+        
+        trip?.alarmTime = trainDeparturePicker.date.addingTimeInterval((self.trip?.tripLength)! - alarmMinutesPicker.countDownDuration)
+        trip?.modificationTime = Date()
         CoreDataHelper.saveTrip()
     }
     

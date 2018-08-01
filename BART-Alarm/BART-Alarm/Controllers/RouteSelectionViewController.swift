@@ -113,7 +113,7 @@ class RouteSelectionViewController: UIViewController {
 //            note.content = contentTextView.text ?? ""
 //            note.modificationTime = Date()
 
-            CoreDataHelper.saveTrip()
+//            CoreDataHelper.saveTrip()
             
         case "unwindToHome":
             print("unwind to home")

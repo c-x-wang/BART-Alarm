@@ -47,7 +47,8 @@ struct CoreDataHelper {
             let fetchRequest = NSFetchRequest<Trip>(entityName: "Trip")
             var results = try context.fetch(fetchRequest)
             
-//            results.sort { $0.modificationTime! > $1.modificationTime! }
+            results.sort { $0.modificationTime! > $1.modificationTime! }
+//            results.sort { $0.alarmTime! > $1.alarmTime! }
             
             return results
         } catch let error {

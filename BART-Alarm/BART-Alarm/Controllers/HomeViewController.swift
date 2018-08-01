@@ -14,7 +14,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var currentAlarmsTableView: CurrentAlarmsTableView!
     
 //    var trip = Trip()
-    var alarmWillRingTime = Date()
+//    var alarmWillRingTime = Date()
     
     var trips = [Trip]() {
         didSet {
@@ -69,9 +69,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let formatter = DateFormatter()
         formatter.dateFormat = "h:mm"
-        guard let alarmTime = trip.alarmTime else {
-            return cell
-        }
+//        guard let alarmTime = trip.alarmTime else {
+////            return cell
+//            enum MyError: Error {
+//                case runtimeError(String)
+//            }
+//            throw MyError.runtimeError("life is sad")
+//        }
         let formattedDate = formatter.string(from: trip.alarmTime!)
         cell.alarmTimeLabel.text = "Alarm will ring at: " + formattedDate
         return cell
