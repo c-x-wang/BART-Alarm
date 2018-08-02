@@ -97,7 +97,7 @@ class RouteSelectionViewController: UIViewController {
             trip.routeNumber = self.routeNumber
             vc.trip = trip
             
-        case "unwindToHome":
+        case "unwindToHomeCancel":
             print("cancel:")
             
         default:

@@ -77,8 +77,19 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     @IBAction func unwindToHomeScreen(_ segue: UIStoryboardSegue) {
-        print("unwind to home")
-        trips = CoreDataHelper.retrieveTrips()
+        guard let identifier = segue.identifier else { return }
+        
+        switch identifier {
+        case "unwindToHomeCreate":
+            trips = CoreDataHelper.retrieveTrips()
+            print("unwind to home from create")
+            
+        case "unwindToHomeCancel":
+            print("unwind to home from cancel")
+            
+        default:
+            print("unexpected segue identifier")
+        }
     }
 
 

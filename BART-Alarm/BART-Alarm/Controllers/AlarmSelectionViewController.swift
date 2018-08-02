@@ -25,7 +25,7 @@ class AlarmSelectionViewController: UIViewController {
     
     @IBAction func CreateButtonTapped(_ sender: Any) {
         
-        performSegue(withIdentifier: "unwindToHome", sender: sender)
+        performSegue(withIdentifier: "unwindToHomeCreate", sender: sender)
         
         let content = UNMutableNotificationContent()
         content.title = "Destination Approaching"

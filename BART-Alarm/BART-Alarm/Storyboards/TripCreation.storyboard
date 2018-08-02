@@ -56,7 +56,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="AHD-86-cwN"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="qhB-tF-58E">
                             <connections>
-                                <segue destination="BOq-D9-fXU" kind="unwind" identifier="unwindToHome" unwindAction="unwindToHomeScreen:" id="n3G-CI-gxf"/>
+                                <segue destination="BOq-D9-fXU" kind="unwind" identifier="unwindToHomeCancel" unwindAction="unwindToHomeScreen:" id="n3G-CI-gxf"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" style="plain" id="qlh-km-CGg">
@@ -250,7 +250,7 @@
                         <outlet property="startEndStationsLabel" destination="sBS-ER-zyS" id="rfc-wa-3lN"/>
                         <outlet property="trainDeparturePicker" destination="sqO-sE-l3Q" id="ruC-Ix-AUJ"/>
                         <outlet property="tripLengthLabel" destination="OM2-G4-5ob" id="MdG-Cr-RkL"/>
-                        <segue destination="LUC-En-gXJ" kind="unwind" identifier="unwindToHome" unwindAction="unwindToHomeScreen:" id="f3f-9s-jGJ"/>
+                        <segue destination="LUC-En-gXJ" kind="unwind" identifier="unwindToHomeCreate" unwindAction="unwindToHomeScreen:" id="f3f-9s-jGJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jz2-BU-Fmx" userLabel="First Responder" sceneMemberID="firstResponder"/>
