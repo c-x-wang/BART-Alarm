@@ -99,6 +99,9 @@ class RouteSelectionViewController: UIViewController {
             
         case "unwindToHomeCancel":
             print("cancel:")
+            if trip != nil {
+                CoreDataHelper.deleteTrip(trip: trip!)
+            }
             
         default:
             print("unexpected segue identifier")
