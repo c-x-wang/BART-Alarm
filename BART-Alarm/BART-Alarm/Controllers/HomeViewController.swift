@@ -11,8 +11,7 @@ import CoreData
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-//    @IBOutlet weak var currentAlarmsTableView: CurrentAlarmsTableView!
-    @IBOutlet weak var currentAlarmsView: CurrentAlarmsView!
+    @IBOutlet weak var currentAlarmsTableView: CurrentAlarmsTableView!
     @IBOutlet weak var historyAlarmsTableView: HistoryAlarmsTableView!
 
     var trips = [Trip]() {
@@ -28,35 +27,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        currentAlarmsTableView.delegate = self
 //        currentAlarmsTableView.dataSource = self
 //        currentAlarmsTableView.rowHeight = 105
-        
-//        currentAlarmsView.delegate = self
-
         historyAlarmsTableView.delegate = self
         historyAlarmsTableView.dataSource = self
         historyAlarmsTableView.rowHeight = 105
 
         trips = CoreDataHelper.retrieveTrips()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        if trips.first != nil {
-            currentAlarmsView.routeNameLabel.text = trips.first?.route
-            currentAlarmsView.routeStationsLabel.text = (trips.first?.startLocation)! + " to " + (trips.first?.endLocation)!
-            
-            let formatter = DateFormatter()
-            formatter.dateFormat = "h:mm a"
-            let formattedTrainDate = formatter.string(from: (trips.first?.trainDepartureTime)!)
-            let formattedAlarmDate = formatter.string(from: (trips.first?.alarmTime)!)
-            currentAlarmsView.trainDepartureTimeLabel.text = "Train departure: " + formattedTrainDate
-            currentAlarmsView.alarmTimeLabel.text = "Alarm: " + formattedAlarmDate
-        } else {
-            currentAlarmsView.routeNameLabel.text = ""
-            currentAlarmsView.routeStationsLabel.text = "No current alarm to display"
-            currentAlarmsView.trainDepartureTimeLabel.text = ""
-            currentAlarmsView.alarmTimeLabel.text = ""
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,16 +41,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return trips.count
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            let tripToDelete = trips[indexPath.row]
-            CoreDataHelper.deleteTrip(trip: tripToDelete)
-            
-            trips = CoreDataHelper.retrieveTrips()
-            self.viewWillAppear(false)
-        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -111,8 +76,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Pass the selected object to the new view controller.
     }
 
-    @IBAction func currentAlarmsViewButtonTapped(_ sender: Any) {
-    }
     @IBAction func unwindToHomeScreen(_ segue: UIStoryboardSegue) {
         guard let identifier = segue.identifier else { return }
         

@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		752BC7A52109532B00792224 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752BC7A42109532B00792224 /* HomeViewController.swift */; };
-		7537E2622113803D00A10BE7 /* DisplayAlarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7537E2612113803D00A10BE7 /* DisplayAlarm.storyboard */; };
-		7537E2642113840300A10BE7 /* DisplayAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7537E2632113840300A10BE7 /* DisplayAlarmViewController.swift */; };
 		7552167421066EFD0022E2C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552167321066EFD0022E2C1 /* AppDelegate.swift */; };
 		7552167C21066EFD0022E2C1 /* BART_Alarm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7552167A21066EFD0022E2C1 /* BART_Alarm.xcdatamodeld */; };
 		7552167E21066EFF0022E2C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7552167D21066EFF0022E2C1 /* Assets.xcassets */; };
@@ -23,7 +21,6 @@
 		75E4A14E21121FFC00B65561 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4A14D21121FFC00B65561 /* CoreDataHelper.swift */; };
 		75E4A1502112767200B65561 /* HistoryAlarmsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4A14F2112767200B65561 /* HistoryAlarmsTableView.swift */; };
 		75E4A152211276AF00B65561 /* HistoryAlarmsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4A151211276AF00B65561 /* HistoryAlarmsTableViewCell.swift */; };
-		75E4A15421136A0400B65561 /* CurrentAlarmsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4A15321136A0400B65561 /* CurrentAlarmsView.swift */; };
 		75F36125210A36FE003044D4 /* CurrentAlarmsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F36124210A36FE003044D4 /* CurrentAlarmsTableViewCell.swift */; };
 		8B7AC0280E74754345842C38 /* Pods_BART_Alarm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2C2FA8A3B0F8220C4BA2CE2 /* Pods_BART_Alarm.framework */; };
 /* End PBXBuildFile section */
@@ -31,8 +28,6 @@
 /* Begin PBXFileReference section */
 		3749C41D19198BC422767169 /* Pods-BART-Alarm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BART-Alarm.release.xcconfig"; path = "Pods/Target Support Files/Pods-BART-Alarm/Pods-BART-Alarm.release.xcconfig"; sourceTree = "<group>"; };
 		752BC7A42109532B00792224 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		7537E2612113803D00A10BE7 /* DisplayAlarm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DisplayAlarm.storyboard; sourceTree = "<group>"; };
-		7537E2632113840300A10BE7 /* DisplayAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayAlarmViewController.swift; sourceTree = "<group>"; };
 		7552167021066EFD0022E2C1 /* BART-Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BART-Alarm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7552167321066EFD0022E2C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7552167B21066EFD0022E2C1 /* BART_Alarm.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BART_Alarm.xcdatamodel; sourceTree = "<group>"; };
@@ -48,7 +43,6 @@
 		75E4A14D21121FFC00B65561 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		75E4A14F2112767200B65561 /* HistoryAlarmsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryAlarmsTableView.swift; sourceTree = "<group>"; };
 		75E4A151211276AF00B65561 /* HistoryAlarmsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryAlarmsTableViewCell.swift; sourceTree = "<group>"; };
-		75E4A15321136A0400B65561 /* CurrentAlarmsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAlarmsView.swift; sourceTree = "<group>"; };
 		75F36124210A36FE003044D4 /* CurrentAlarmsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAlarmsTableViewCell.swift; sourceTree = "<group>"; };
 		C2C2FA8A3B0F8220C4BA2CE2 /* Pods_BART_Alarm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BART_Alarm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D3DCDB5F56BC8C62D7098E /* Pods-BART-Alarm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BART-Alarm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BART-Alarm/Pods-BART-Alarm.debug.xcconfig"; sourceTree = "<group>"; };
@@ -123,7 +117,6 @@
 			children = (
 				7552168F210674980022E2C1 /* Home.storyboard */,
 				75521693210798850022E2C1 /* TripCreation.storyboard */,
-				7537E2612113803D00A10BE7 /* DisplayAlarm.storyboard */,
 				7552167F21066EFF0022E2C1 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -136,7 +129,6 @@
 				755216952107A11E0022E2C1 /* RouteSelectionViewController.swift */,
 				755216972108FCA30022E2C1 /* StationSelectionViewController.swift */,
 				755216992108FD760022E2C1 /* AlarmSelectionViewController.swift */,
-				7537E2632113840300A10BE7 /* DisplayAlarmViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -167,7 +159,6 @@
 			children = (
 				75E4A14A2110CCE300B65561 /* CurrentAlarmsTableView.swift */,
 				75F36124210A36FE003044D4 /* CurrentAlarmsTableViewCell.swift */,
-				75E4A15321136A0400B65561 /* CurrentAlarmsView.swift */,
 				75E4A14F2112767200B65561 /* HistoryAlarmsTableView.swift */,
 				75E4A151211276AF00B65561 /* HistoryAlarmsTableViewCell.swift */,
 			);
@@ -253,7 +244,6 @@
 			files = (
 				75521690210674980022E2C1 /* Home.storyboard in Resources */,
 				75521694210798850022E2C1 /* TripCreation.storyboard in Resources */,
-				7537E2622113803D00A10BE7 /* DisplayAlarm.storyboard in Resources */,
 				7552168121066EFF0022E2C1 /* LaunchScreen.storyboard in Resources */,
 				7552167E21066EFF0022E2C1 /* Assets.xcassets in Resources */,
 			);
@@ -317,7 +307,6 @@
 				75E4A152211276AF00B65561 /* HistoryAlarmsTableViewCell.swift in Sources */,
 				75E4A14E21121FFC00B65561 /* CoreDataHelper.swift in Sources */,
 				755216982108FCA30022E2C1 /* StationSelectionViewController.swift in Sources */,
-				75E4A15421136A0400B65561 /* CurrentAlarmsView.swift in Sources */,
 				7552167C21066EFD0022E2C1 /* BART_Alarm.xcdatamodeld in Sources */,
 				755216962107A11E0022E2C1 /* RouteSelectionViewController.swift in Sources */,
 				7552169A2108FD760022E2C1 /* AlarmSelectionViewController.swift in Sources */,
@@ -325,7 +314,6 @@
 				7552167421066EFD0022E2C1 /* AppDelegate.swift in Sources */,
 				75F36125210A36FE003044D4 /* CurrentAlarmsTableViewCell.swift in Sources */,
 				752BC7A52109532B00792224 /* HomeViewController.swift in Sources */,
-				7537E2642113840300A10BE7 /* DisplayAlarmViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

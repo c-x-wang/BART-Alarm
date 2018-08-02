@@ -30,7 +30,7 @@ class AlarmSelectionViewController: UIViewController {
         let content = UNMutableNotificationContent()
         content.title = "Destination Approaching"
 //        content.subtitle = "subtitle"
-        content.body = "Train will arrive at \((trip?.endLocation)!) in \(Int(alarmMinutesPicker.countDownDuration)/60) minutes"
+        content.body = "Train will arrive at \(trip?.endLocation) in \(Int(alarmMinutesPicker.countDownDuration)/60) minutes"
         content.badge = 1
 //        content.sound =
         
