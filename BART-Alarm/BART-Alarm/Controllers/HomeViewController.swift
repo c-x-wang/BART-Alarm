@@ -25,9 +25,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        currentAlarmsTableView.delegate = self
-//        currentAlarmsTableView.dataSource = self
-//        currentAlarmsTableView.rowHeight = 105
+        currentAlarmsTableView.delegate = self
+        currentAlarmsTableView.dataSource = self
+        currentAlarmsTableView.rowHeight = 105
+        currentAlarmsTableView.isScrollEnabled = false
         
 //        currentAlarmsView.delegate = self
 
@@ -57,6 +58,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //            currentAlarmsView.trainDepartureTimeLabel.text = ""
 //            currentAlarmsView.alarmTimeLabel.text = ""
 //        }
+        
+        currentAlarmsTableView.reloadData()
+        historyAlarmsTableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,23 +83,46 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "CurrentAlarmsCell") as! CurrentAlarmsTableViewCell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryAlarmsCell") as! HistoryAlarmsTableViewCell
-
-        let trip = trips[indexPath.row]
-
-        cell.routeNameLabel.text = trip.route!
-        cell.routeStationsLabel.text = trip.startLocation! + " to " + trip.endLocation!
-
-
-        let formatter = DateFormatter()
-        formatter.dateFormat = "h:mm a"
-        let formattedTrainDate = formatter.string(from: trip.trainDepartureTime!)
-        let formattedAlarmDate = formatter.string(from: trip.alarmTime!)
-        cell.trainDepartureTimeLabel.text = "Train departure: " + formattedTrainDate
-        cell.alarmTimeLabel.text = "Alarm: " + formattedAlarmDate
-
-        return cell
+        if tableView == currentAlarmsTableView {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CurrentAlarmsCell") as! CurrentAlarmsTableViewCell
+            
+            let trip = trips[indexPath.row]
+            
+            cell.routeNameLabel.text = trip.route!
+            cell.routeStationsLabel.text = trip.startLocation! + " to " + trip.endLocation!
+            
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "h:mm a"
+            let formattedTrainDate = formatter.string(from: trip.trainDepartureTime!)
+            let formattedAlarmDate = formatter.string(from: trip.alarmTime!)
+            cell.trainDepartureTimeLabel.text = "Train departure: " + formattedTrainDate
+            cell.alarmTimeLabel.text = "Alarm: " + formattedAlarmDate
+            
+            return cell
+            
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryAlarmsCell") as! HistoryAlarmsTableViewCell
+            
+            let trip = trips[indexPath.row]
+            
+            cell.routeNameLabel.text = trip.route!
+            cell.routeStationsLabel.text = trip.startLocation! + " to " + trip.endLocation!
+            
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "h:mm a"
+            let formattedTrainDate = formatter.string(from: trip.trainDepartureTime!)
+            let formattedAlarmDate = formatter.string(from: trip.alarmTime!)
+            cell.trainDepartureTimeLabel.text = "Train departure: " + formattedTrainDate
+            cell.alarmTimeLabel.text = "Alarm: " + formattedAlarmDate
+            
+            return cell
+        }
+    }
+    
+    func moveCurrentAlarm() {
+        print("move current alarm")
     }
 
 

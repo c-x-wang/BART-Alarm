@@ -45,6 +45,8 @@ class AlarmSelectionViewController: UIViewController {
         let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+        HomeViewController().moveCurrentAlarm()
     }
     
     func calculateTripTime() {
