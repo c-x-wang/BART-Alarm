@@ -11,8 +11,8 @@ import CoreData
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-//    @IBOutlet weak var currentAlarmsTableView: CurrentAlarmsTableView!
-    @IBOutlet weak var currentAlarmsView: CurrentAlarmsView!
+    @IBOutlet weak var currentAlarmsTableView: CurrentAlarmsTableView!
+//    @IBOutlet weak var currentAlarmsView: CurrentAlarmsView!
     @IBOutlet weak var historyAlarmsTableView: HistoryAlarmsTableView!
 
     var trips = [Trip]() {
@@ -41,22 +41,22 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if trips.first != nil {
-            currentAlarmsView.routeNameLabel.text = trips.first?.route
-            currentAlarmsView.routeStationsLabel.text = (trips.first?.startLocation)! + " to " + (trips.first?.endLocation)!
-            
-            let formatter = DateFormatter()
-            formatter.dateFormat = "h:mm a"
-            let formattedTrainDate = formatter.string(from: (trips.first?.trainDepartureTime)!)
-            let formattedAlarmDate = formatter.string(from: (trips.first?.alarmTime)!)
-            currentAlarmsView.trainDepartureTimeLabel.text = "Train departure: " + formattedTrainDate
-            currentAlarmsView.alarmTimeLabel.text = "Alarm: " + formattedAlarmDate
-        } else {
-            currentAlarmsView.routeNameLabel.text = ""
-            currentAlarmsView.routeStationsLabel.text = "No current alarm to display"
-            currentAlarmsView.trainDepartureTimeLabel.text = ""
-            currentAlarmsView.alarmTimeLabel.text = ""
-        }
+//        if trips.first != nil {
+//            currentAlarmsView.routeNameLabel.text = trips.first?.route
+//            currentAlarmsView.routeStationsLabel.text = (trips.first?.startLocation)! + " to " + (trips.first?.endLocation)!
+//            
+//            let formatter = DateFormatter()
+//            formatter.dateFormat = "h:mm a"
+//            let formattedTrainDate = formatter.string(from: (trips.first?.trainDepartureTime)!)
+//            let formattedAlarmDate = formatter.string(from: (trips.first?.alarmTime)!)
+//            currentAlarmsView.trainDepartureTimeLabel.text = "Train departure: " + formattedTrainDate
+//            currentAlarmsView.alarmTimeLabel.text = "Alarm: " + formattedAlarmDate
+//        } else {
+//            currentAlarmsView.routeNameLabel.text = ""
+//            currentAlarmsView.routeStationsLabel.text = "No current alarm to display"
+//            currentAlarmsView.trainDepartureTimeLabel.text = ""
+//            currentAlarmsView.alarmTimeLabel.text = ""
+//        }
     }
 
     override func didReceiveMemoryWarning() {
