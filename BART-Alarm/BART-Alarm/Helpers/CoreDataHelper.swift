@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreData
+import UserNotifications
 
 struct CoreDataHelper {
     static let context: NSManagedObjectContext = {
@@ -38,6 +39,17 @@ struct CoreDataHelper {
     
     static func deleteTrip(trip: Trip) {
         context.delete(trip)
+        
+        UNUserNotificationCenter.current().getPendingNotificationRequests { (notificationRequests) in
+            var identifiers: [String] = []
+            for notification:UNNotificationRequest in notificationRequests {
+                if notification.identifier == trip.notifID {
+                    identifiers.append(notification.identifier)
+                    print("deleting \((trip.notifID)!)")
+                }
+            }
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
+        }
         
         saveTrip()
     }

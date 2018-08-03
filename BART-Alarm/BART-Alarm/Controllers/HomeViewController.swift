@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-import UserNotifications
+//import UserNotifications
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -85,16 +85,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if editingStyle == .delete {
             let tripToDelete = trips[indexPath.row]
             CoreDataHelper.deleteTrip(trip: tripToDelete)
-            
-            UNUserNotificationCenter.current().getPendingNotificationRequests { (notificationRequests) in
-                var identifiers: [String] = []
-                for notification:UNNotificationRequest in notificationRequests {
-                    if notification.identifier == tripToDelete.notifID {
-                        identifiers.append(notification.identifier)
-                    }
-                }
-                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
-            }
             
             trips = CoreDataHelper.retrieveTrips()
             self.viewWillAppear(false)
