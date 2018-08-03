@@ -70,6 +70,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
 //        currentAlarmsTableView.reloadData()
         historyAlarmsTableView.reloadData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -112,22 +113,36 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //
 //        }
 //        else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryAlarmsCell") as! HistoryAlarmsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryAlarmsCell") as! HistoryAlarmsTableViewCell
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
+        
+        let trip = trips[indexPath.row]
+        
+        cell.routeNameLabel.text = trip.route!
+        cell.routeStationsLabel.text = trip.startLocation! + " to " + trip.endLocation!
+        
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "h:mm a"
+        let formattedTrainDate = formatter.string(from: trip.trainDepartureTime!)
+        let formattedAlarmDate = formatter.string(from: trip.alarmTime!)
+        cell.trainDepartureTimeLabel.text = "Train departure: " + formattedTrainDate
+        cell.alarmTimeLabel.text = "Alarm: " + formattedAlarmDate
+        
+        let now = Date()
+        if trip.alarmTime! <= now {
+            cell.routeNameLabel.textColor = UIColor.gray
+            cell.routeStationsLabel.textColor = UIColor.gray
+            cell.trainDepartureTimeLabel.textColor = UIColor.gray
+            cell.alarmTimeLabel.textColor = UIColor.gray
+        } else {
+            cell.routeNameLabel.textColor = UIColor.black
+            cell.routeStationsLabel.textColor = UIColor.black
+            cell.trainDepartureTimeLabel.textColor = UIColor.black
+            cell.alarmTimeLabel.textColor = UIColor.black
+        }
             
-            let trip = trips[indexPath.row]
-            
-            cell.routeNameLabel.text = trip.route!
-            cell.routeStationsLabel.text = trip.startLocation! + " to " + trip.endLocation!
-            
-            
-            let formatter = DateFormatter()
-            formatter.dateFormat = "h:mm a"
-            let formattedTrainDate = formatter.string(from: trip.trainDepartureTime!)
-            let formattedAlarmDate = formatter.string(from: trip.alarmTime!)
-            cell.trainDepartureTimeLabel.text = "Train departure: " + formattedTrainDate
-            cell.alarmTimeLabel.text = "Alarm: " + formattedAlarmDate
-            
-            return cell
+        return cell
 //        }
     }
     
