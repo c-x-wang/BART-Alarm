@@ -22,6 +22,7 @@ class AlarmSelectionViewController: UIViewController {
     @IBOutlet weak var alarmMinutesPicker: UIDatePicker!
     
     var trip: Trip?
+    let notifCount = UserDefaults.standard.integer(forKey: "notifCount")
     
     @IBAction func CreateButtonTapped(_ sender: Any) {
         
@@ -41,12 +42,16 @@ class AlarmSelectionViewController: UIViewController {
         let unitFlags: Set<Calendar.Component> = [.hour, .minute]
         let components = calendar.dateComponents(unitFlags, from: (trip?.alarmTime)!)
         
+        UserDefaults.standard.set(notifCount + 1, forKey: "notifCount")
+        
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
-        let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: "timerDone\(notifCount)", content: content, trigger: trigger)
+        print("timerDone\(notifCount)")
+        
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         
-        HomeViewController().moveCurrentAlarm()
+//        HomeViewController().moveCurrentAlarm()
     }
     
     func calculateTripTime() {
@@ -123,6 +128,8 @@ class AlarmSelectionViewController: UIViewController {
         trip?.alarmTime = trainDeparturePicker.date.addingTimeInterval((self.trip?.tripLength)! - alarmMinutesPicker.countDownDuration)
         trip?.modificationTime = Date()
         trip?.activated = true
+        trip?.notifID = "timerDone\(notifCount)"
+        print("save '\((trip?.notifID)!)'")
         CoreDataHelper.saveTrip()
     }
     

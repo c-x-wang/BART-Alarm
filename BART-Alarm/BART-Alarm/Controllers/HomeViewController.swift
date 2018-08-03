@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -37,6 +38,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         historyAlarmsTableView.rowHeight = 105
 
         trips = CoreDataHelper.retrieveTrips()
+        
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        if launchedBefore  {
+            print("Not first launch.")
+        } else {
+            print("First launch, setting UserDefault.")
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,6 +85,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if editingStyle == .delete {
             let tripToDelete = trips[indexPath.row]
             CoreDataHelper.deleteTrip(trip: tripToDelete)
+            
+            UNUserNotificationCenter.current().getPendingNotificationRequests { (notificationRequests) in
+                var identifiers: [String] = []
+                for notification:UNNotificationRequest in notificationRequests {
+                    if notification.identifier == tripToDelete.notifID {
+                        identifiers.append(notification.identifier)
+                    }
+                }
+                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
+            }
             
             trips = CoreDataHelper.retrieveTrips()
             self.viewWillAppear(false)
@@ -122,9 +141,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        }
     }
     
-    func moveCurrentAlarm() {
-        print("move current alarm")
-    }
+//    func moveCurrentAlarm() {
+//        print("move current alarm")
+//    }
 
 
 
