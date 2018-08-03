@@ -6,21 +6,21 @@
 //  Copyright © 2018 cxw. All rights reserved.
 //
 
-import UIKit
-
-class CurrentAlarmsTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var routeNameLabel: UILabel!
-    @IBOutlet weak var routeStationsLabel: UILabel!
-    @IBOutlet weak var trainDepartureTimeLabel: UILabel!
-    @IBOutlet weak var alarmTimeLabel: UILabel!
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
-}
+//import UIKit
+//
+//class CurrentAlarmsTableViewCell: UITableViewCell {
+//
+//    @IBOutlet weak var routeNameLabel: UILabel!
+//    @IBOutlet weak var routeStationsLabel: UILabel!
+//    @IBOutlet weak var trainDepartureTimeLabel: UILabel!
+//    @IBOutlet weak var alarmTimeLabel: UILabel!
+//
+//    /*
+//    // Only override draw() if you perform custom drawing.
+//    // An empty implementation adversely affects performance during animation.
+//    override func draw(_ rect: CGRect) {
+//        // Drawing code
+//    }
+//    */
+//
+//}

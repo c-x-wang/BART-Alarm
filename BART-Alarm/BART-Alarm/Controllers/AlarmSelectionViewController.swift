@@ -122,6 +122,7 @@ class AlarmSelectionViewController: UIViewController {
         trip?.trainDepartureTime = trainDeparturePicker.date
         trip?.alarmTime = trainDeparturePicker.date.addingTimeInterval((self.trip?.tripLength)! - alarmMinutesPicker.countDownDuration)
         trip?.modificationTime = Date()
+        trip?.activated = true
         CoreDataHelper.saveTrip()
     }
     
