@@ -112,22 +112,23 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //
 //        }
 //        else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryAlarmsCell") as! HistoryAlarmsTableViewCell
-            
-            let trip = trips[indexPath.row]
-            
-            cell.routeNameLabel.text = trip.route!
-            cell.routeStationsLabel.text = trip.startLocation! + " to " + trip.endLocation!
-            
-            
-            let formatter = DateFormatter()
-            formatter.dateFormat = "h:mm a"
-            let formattedTrainDate = formatter.string(from: trip.trainDepartureTime!)
-            let formattedAlarmDate = formatter.string(from: trip.alarmTime!)
-            cell.trainDepartureTimeLabel.text = "Train departure: " + formattedTrainDate
-            cell.alarmTimeLabel.text = "Alarm: " + formattedAlarmDate
-            
-            return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryAlarmsCell") as! HistoryAlarmsTableViewCell
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
+        
+        let trip = trips[indexPath.row]
+        
+        cell.routeNameLabel.text = trip.route!
+        cell.routeStationsLabel.text = trip.startLocation! + " to " + trip.endLocation!
+        
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "h:mm a"
+        let formattedTrainDate = formatter.string(from: trip.trainDepartureTime!)
+        let formattedAlarmDate = formatter.string(from: trip.alarmTime!)
+        cell.trainDepartureTimeLabel.text = "Train departure: " + formattedTrainDate
+        cell.alarmTimeLabel.text = "Alarm: " + formattedAlarmDate
+        
+        return cell
 //        }
     }
     
