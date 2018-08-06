@@ -39,6 +39,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         trips = CoreDataHelper.retrieveTrips()
         
+//        for trip in trips {
+//            if trip.modificationTime == nil {
+//                CoreDataHelper.deleteTrip(trip: trip)
+//                print("incomplete trip deleted")
+//            }
+//        }
+        
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         if launchedBefore  {
             print("Not first launch.")
@@ -69,6 +76,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        }
         
 //        currentAlarmsTableView.reloadData()
+//        for trip in trips {
+//            if trip.modificationTime == nil {
+//                CoreDataHelper.deleteTrip(trip: trip)
+//                print("incomplete trip deleted")
+//            }
+//        }
         historyAlarmsTableView.reloadData()
         
     }
@@ -117,6 +130,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         
         let trip = trips[indexPath.row]
+        
+//        if trip.modificationTime == nil {
+//            CoreDataHelper.deleteTrip(trip: trip)
+//            print("incomplete trip deleted if")
+//            return cell
+//        }
         
         cell.routeNameLabel.text = trip.route!
         cell.routeStationsLabel.text = trip.startLocation! + " to " + trip.endLocation!

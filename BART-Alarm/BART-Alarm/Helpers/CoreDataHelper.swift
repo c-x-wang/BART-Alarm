@@ -59,7 +59,23 @@ struct CoreDataHelper {
             let fetchRequest = NSFetchRequest<Trip>(entityName: "Trip")
             var results = try context.fetch(fetchRequest)
             
-            results.sort { $0.modificationTime! > $1.modificationTime! }
+//            for result in results {
+//                if result.modificationTime == nil {
+//                    CoreDataHelper.deleteTrip(trip: result)
+//                    print("incomplete trip deleted cdh")
+//                }
+//            }
+            
+            if results.count > 1 {
+                for result in results {
+//                    print("checking results")
+                    if result.modificationTime == nil {
+                        CoreDataHelper.deleteTrip(trip: result)
+                        print("incomplete trip deleted cdh2")
+                    }
+                }
+                results.sort { $0.modificationTime! > $1.modificationTime! }
+            }
 //            results.sort { $0.alarmTime! > $1.alarmTime! }
             
             return results
