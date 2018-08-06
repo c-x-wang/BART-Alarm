@@ -42,7 +42,7 @@ class RouteSelectionViewController: UIViewController {
         var routeNames = [String]()
         var routeNumbers = [String]()
         
-        if let path = Bundle.main.path(forResource: "test-json", ofType: "json") {
+        if let path = Bundle.main.path(forResource: "routes", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
                 let json = try JSON(data: data)

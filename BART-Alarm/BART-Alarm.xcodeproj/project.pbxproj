@@ -19,7 +19,19 @@
 		755216962107A11E0022E2C1 /* RouteSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755216952107A11E0022E2C1 /* RouteSelectionViewController.swift */; };
 		755216982108FCA30022E2C1 /* StationSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755216972108FCA30022E2C1 /* StationSelectionViewController.swift */; };
 		7552169A2108FD760022E2C1 /* AlarmSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755216992108FD760022E2C1 /* AlarmSelectionViewController.swift */; };
-		75B683202118EA1000D0BBD7 /* test-json.json in Resources */ = {isa = PBXBuildFile; fileRef = 75B6831F2118EA1000D0BBD7 /* test-json.json */; };
+		75B683232118EE5700D0BBD7 /* routes.json in Resources */ = {isa = PBXBuildFile; fileRef = 75B683222118EE5700D0BBD7 /* routes.json */; };
+		75B683292118EFEE00D0BBD7 /* route-2-stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 75B683282118EFEE00D0BBD7 /* route-2-stations.json */; };
+		75B6832D2118F0AC00D0BBD7 /* route-12-stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 75B6832C2118F0AC00D0BBD7 /* route-12-stations.json */; };
+		75B6832F2118F0BE00D0BBD7 /* route-6-stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 75B6832E2118F0BE00D0BBD7 /* route-6-stations.json */; };
+		75B683312118F0CA00D0BBD7 /* route-8-stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 75B683302118F0CA00D0BBD7 /* route-8-stations.json */; };
+		75B683332118F0D700D0BBD7 /* route-4-stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 75B683322118F0D700D0BBD7 /* route-4-stations.json */; };
+		75B683352118F0EC00D0BBD7 /* route-20-stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 75B683342118F0EC00D0BBD7 /* route-20-stations.json */; };
+		75B683372118F25A00D0BBD7 /* route-12-schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 75B683362118F25A00D0BBD7 /* route-12-schedule.json */; };
+		75B683392118F26600D0BBD7 /* route-6-schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 75B683382118F26600D0BBD7 /* route-6-schedule.json */; };
+		75B6833D2118F27D00D0BBD7 /* route-8-schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 75B6833C2118F27D00D0BBD7 /* route-8-schedule.json */; };
+		75B6833F2118F28600D0BBD7 /* route-4-schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 75B6833E2118F28600D0BBD7 /* route-4-schedule.json */; };
+		75B683412118F28F00D0BBD7 /* route-2-schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 75B683402118F28F00D0BBD7 /* route-2-schedule.json */; };
+		75B683432118F29D00D0BBD7 /* route-20-schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 75B683422118F29D00D0BBD7 /* route-20-schedule.json */; };
 		75E4A14B2110CCE300B65561 /* CurrentAlarmsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4A14A2110CCE300B65561 /* CurrentAlarmsTableView.swift */; };
 		75E4A14E21121FFC00B65561 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4A14D21121FFC00B65561 /* CoreDataHelper.swift */; };
 		75E4A1502112767200B65561 /* HistoryAlarmsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4A14F2112767200B65561 /* HistoryAlarmsTableView.swift */; };
@@ -45,7 +57,19 @@
 		755216952107A11E0022E2C1 /* RouteSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSelectionViewController.swift; sourceTree = "<group>"; };
 		755216972108FCA30022E2C1 /* StationSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSelectionViewController.swift; sourceTree = "<group>"; };
 		755216992108FD760022E2C1 /* AlarmSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSelectionViewController.swift; sourceTree = "<group>"; };
-		75B6831F2118EA1000D0BBD7 /* test-json.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "test-json.json"; sourceTree = "<group>"; };
+		75B683222118EE5700D0BBD7 /* routes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = routes.json; sourceTree = "<group>"; };
+		75B683282118EFEE00D0BBD7 /* route-2-stations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "route-2-stations.json"; sourceTree = "<group>"; };
+		75B6832C2118F0AC00D0BBD7 /* route-12-stations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "route-12-stations.json"; sourceTree = "<group>"; };
+		75B6832E2118F0BE00D0BBD7 /* route-6-stations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "route-6-stations.json"; sourceTree = "<group>"; };
+		75B683302118F0CA00D0BBD7 /* route-8-stations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "route-8-stations.json"; sourceTree = "<group>"; };
+		75B683322118F0D700D0BBD7 /* route-4-stations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "route-4-stations.json"; sourceTree = "<group>"; };
+		75B683342118F0EC00D0BBD7 /* route-20-stations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "route-20-stations.json"; sourceTree = "<group>"; };
+		75B683362118F25A00D0BBD7 /* route-12-schedule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "route-12-schedule.json"; sourceTree = "<group>"; };
+		75B683382118F26600D0BBD7 /* route-6-schedule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "route-6-schedule.json"; sourceTree = "<group>"; };
+		75B6833C2118F27D00D0BBD7 /* route-8-schedule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "route-8-schedule.json"; sourceTree = "<group>"; };
+		75B6833E2118F28600D0BBD7 /* route-4-schedule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "route-4-schedule.json"; sourceTree = "<group>"; };
+		75B683402118F28F00D0BBD7 /* route-2-schedule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "route-2-schedule.json"; sourceTree = "<group>"; };
+		75B683422118F29D00D0BBD7 /* route-20-schedule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "route-20-schedule.json"; sourceTree = "<group>"; };
 		75E4A14A2110CCE300B65561 /* CurrentAlarmsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAlarmsTableView.swift; sourceTree = "<group>"; };
 		75E4A14D21121FFC00B65561 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		75E4A14F2112767200B65561 /* HistoryAlarmsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryAlarmsTableView.swift; sourceTree = "<group>"; };
@@ -180,7 +204,19 @@
 		75B683212118EAB300D0BBD7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				75B6831F2118EA1000D0BBD7 /* test-json.json */,
+				75B683222118EE5700D0BBD7 /* routes.json */,
+				75B6832C2118F0AC00D0BBD7 /* route-12-stations.json */,
+				75B6832E2118F0BE00D0BBD7 /* route-6-stations.json */,
+				75B683302118F0CA00D0BBD7 /* route-8-stations.json */,
+				75B683322118F0D700D0BBD7 /* route-4-stations.json */,
+				75B683282118EFEE00D0BBD7 /* route-2-stations.json */,
+				75B683342118F0EC00D0BBD7 /* route-20-stations.json */,
+				75B683362118F25A00D0BBD7 /* route-12-schedule.json */,
+				75B683382118F26600D0BBD7 /* route-6-schedule.json */,
+				75B6833C2118F27D00D0BBD7 /* route-8-schedule.json */,
+				75B6833E2118F28600D0BBD7 /* route-4-schedule.json */,
+				75B683402118F28F00D0BBD7 /* route-2-schedule.json */,
+				75B683422118F29D00D0BBD7 /* route-20-schedule.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -262,12 +298,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75B683432118F29D00D0BBD7 /* route-20-schedule.json in Resources */,
+				75B683332118F0D700D0BBD7 /* route-4-stations.json in Resources */,
 				75521690210674980022E2C1 /* Home.storyboard in Resources */,
+				75B6833D2118F27D00D0BBD7 /* route-8-schedule.json in Resources */,
+				75B683232118EE5700D0BBD7 /* routes.json in Resources */,
+				75B683392118F26600D0BBD7 /* route-6-schedule.json in Resources */,
+				75B6832F2118F0BE00D0BBD7 /* route-6-stations.json in Resources */,
 				75521694210798850022E2C1 /* TripCreation.storyboard in Resources */,
+				75B6833F2118F28600D0BBD7 /* route-4-schedule.json in Resources */,
 				7537E2622113803D00A10BE7 /* DisplayAlarm.storyboard in Resources */,
-				75B683202118EA1000D0BBD7 /* test-json.json in Resources */,
+				75B683352118F0EC00D0BBD7 /* route-20-stations.json in Resources */,
+				75B683412118F28F00D0BBD7 /* route-2-schedule.json in Resources */,
+				75B683312118F0CA00D0BBD7 /* route-8-stations.json in Resources */,
+				75B683372118F25A00D0BBD7 /* route-12-schedule.json in Resources */,
+				75B683292118EFEE00D0BBD7 /* route-2-stations.json in Resources */,
 				7552168121066EFF0022E2C1 /* LaunchScreen.storyboard in Resources */,
 				7552167E21066EFF0022E2C1 /* Assets.xcassets in Resources */,
+				75B6832D2118F0AC00D0BBD7 /* route-12-stations.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

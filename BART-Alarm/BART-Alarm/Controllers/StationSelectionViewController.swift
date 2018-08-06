@@ -48,25 +48,46 @@ class StationSelectionViewController: UIViewController {
         
         let apiToContact = "http://api.bart.gov/api/route.aspx?cmd=routeinfo&route=" + (self.trip?.routeNumber)! + "&key=MW9S-E7SL-26DU-VV8V&json=y"
         var stationsArray = [String]()
+        
+        if let path = Bundle.main.path(forResource: "route-" + (self.trip?.routeNumber)! + "-stations", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
+                let json = try JSON(data: data)
+                print("jsonData:\(json)")
 
-        Alamofire.request(apiToContact).validate().responseJSON() { response in
-            switch response.result {
-            case .success:
-                if let value = response.result.value {
-                    let json = JSON(value)
+                let stationsData = json["root"]["routes"]["route"]["config"]["station"].arrayValue
 
-                    let stationsData = json["root"]["routes"]["route"]["config"]["station"].arrayValue
-
-                    for station in stationsData {
-                        stationsArray.append(station.stringValue)
-                    }
-
-                    self.startStationDropDown.dataSource = stationsArray
+                for station in stationsData {
+                    stationsArray.append(station.stringValue)
                 }
-            case .failure(let error):
-                print(error)
+
+                self.startStationDropDown.dataSource = stationsArray
+
+            } catch let error {
+                print("parse error: \(error.localizedDescription)")
             }
+        } else {
+            print("Invalid filename/path.")
         }
+
+//        Alamofire.request(apiToContact).validate().responseJSON() { response in
+//            switch response.result {
+//            case .success:
+//                if let value = response.result.value {
+//                    let json = JSON(value)
+//
+//                    let stationsData = json["root"]["routes"]["route"]["config"]["station"].arrayValue
+//
+//                    for station in stationsData {
+//                        stationsArray.append(station.stringValue)
+//                    }
+//
+//                    self.startStationDropDown.dataSource = stationsArray
+//                }
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
         
         startStationDropDown.selectionAction = { [weak self] (index, item) in
             self?.chooseStartButton.setTitle(item, for: .normal)
