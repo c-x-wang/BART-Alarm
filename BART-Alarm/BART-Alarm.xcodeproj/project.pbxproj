@@ -19,6 +19,7 @@
 		755216962107A11E0022E2C1 /* RouteSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755216952107A11E0022E2C1 /* RouteSelectionViewController.swift */; };
 		755216982108FCA30022E2C1 /* StationSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755216972108FCA30022E2C1 /* StationSelectionViewController.swift */; };
 		7552169A2108FD760022E2C1 /* AlarmSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755216992108FD760022E2C1 /* AlarmSelectionViewController.swift */; };
+		75B683202118EA1000D0BBD7 /* test-json.json in Resources */ = {isa = PBXBuildFile; fileRef = 75B6831F2118EA1000D0BBD7 /* test-json.json */; };
 		75E4A14B2110CCE300B65561 /* CurrentAlarmsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4A14A2110CCE300B65561 /* CurrentAlarmsTableView.swift */; };
 		75E4A14E21121FFC00B65561 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4A14D21121FFC00B65561 /* CoreDataHelper.swift */; };
 		75E4A1502112767200B65561 /* HistoryAlarmsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4A14F2112767200B65561 /* HistoryAlarmsTableView.swift */; };
@@ -44,6 +45,7 @@
 		755216952107A11E0022E2C1 /* RouteSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSelectionViewController.swift; sourceTree = "<group>"; };
 		755216972108FCA30022E2C1 /* StationSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationSelectionViewController.swift; sourceTree = "<group>"; };
 		755216992108FD760022E2C1 /* AlarmSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSelectionViewController.swift; sourceTree = "<group>"; };
+		75B6831F2118EA1000D0BBD7 /* test-json.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "test-json.json"; sourceTree = "<group>"; };
 		75E4A14A2110CCE300B65561 /* CurrentAlarmsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAlarmsTableView.swift; sourceTree = "<group>"; };
 		75E4A14D21121FFC00B65561 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		75E4A14F2112767200B65561 /* HistoryAlarmsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryAlarmsTableView.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		7552167221066EFD0022E2C1 /* BART-Alarm */ = {
 			isa = PBXGroup;
 			children = (
+				75B683212118EAB300D0BBD7 /* Data */,
 				75E4A14C21121FE100B65561 /* Helpers */,
 				7552168E2106739C0022E2C1 /* Views */,
 				7552168D210673960022E2C1 /* Services */,
@@ -172,6 +175,14 @@
 				75E4A151211276AF00B65561 /* HistoryAlarmsTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		75B683212118EAB300D0BBD7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				75B6831F2118EA1000D0BBD7 /* test-json.json */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		75E4A14C21121FE100B65561 /* Helpers */ = {
@@ -254,6 +265,7 @@
 				75521690210674980022E2C1 /* Home.storyboard in Resources */,
 				75521694210798850022E2C1 /* TripCreation.storyboard in Resources */,
 				7537E2622113803D00A10BE7 /* DisplayAlarm.storyboard in Resources */,
+				75B683202118EA1000D0BBD7 /* test-json.json in Resources */,
 				7552168121066EFF0022E2C1 /* LaunchScreen.storyboard in Resources */,
 				7552167E21066EFF0022E2C1 /* Assets.xcassets in Resources */,
 			);

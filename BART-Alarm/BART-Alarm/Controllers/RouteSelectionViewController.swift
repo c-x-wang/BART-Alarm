@@ -42,27 +42,51 @@ class RouteSelectionViewController: UIViewController {
         var routeNames = [String]()
         var routeNumbers = [String]()
         
-        Alamofire.request(apiToContact).validate().responseJSON() { response in
-            switch response.result {
-            case .success:
-                if let value = response.result.value {
-                    let json = JSON(value)
-                    
-                    let routesData = json["root"]["routes"]["route"].arrayValue
-                    
-                    for route in routesData {
-                        if route["number"].intValue % 2 == 0 {
-                            routeNames.append(route["name"].stringValue)
-                            routeNumbers.append(route["number"].stringValue)
-                        }
+        if let path = Bundle.main.path(forResource: "test-json", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
+                let json = try JSON(data: data)
+                print("jsonData:\(json)")
+                
+                let routesData = json["root"]["routes"]["route"].arrayValue
+                
+                for route in routesData {
+                    if route["number"].intValue % 2 == 0 {
+                        routeNames.append(route["name"].stringValue)
+                        routeNumbers.append(route["number"].stringValue)
                     }
-                    
-                    self.routeDropDown.dataSource = routeNames
                 }
-            case .failure(let error):
-                print(error)
+                
+                self.routeDropDown.dataSource = routeNames
+                
+            } catch let error {
+                print("parse error: \(error.localizedDescription)")
             }
+        } else {
+            print("Invalid filename/path.")
         }
+        
+//        Alamofire.request(apiToContact).validate().responseJSON() { response in
+//            switch response.result {
+//            case .success:
+//                if let value = response.result.value {
+//                    let json = JSON(value)
+//
+//                    let routesData = json["root"]["routes"]["route"].arrayValue
+//
+//                    for route in routesData {
+//                        if route["number"].intValue % 2 == 0 {
+//                            routeNames.append(route["name"].stringValue)
+//                            routeNumbers.append(route["number"].stringValue)
+//                        }
+//                    }
+//
+//                    self.routeDropDown.dataSource = routeNames
+//                }
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
         
         routeDropDown.selectionAction = { [weak self] (index, item) in
             self?.chooseRouteButton.setTitle(item, for: .normal)
