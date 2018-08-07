@@ -6,9 +6,16 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Home-->
         <scene sceneID="U51-2d-jfc">
@@ -18,47 +25,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hqB-vo-VpK" customClass="HistoryAlarmsTableView" customModule="BART_Alarm" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="125" width="375" height="542"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hqB-vo-VpK" customClass="HistoryAlarmsTableView" customModule="BART_Alarm" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="111" width="375" height="556"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryAlarmsCell" rowHeight="105" id="Sz2-DM-2lf" customClass="HistoryAlarmsTableViewCell" customModule="BART_Alarm" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="105"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryAlarmsCell" rowHeight="120" id="Sz2-DM-2lf" customClass="HistoryAlarmsTableViewCell" customModule="BART_Alarm" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sz2-DM-2lf" id="bjK-kN-chf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="104.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Route: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62h-9e-3g9">
-                                                    <rect key="frame" x="15" y="11" width="345" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="START to END" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zu2-VM-WEe">
-                                                    <rect key="frame" x="15" y="41" width="345" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Train departure: --:-- AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXN-Rx-EC9">
-                                                    <rect key="frame" x="15" y="71" width="207" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alarm: --:-- AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VH5-1m-02Y">
-                                                    <rect key="frame" x="230" y="71" width="130" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AdU-20-uQf">
+                                                    <rect key="frame" x="12" y="12" width="351" height="95.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Route " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62h-9e-3g9">
+                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="32"/>
+                                                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="miz-nK-xzd">
+                                                            <rect key="frame" x="0.0" y="32" width="351" height="63.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00 AM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VH5-1m-02Y">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="63.5"/>
+                                                                    <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="30"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Rhs-5T-LP6">
+                                                                    <rect key="frame" x="143" y="0.0" width="208" height="63.5"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="START to END" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zu2-VM-WEe">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="112.5" height="32"/>
+                                                                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Train departure: --:-- AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXN-Rx-EC9">
+                                                                            <rect key="frame" x="0.0" y="32" width="208" height="31.5"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="208" id="o3r-N1-RNH"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="GXN-Rx-EC9" firstAttribute="height" secondItem="zu2-VM-WEe" secondAttribute="height" id="RT3-nA-TWH"/>
+                                                                        <constraint firstAttribute="width" constant="208" id="fBJ-7G-Zyf"/>
+                                                                    </constraints>
+                                                                </stackView>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="miz-nK-xzd" firstAttribute="height" secondItem="62h-9e-3g9" secondAttribute="height" multiplier="2:1" id="duP-qW-JXC"/>
+                                                    </constraints>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="AdU-20-uQf" secondAttribute="bottom" constant="12" id="Mgr-zl-Ij1"/>
+                                                <constraint firstAttribute="trailing" secondItem="AdU-20-uQf" secondAttribute="trailing" constant="12" id="N2m-3r-45V"/>
+                                                <constraint firstItem="AdU-20-uQf" firstAttribute="leading" secondItem="bjK-kN-chf" secondAttribute="leading" constant="12" id="VGN-C4-LL7"/>
+                                                <constraint firstItem="AdU-20-uQf" firstAttribute="top" secondItem="bjK-kN-chf" secondAttribute="top" constant="12" id="mrB-CK-rXR"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="alarmTimeLabel" destination="VH5-1m-02Y" id="p5H-iA-nEn"/>
@@ -69,33 +102,56 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hGO-dK-VEf">
-                                <rect key="frame" x="0.0" y="73" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hGO-dK-VEf">
+                                <rect key="frame" x="0.0" y="29" width="375" height="70"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="All Alarms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QmM-io-bKO">
-                                        <rect key="frame" x="16" y="8" width="108" height="28"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Alarms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QmM-io-bKO">
+                                        <rect key="frame" x="16" y="18.5" width="142" height="37.5"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="32"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCR-ai-iE4">
+                                        <rect key="frame" x="323" y="15" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="wCR-ai-iE4" secondAttribute="height" multiplier="1:1" id="eIi-t9-a3s"/>
+                                            <constraint firstAttribute="height" constant="40" id="vrp-Uu-59f"/>
+                                        </constraints>
+                                        <state key="normal" image="plus"/>
+                                        <connections>
+                                            <segue destination="FEd-Xb-4Ne" kind="show" id="KL9-Oc-hfD"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="QmM-io-bKO" firstAttribute="leading" secondItem="hGO-dK-VEf" secondAttribute="leading" constant="16" id="4oT-B2-jch"/>
+                                    <constraint firstAttribute="height" constant="70" id="EnS-7H-vVB"/>
+                                    <constraint firstItem="QmM-io-bKO" firstAttribute="centerY" secondItem="hGO-dK-VEf" secondAttribute="centerY" constant="3" id="ioE-XV-XoX"/>
+                                    <constraint firstAttribute="trailing" secondItem="wCR-ai-iE4" secondAttribute="trailing" constant="12" id="qjT-6F-Ak3"/>
+                                    <constraint firstItem="wCR-ai-iE4" firstAttribute="centerY" secondItem="hGO-dK-VEf" secondAttribute="centerY" id="uZp-WR-Fgl"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hqB-vo-VpK" firstAttribute="top" secondItem="hGO-dK-VEf" secondAttribute="bottom" constant="12" id="38S-Aj-Z5V"/>
+                            <constraint firstItem="hGO-dK-VEf" firstAttribute="top" secondItem="nVh-BW-Syb" secondAttribute="top" constant="9" id="R5j-Br-1C4"/>
+                            <constraint firstItem="hqB-vo-VpK" firstAttribute="trailing" secondItem="nVh-BW-Syb" secondAttribute="trailing" id="Tz4-w7-sMO"/>
+                            <constraint firstItem="hGO-dK-VEf" firstAttribute="leading" secondItem="nVh-BW-Syb" secondAttribute="leading" id="kBz-H7-lvI"/>
+                            <constraint firstItem="hqB-vo-VpK" firstAttribute="leading" secondItem="nVh-BW-Syb" secondAttribute="leading" id="kHI-Pw-G8H"/>
+                            <constraint firstItem="hqB-vo-VpK" firstAttribute="bottom" secondItem="nVh-BW-Syb" secondAttribute="bottom" id="nH8-O5-T4E"/>
+                            <constraint firstItem="hGO-dK-VEf" firstAttribute="trailing" secondItem="nVh-BW-Syb" secondAttribute="trailing" id="ueN-gh-JKu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nVh-BW-Syb"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="3jU-kM-lKt">
-                        <barButtonItem key="rightBarButtonItem" title="New Alarm" id="f0S-Y5-a9u">
-                            <connections>
-                                <segue destination="FEd-Xb-4Ne" kind="show" id="YBH-VV-Yc1"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="New Alarm" id="f0S-Y5-a9u"/>
                     </navigationItem>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="historyAlarmsTableView" destination="hqB-vo-VpK" id="F9l-h7-hci"/>
+                        <outlet property="titleView" destination="hGO-dK-VEf" id="toe-vx-GwG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MIa-Zb-oi1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -121,10 +177,10 @@
         <!--Navigation Controller-->
         <scene sceneID="R9P-bm-tA0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wzu-RR-32t" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="wzu-RR-32t" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zV0-BI-iC4">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -137,4 +193,7 @@
             <point key="canvasLocation" x="-1338.4000000000001" y="-3144.3778110944531"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plus" width="512" height="512"/>
+    </resources>
 </document>

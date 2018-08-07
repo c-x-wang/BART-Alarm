@@ -15,7 +15,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //    @IBOutlet weak var currentAlarmsTableView: CurrentAlarmsTableView!
 //    @IBOutlet weak var currentAlarmsView: CurrentAlarmsView!
     @IBOutlet weak var historyAlarmsTableView: HistoryAlarmsTableView!
-
+    @IBOutlet weak var titleView: UIView!
+    
     var trips = [Trip]() {
         didSet {
 //            currentAlarmsTableView.reloadData()
@@ -25,6 +26,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        titleView.layer.shadowColor = UIColor.black.cgColor
+//        titleView.layer.shadowOpacity = 0.5
+//        titleView.layer.shadowRadius = 0.5
+//        titleView.layer.shadowOffset = CGSize(width: 0, height: 2)
+//        titleView.layer.masksToBounds = false
 
 //        currentAlarmsTableView.delegate = self
 //        currentAlarmsTableView.dataSource = self
@@ -160,21 +167,21 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let formattedTrainDate = formatter.string(from: trip.trainDepartureTime!)
         let formattedAlarmDate = formatter.string(from: trip.alarmTime!)
         cell.trainDepartureTimeLabel.text = "Train departure: " + formattedTrainDate
-        cell.alarmTimeLabel.text = "Alarm: " + formattedAlarmDate
+        cell.alarmTimeLabel.text = formattedAlarmDate //"Alarm: " + formattedAlarmDate
         
-        let now = Date()
-        if trip.alarmTime! <= now {
-            cell.routeNameLabel.textColor = UIColor.gray
-            cell.routeStationsLabel.textColor = UIColor.gray
-            cell.trainDepartureTimeLabel.textColor = UIColor.gray
-            cell.alarmTimeLabel.textColor = UIColor.gray
-        } else {
+//        let now = Date()
+//        if trip.alarmTime! <= now {
+//            cell.routeNameLabel.textColor = UIColor.gray
+//            cell.routeStationsLabel.textColor = UIColor.gray
+//            cell.trainDepartureTimeLabel.textColor = UIColor.gray
+//            cell.alarmTimeLabel.textColor = UIColor.gray
+//        } else {
             cell.routeNameLabel.textColor = UIColor.black
             cell.routeStationsLabel.textColor = UIColor.black
             cell.trainDepartureTimeLabel.textColor = UIColor.black
             cell.alarmTimeLabel.textColor = UIColor.black
-        }
-            
+//        }
+        
         return cell
 //        }
     }
