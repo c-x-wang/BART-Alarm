@@ -13,8 +13,10 @@ import Alamofire
 import AlamofireImage
 import AlamofireNetworkActivityIndicator
 
-class StationSelectionViewController: UIViewController {
+class StationSelectionViewController: UIViewController, UIScrollViewDelegate {
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var mapPhoto: UIImageView!
     @IBOutlet weak var routeLabel: UILabel!
     @IBOutlet weak var chooseStartButton: UIButton!
     @IBOutlet weak var chooseEndButton: UIButton!
@@ -131,13 +133,13 @@ class StationSelectionViewController: UIViewController {
 //            case .success:
 //                if let value = response.result.value {
 //                    let json = JSON(value)
-//                    
+//
 //                    let stationsData = json["root"]["routes"]["route"]["config"]["station"].arrayValue
-//                    
+//
 //                    for station in stationsData {
 //                        stationsArray.append(station.stringValue)
 //                    }
-//                    
+//
 //                    self.endStationDropDown.dataSource = stationsArray
 //                }
 //            case .failure(let error):
@@ -161,6 +163,14 @@ class StationSelectionViewController: UIViewController {
         
         setupStartStationDropDown()
         setupEndStationDropDown()
+        
+        scrollView.minimumZoomScale = 1.0
+        scrollView.maximumZoomScale = 6.0
+    }
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        
+        return mapPhoto
     }
     
     override func didReceiveMemoryWarning() {

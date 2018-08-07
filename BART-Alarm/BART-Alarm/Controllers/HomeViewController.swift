@@ -53,6 +53,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             print("First launch, setting UserDefault.")
             UserDefaults.standard.set(true, forKey: "launchedBefore")
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadData(_:)), name: NSNotification.Name("ReloadNotification"), object: nil)
+    }
+    
+    @objc func reloadData(_ notification: Notification?) {
+        self.historyAlarmsTableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,9 +88,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //                print("incomplete trip deleted")
 //            }
 //        }
-        historyAlarmsTableView.reloadData()
+        
+//        historyAlarmsTableView.reloadData()
+//        NotificationCenter.default.addObserver(self,selector: #selector(willEnterForeground),name: NSNotification.Name.UIApplicationWillEnterForeground,object: nil)
         
     }
+    
+//    @objc func willEnterForeground() {
+//        print("print if willEnterForeground() is called")
+//        self.historyAlarmsTableView.reloadData()
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

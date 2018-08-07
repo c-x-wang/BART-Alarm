@@ -13,8 +13,10 @@ import Alamofire
 import AlamofireImage
 import AlamofireNetworkActivityIndicator
 
-class RouteSelectionViewController: UIViewController {
+class RouteSelectionViewController: UIViewController, UIScrollViewDelegate {
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var mapPhoto: UIImageView!
     @IBOutlet weak var chooseRouteButton: UIButton!
     
     var trip: Trip?
@@ -99,6 +101,14 @@ class RouteSelectionViewController: UIViewController {
         super.viewDidLoad()
         
         setupRouteDropDown()
+        
+        scrollView.minimumZoomScale = 1.0
+        scrollView.maximumZoomScale = 6.0
+    }
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        
+        return mapPhoto
     }
     
     override func didReceiveMemoryWarning() {

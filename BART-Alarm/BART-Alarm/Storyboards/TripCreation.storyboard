@@ -19,14 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BART_cc_map" translatesAutoresizingMaskIntoConstraints="NO" id="66v-CB-B0E">
-                                <rect key="frame" x="16" y="304" width="343" height="343"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="343" id="Btj-Jl-73O"/>
-                                    <constraint firstAttribute="width" constant="343" id="R0H-bS-goE"/>
-                                    <constraint firstAttribute="width" secondItem="66v-CB-B0E" secondAttribute="height" multiplier="1:1" id="XNC-zW-FGr"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the route you are traveling on:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdc-vt-o9r">
                                 <rect key="frame" x="16" y="90" width="281" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -41,13 +33,38 @@
                                     <action selector="chooseRouteTapped:" destination="2TO-wp-VvU" eventType="touchUpInside" id="FxF-gT-mL0"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vFD-7O-4Sl">
+                                <rect key="frame" x="16" y="304" width="343" height="343"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BART_cc_map" translatesAutoresizingMaskIntoConstraints="NO" id="cYV-CU-WdE">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="343"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="343" id="Bx0-bW-g2i"/>
+                                            <constraint firstAttribute="width" secondItem="cYV-CU-WdE" secondAttribute="height" multiplier="1:1" id="TF9-jF-EdI"/>
+                                            <constraint firstAttribute="height" constant="343" id="yNI-ms-K9Z"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="cYV-CU-WdE" firstAttribute="leading" secondItem="vFD-7O-4Sl" secondAttribute="leading" id="9wU-hi-dvw"/>
+                                    <constraint firstAttribute="width" constant="343" id="B7W-F8-kwd"/>
+                                    <constraint firstAttribute="bottom" secondItem="cYV-CU-WdE" secondAttribute="bottom" id="BJK-qk-wPh"/>
+                                    <constraint firstAttribute="width" secondItem="vFD-7O-4Sl" secondAttribute="height" multiplier="1:1" id="Evj-Pe-9AV"/>
+                                    <constraint firstAttribute="trailing" secondItem="cYV-CU-WdE" secondAttribute="trailing" id="U5b-Zq-Elx"/>
+                                    <constraint firstItem="cYV-CU-WdE" firstAttribute="top" secondItem="vFD-7O-4Sl" secondAttribute="top" id="ccV-ta-abD"/>
+                                    <constraint firstItem="cYV-CU-WdE" firstAttribute="width" secondItem="cYV-CU-WdE" secondAttribute="height" multiplier="1:1" id="hrK-i6-N0Z"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="2TO-wp-VvU" id="bEI-Z6-Rpb"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="pzq-o2-1Qb" firstAttribute="trailing" secondItem="66v-CB-B0E" secondAttribute="trailing" constant="16" id="Uer-dw-9qc"/>
+                            <constraint firstItem="vFD-7O-4Sl" firstAttribute="leading" secondItem="pzq-o2-1Qb" secondAttribute="leading" constant="16" id="HLo-R7-xrC"/>
+                            <constraint firstItem="pzq-o2-1Qb" firstAttribute="trailing" secondItem="vFD-7O-4Sl" secondAttribute="trailing" constant="16" id="Uhb-n0-io3"/>
                             <constraint firstItem="qdc-vt-o9r" firstAttribute="leading" secondItem="pzq-o2-1Qb" secondAttribute="leading" constant="16" id="UuK-ZZ-8O0"/>
-                            <constraint firstItem="pzq-o2-1Qb" firstAttribute="bottom" secondItem="66v-CB-B0E" secondAttribute="bottom" constant="20" id="lce-i6-ZgL"/>
-                            <constraint firstItem="66v-CB-B0E" firstAttribute="leading" secondItem="pzq-o2-1Qb" secondAttribute="leading" constant="16" id="of9-7u-wvX"/>
+                            <constraint firstItem="pzq-o2-1Qb" firstAttribute="bottom" secondItem="vFD-7O-4Sl" secondAttribute="bottom" constant="20" id="bTx-mf-Ye2"/>
                             <constraint firstItem="qdc-vt-o9r" firstAttribute="top" secondItem="pzq-o2-1Qb" secondAttribute="top" constant="26" id="thm-J7-Cb5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pzq-o2-1Qb"/>
@@ -68,6 +85,8 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="chooseRouteButton" destination="AAq-zh-u13" id="AsV-Kw-FwK"/>
+                        <outlet property="mapPhoto" destination="cYV-CU-WdE" id="8se-jp-8Jg"/>
+                        <outlet property="scrollView" destination="vFD-7O-4Sl" id="w0x-CZ-9AU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eDW-Fk-rOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -83,14 +102,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BART_cc_map" translatesAutoresizingMaskIntoConstraints="NO" id="cqs-Ky-Q5M">
-                                <rect key="frame" x="16" y="304" width="343" height="343"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="0Hg-NZ-LIP"/>
-                                    <constraint firstAttribute="width" secondItem="cqs-Ky-Q5M" secondAttribute="height" multiplier="1:1" id="FI7-C0-laq"/>
-                                    <constraint firstAttribute="height" constant="343" id="Y4s-x2-Slq"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Route: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xr-fH-tEQ">
                                 <rect key="frame" x="16" y="82" width="69" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -135,12 +146,38 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3E-7c-ezY">
+                                <rect key="frame" x="16" y="304" width="343" height="343"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BART_cc_map" translatesAutoresizingMaskIntoConstraints="NO" id="wPK-B0-MVO">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="343"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="wPK-B0-MVO" secondAttribute="height" multiplier="1:1" id="fOn-iV-bsr"/>
+                                            <constraint firstAttribute="height" constant="343" id="iFY-RK-VWY"/>
+                                            <constraint firstAttribute="width" constant="343" id="qNm-al-7ib"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="B3E-7c-ezY" secondAttribute="height" multiplier="1:1" id="6En-ln-jGj"/>
+                                    <constraint firstItem="wPK-B0-MVO" firstAttribute="top" secondItem="B3E-7c-ezY" secondAttribute="top" id="Blf-bm-AZG"/>
+                                    <constraint firstAttribute="width" constant="343" id="EMb-YY-Icl"/>
+                                    <constraint firstItem="wPK-B0-MVO" firstAttribute="leading" secondItem="B3E-7c-ezY" secondAttribute="leading" id="ddA-ZU-3za"/>
+                                    <constraint firstItem="wPK-B0-MVO" firstAttribute="width" secondItem="wPK-B0-MVO" secondAttribute="height" multiplier="1:1" id="hPG-pY-h9E"/>
+                                    <constraint firstAttribute="trailing" secondItem="wPK-B0-MVO" secondAttribute="trailing" id="lJD-8d-LyR"/>
+                                    <constraint firstAttribute="bottom" secondItem="wPK-B0-MVO" secondAttribute="bottom" id="r4T-aI-m4P"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="l3k-oh-Uyb" id="gHL-1G-aaV"/>
+                                </connections>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cqs-Ky-Q5M" firstAttribute="leading" secondItem="bUH-0n-OWF" secondAttribute="leading" constant="16" id="281-ze-0sk"/>
-                            <constraint firstItem="bUH-0n-OWF" firstAttribute="bottom" secondItem="cqs-Ky-Q5M" secondAttribute="bottom" constant="20" id="UbA-T5-VWV"/>
-                            <constraint firstItem="bUH-0n-OWF" firstAttribute="trailing" secondItem="cqs-Ky-Q5M" secondAttribute="trailing" constant="16" id="hdi-YT-JLf"/>
+                            <constraint firstItem="bUH-0n-OWF" firstAttribute="bottom" secondItem="B3E-7c-ezY" secondAttribute="bottom" constant="20" id="6YA-zU-ndB"/>
+                            <constraint firstItem="B3E-7c-ezY" firstAttribute="leading" secondItem="bUH-0n-OWF" secondAttribute="leading" constant="16" id="7eT-PO-8qz"/>
+                            <constraint firstItem="bUH-0n-OWF" firstAttribute="trailing" secondItem="B3E-7c-ezY" secondAttribute="trailing" constant="16" id="CJM-jp-iPf"/>
+                            <constraint firstItem="B3E-7c-ezY" firstAttribute="width" secondItem="B3E-7c-ezY" secondAttribute="height" multiplier="1:1" id="gv0-gQ-2n1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bUH-0n-OWF"/>
                     </view>
@@ -155,7 +192,9 @@
                     <connections>
                         <outlet property="chooseEndButton" destination="d3q-wi-n1h" id="x73-dd-XBh"/>
                         <outlet property="chooseStartButton" destination="hyS-F4-3qc" id="t3a-Sk-OkQ"/>
+                        <outlet property="mapPhoto" destination="wPK-B0-MVO" id="2Xi-e2-qKR"/>
                         <outlet property="routeLabel" destination="kw0-57-9fg" id="far-O1-x8f"/>
+                        <outlet property="scrollView" destination="B3E-7c-ezY" id="Yui-DG-vRv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4g7-oR-3A7" userLabel="First Responder" sceneMemberID="firstResponder"/>

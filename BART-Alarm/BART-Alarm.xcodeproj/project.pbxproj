@@ -32,6 +32,7 @@
 		75B6833F2118F28600D0BBD7 /* route-4-schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 75B6833E2118F28600D0BBD7 /* route-4-schedule.json */; };
 		75B683412118F28F00D0BBD7 /* route-2-schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 75B683402118F28F00D0BBD7 /* route-2-schedule.json */; };
 		75B683432118F29D00D0BBD7 /* route-20-schedule.json in Resources */ = {isa = PBXBuildFile; fileRef = 75B683422118F29D00D0BBD7 /* route-20-schedule.json */; };
+		75B683452118FF9100D0BBD7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B683442118FF9100D0BBD7 /* MapViewController.swift */; };
 		75E4A14B2110CCE300B65561 /* CurrentAlarmsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4A14A2110CCE300B65561 /* CurrentAlarmsTableView.swift */; };
 		75E4A14E21121FFC00B65561 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4A14D21121FFC00B65561 /* CoreDataHelper.swift */; };
 		75E4A1502112767200B65561 /* HistoryAlarmsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4A14F2112767200B65561 /* HistoryAlarmsTableView.swift */; };
@@ -70,6 +71,7 @@
 		75B6833E2118F28600D0BBD7 /* route-4-schedule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "route-4-schedule.json"; sourceTree = "<group>"; };
 		75B683402118F28F00D0BBD7 /* route-2-schedule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "route-2-schedule.json"; sourceTree = "<group>"; };
 		75B683422118F29D00D0BBD7 /* route-20-schedule.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "route-20-schedule.json"; sourceTree = "<group>"; };
+		75B683442118FF9100D0BBD7 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		75E4A14A2110CCE300B65561 /* CurrentAlarmsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAlarmsTableView.swift; sourceTree = "<group>"; };
 		75E4A14D21121FFC00B65561 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		75E4A14F2112767200B65561 /* HistoryAlarmsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryAlarmsTableView.swift; sourceTree = "<group>"; };
@@ -121,7 +123,6 @@
 		7552167221066EFD0022E2C1 /* BART-Alarm */ = {
 			isa = PBXGroup;
 			children = (
-				75B683212118EAB300D0BBD7 /* Data */,
 				75E4A14C21121FE100B65561 /* Helpers */,
 				7552168E2106739C0022E2C1 /* Views */,
 				7552168D210673960022E2C1 /* Services */,
@@ -130,6 +131,7 @@
 				7552168A210673800022E2C1 /* Controllers */,
 				75521689210673780022E2C1 /* Storyboards */,
 				75521688210673700022E2C1 /* Supporting */,
+				75B683212118EAB300D0BBD7 /* Data */,
 				7552167321066EFD0022E2C1 /* AppDelegate.swift */,
 				7552167D21066EFF0022E2C1 /* Assets.xcassets */,
 			);
@@ -164,6 +166,7 @@
 				755216972108FCA30022E2C1 /* StationSelectionViewController.swift */,
 				755216992108FD760022E2C1 /* AlarmSelectionViewController.swift */,
 				7537E2632113840300A10BE7 /* DisplayAlarmViewController.swift */,
+				75B683442118FF9100D0BBD7 /* MapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				75F36125210A36FE003044D4 /* CurrentAlarmsTableViewCell.swift in Sources */,
 				752BC7A52109532B00792224 /* HomeViewController.swift in Sources */,
 				7537E2642113840300A10BE7 /* DisplayAlarmViewController.swift in Sources */,
+				75B683452118FF9100D0BBD7 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
