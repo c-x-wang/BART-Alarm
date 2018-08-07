@@ -36,37 +36,40 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AdU-20-uQf">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="AdU-20-uQf">
                                                     <rect key="frame" x="12" y="12" width="351" height="95.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Route " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62h-9e-3g9">
-                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="32"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Route route route route route route " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62h-9e-3g9">
+                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="31"/>
                                                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="miz-nK-xzd">
-                                                            <rect key="frame" x="0.0" y="32" width="351" height="63.5"/>
+                                                            <rect key="frame" x="0.0" y="34" width="351" height="61.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00 AM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VH5-1m-02Y">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="63.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="61.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="128" id="lRm-gJ-6kQ"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="30"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Rhs-5T-LP6">
-                                                                    <rect key="frame" x="143" y="0.0" width="208" height="63.5"/>
+                                                                    <rect key="frame" x="143" y="0.0" width="208" height="61.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="START to END" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zu2-VM-WEe">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="112.5" height="32"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="112.5" height="30.5"/>
                                                                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Train departure: --:-- AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXN-Rx-EC9">
-                                                                            <rect key="frame" x="0.0" y="32" width="208" height="31.5"/>
+                                                                            <rect key="frame" x="0.0" y="30.5" width="208" height="31"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="208" id="o3r-N1-RNH"/>
+                                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="208" id="o3r-N1-RNH"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
                                                                             <nil key="textColor"/>
@@ -75,7 +78,7 @@
                                                                     </subviews>
                                                                     <constraints>
                                                                         <constraint firstItem="GXN-Rx-EC9" firstAttribute="height" secondItem="zu2-VM-WEe" secondAttribute="height" id="RT3-nA-TWH"/>
-                                                                        <constraint firstAttribute="width" constant="208" id="fBJ-7G-Zyf"/>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="208" id="fBJ-7G-Zyf"/>
                                                                     </constraints>
                                                                 </stackView>
                                                             </subviews>

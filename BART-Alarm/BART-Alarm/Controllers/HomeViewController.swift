@@ -158,7 +158,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //            return cell
 //        }
         
-        cell.routeNameLabel.text = trip.route!
+        cell.routeNameLabel.text = " " + trip.route!
         cell.routeStationsLabel.text = trip.startLocation! + " to " + trip.endLocation!
         
         

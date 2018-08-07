@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bpg-fk-rqj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gs5-aI-KuO">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,14 +19,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the route you are traveling on:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdc-vt-o9r">
-                                <rect key="frame" x="16" y="90" width="281" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select the route you are traveling on:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdc-vt-o9r">
+                                <rect key="frame" x="16" y="132" width="281" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAq-zh-u13">
-                                <rect key="frame" x="16" y="119" width="343" height="30"/>
+                                <rect key="frame" x="16" y="161" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Choose Route"/>
                                 <connections>
@@ -47,7 +48,6 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="cYV-CU-WdE" firstAttribute="leading" secondItem="vFD-7O-4Sl" secondAttribute="leading" id="9wU-hi-dvw"/>
-                                    <constraint firstAttribute="width" constant="343" id="B7W-F8-kwd"/>
                                     <constraint firstAttribute="bottom" secondItem="cYV-CU-WdE" secondAttribute="bottom" id="BJK-qk-wPh"/>
                                     <constraint firstAttribute="width" secondItem="vFD-7O-4Sl" secondAttribute="height" multiplier="1:1" id="Evj-Pe-9AV"/>
                                     <constraint firstAttribute="trailing" secondItem="cYV-CU-WdE" secondAttribute="trailing" id="U5b-Zq-Elx"/>
@@ -58,14 +58,22 @@
                                     <outlet property="delegate" destination="2TO-wp-VvU" id="bEI-Z6-Rpb"/>
                                 </connections>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50T-8h-ekb">
+                                <rect key="frame" x="327" y="83" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zS-MZ-688">
+                                <rect key="frame" x="16" y="83" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vFD-7O-4Sl" firstAttribute="leading" secondItem="pzq-o2-1Qb" secondAttribute="leading" constant="16" id="HLo-R7-xrC"/>
                             <constraint firstItem="pzq-o2-1Qb" firstAttribute="trailing" secondItem="vFD-7O-4Sl" secondAttribute="trailing" constant="16" id="Uhb-n0-io3"/>
-                            <constraint firstItem="qdc-vt-o9r" firstAttribute="leading" secondItem="pzq-o2-1Qb" secondAttribute="leading" constant="16" id="UuK-ZZ-8O0"/>
                             <constraint firstItem="pzq-o2-1Qb" firstAttribute="bottom" secondItem="vFD-7O-4Sl" secondAttribute="bottom" constant="20" id="bTx-mf-Ye2"/>
-                            <constraint firstItem="qdc-vt-o9r" firstAttribute="top" secondItem="pzq-o2-1Qb" secondAttribute="top" constant="26" id="thm-J7-Cb5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pzq-o2-1Qb"/>
                     </view>
@@ -92,7 +100,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eDW-Fk-rOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="BOq-D9-fXU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2956" y="169.56521739130437"/>
+            <point key="canvasLocation" x="3895.1999999999998" y="169.56521739130437"/>
         </scene>
         <!--Station Selection-->
         <scene sceneID="iip-va-hNf">
@@ -110,21 +118,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start station:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RU-bY-vWm">
-                                <rect key="frame" x="16" y="155" width="99" height="21"/>
+                                <rect key="frame" x="16" y="145" width="99" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="End station: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="se8-Ug-DCi">
-                                <rect key="frame" x="16" y="235" width="95" height="21"/>
+                                <rect key="frame" x="16" y="210" width="95" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyS-F4-3qc">
-                                <rect key="frame" x="16" y="184" width="343" height="30"/>
+                                <rect key="frame" x="16" y="174" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Choose start station"/>
                                 <connections>
@@ -132,7 +140,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3q-wi-n1h">
-                                <rect key="frame" x="16" y="264" width="343" height="30"/>
+                                <rect key="frame" x="16" y="239" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Choose end station"/>
                                 <connections>
@@ -199,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4g7-oR-3A7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3791.1999999999998" y="169.56521739130437"/>
+            <point key="canvasLocation" x="4730.3999999999996" y="169.56521739130437"/>
         </scene>
         <!--Alarm Selection-->
         <scene sceneID="MHh-NZ-sNQ">
@@ -295,25 +303,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jz2-BU-Fmx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="LUC-En-gXJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4591.1999999999998" y="169.56521739130437"/>
+            <point key="canvasLocation" x="5530.3999999999996" y="169.56521739130437"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="d1m-H5-IIf">
+        <scene sceneID="7XF-aZ-SSQ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bpg-fk-rqj" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gs5-aI-KuO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="do9-m2-BPF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JXN-gN-noP">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="2TO-wp-VvU" kind="relationship" relationship="rootViewController" id="Qzb-rG-xva"/>
+                        <segue destination="2TO-wp-VvU" kind="relationship" relationship="rootViewController" id="Yx2-hc-Fu2"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FNq-xp-9R4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Um-Aj-zhI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2016.8" y="169.56521739130437"/>
+            <point key="canvasLocation" x="2956" y="169.56521739130437"/>
         </scene>
     </scenes>
     <resources>
