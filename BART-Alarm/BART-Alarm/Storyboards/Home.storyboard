@@ -197,6 +197,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="plus" width="512" height="512"/>
+        <image name="plus" width="256" height="256"/>
     </resources>
 </document>
