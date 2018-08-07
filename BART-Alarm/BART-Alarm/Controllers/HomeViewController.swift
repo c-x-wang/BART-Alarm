@@ -58,6 +58,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @objc func reloadData(_ notification: Notification?) {
+        print("pls reload \(Date())")
         self.historyAlarmsTableView.reloadData()
     }
     
