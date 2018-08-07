@@ -48,7 +48,7 @@ class RouteSelectionViewController: UIViewController, UIScrollViewDelegate {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
                 let json = try JSON(data: data)
-                print("jsonData:\(json)")
+//                print("jsonData:\(json)")
                 
                 let routesData = json["root"]["routes"]["route"].arrayValue
                 

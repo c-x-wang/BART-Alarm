@@ -63,7 +63,7 @@ class AlarmSelectionViewController: UIViewController {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
                 let json = try JSON(data: data)
-                print("jsonData:\(json)")
+//                print("jsonData:\(json)")
                 
                 for i in 1...300 {
                     

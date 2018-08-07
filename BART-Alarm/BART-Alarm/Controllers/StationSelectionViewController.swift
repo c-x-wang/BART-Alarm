@@ -55,7 +55,7 @@ class StationSelectionViewController: UIViewController, UIScrollViewDelegate {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
                 let json = try JSON(data: data)
-                print("jsonData:\(json)")
+//                print("jsonData:\(json)")
 
                 let stationsData = json["root"]["routes"]["route"]["config"]["station"].arrayValue
 
@@ -111,7 +111,7 @@ class StationSelectionViewController: UIViewController, UIScrollViewDelegate {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
                 let json = try JSON(data: data)
-                print("jsonData:\(json)")
+//                print("jsonData:\(json)")
                 
                 let stationsData = json["root"]["routes"]["route"]["config"]["station"].arrayValue
                 
