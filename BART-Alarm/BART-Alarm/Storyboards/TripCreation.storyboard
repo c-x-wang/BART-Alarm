@@ -43,27 +43,33 @@
                                     <outlet property="delegate" destination="2TO-wp-VvU" id="bEI-Z6-Rpb"/>
                                 </connections>
                             </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select the route you are traveling on:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdc-vt-o9r">
-                                <rect key="frame" x="16" y="83" width="281" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAq-zh-u13">
-                                <rect key="frame" x="16" y="112" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Choose Route"/>
-                                <connections>
-                                    <action selector="chooseRouteTapped:" destination="2TO-wp-VvU" eventType="touchUpInside" id="FxF-gT-mL0"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yZL-6p-vEU">
+                                <rect key="frame" x="16" y="84" width="343" height="60.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the route you are traveling on:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdc-vt-o9r">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAq-zh-u13">
+                                        <rect key="frame" x="0.0" y="30.5" width="343" height="30"/>
+                                        <state key="normal" title="Choose Route"/>
+                                        <connections>
+                                            <action selector="chooseRouteTapped:" destination="2TO-wp-VvU" eventType="touchUpInside" id="FxF-gT-mL0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vFD-7O-4Sl" firstAttribute="leading" secondItem="pzq-o2-1Qb" secondAttribute="leading" constant="16" id="HLo-R7-xrC"/>
+                            <constraint firstItem="yZL-6p-vEU" firstAttribute="leading" secondItem="pzq-o2-1Qb" secondAttribute="leading" constant="16" id="KSD-47-wv3"/>
+                            <constraint firstItem="pzq-o2-1Qb" firstAttribute="trailing" secondItem="yZL-6p-vEU" secondAttribute="trailing" constant="16" id="LEP-dn-6EI"/>
                             <constraint firstItem="pzq-o2-1Qb" firstAttribute="trailing" secondItem="vFD-7O-4Sl" secondAttribute="trailing" constant="16" id="Uhb-n0-io3"/>
                             <constraint firstItem="pzq-o2-1Qb" firstAttribute="bottom" secondItem="vFD-7O-4Sl" secondAttribute="bottom" constant="20" id="bTx-mf-Ye2"/>
+                            <constraint firstItem="yZL-6p-vEU" firstAttribute="top" secondItem="pzq-o2-1Qb" secondAttribute="top" constant="20" id="oiI-jz-zp8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pzq-o2-1Qb"/>
                     </view>
@@ -199,50 +205,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Route: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xr-fH-tEQ">
-                                <rect key="frame" x="16" y="82" width="69" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start station:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RU-bY-vWm">
-                                <rect key="frame" x="16" y="145" width="99" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="End station: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="se8-Ug-DCi">
-                                <rect key="frame" x="16" y="210" width="95" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyS-F4-3qc">
-                                <rect key="frame" x="16" y="174" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Choose start station"/>
-                                <connections>
-                                    <action selector="chooseStartTapped:" destination="l3k-oh-Uyb" eventType="touchUpInside" id="CxI-4F-Po4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3q-wi-n1h">
-                                <rect key="frame" x="16" y="239" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Choose end station"/>
-                                <connections>
-                                    <action selector="chooseEndTapped:" destination="l3k-oh-Uyb" eventType="touchUpInside" id="t7L-jG-KAd"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kw0-57-9fg">
-                                <rect key="frame" x="16" y="111" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="L2s-bA-SyU">
+                                <rect key="frame" x="16" y="84" width="343" height="187"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Nli-kA-9tx">
+                                        <rect key="frame" x="0.0" y="0.0" width="54" height="46"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8XX-FR-D1c">
+                                                <rect key="frame" x="0.0" y="0.0" width="54" height="46"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Route: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xr-fH-tEQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="54" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kw0-57-9fg">
+                                                        <rect key="frame" x="0.0" y="25.5" width="54" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4ff-5I-woZ">
+                                        <rect key="frame" x="0.0" y="61" width="139" height="55.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start station:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4RU-bY-vWm">
+                                                <rect key="frame" x="0.0" y="0.0" width="139" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyS-F4-3qc">
+                                                <rect key="frame" x="0.0" y="25.5" width="139" height="30"/>
+                                                <state key="normal" title="Choose start station"/>
+                                                <connections>
+                                                    <action selector="chooseStartTapped:" destination="l3k-oh-Uyb" eventType="touchUpInside" id="CxI-4F-Po4"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="As0-ni-hMY">
+                                        <rect key="frame" x="0.0" y="131.5" width="133" height="55.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End station: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="se8-Ug-DCi">
+                                                <rect key="frame" x="0.0" y="0.0" width="133" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3q-wi-n1h">
+                                                <rect key="frame" x="0.0" y="25.5" width="133" height="30"/>
+                                                <state key="normal" title="Choose end station"/>
+                                                <connections>
+                                                    <action selector="chooseEndTapped:" destination="l3k-oh-Uyb" eventType="touchUpInside" id="t7L-jG-KAd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3E-7c-ezY">
                                 <rect key="frame" x="16" y="304" width="343" height="343"/>
                                 <subviews>
@@ -271,10 +296,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="L2s-bA-SyU" firstAttribute="leading" secondItem="bUH-0n-OWF" secondAttribute="leading" constant="16" id="2cI-dH-rjd"/>
                             <constraint firstItem="bUH-0n-OWF" firstAttribute="bottom" secondItem="B3E-7c-ezY" secondAttribute="bottom" constant="20" id="6YA-zU-ndB"/>
                             <constraint firstItem="B3E-7c-ezY" firstAttribute="leading" secondItem="bUH-0n-OWF" secondAttribute="leading" constant="16" id="7eT-PO-8qz"/>
                             <constraint firstItem="bUH-0n-OWF" firstAttribute="trailing" secondItem="B3E-7c-ezY" secondAttribute="trailing" constant="16" id="CJM-jp-iPf"/>
+                            <constraint firstItem="L2s-bA-SyU" firstAttribute="top" secondItem="bUH-0n-OWF" secondAttribute="top" constant="20" id="g70-4s-rQ0"/>
                             <constraint firstItem="B3E-7c-ezY" firstAttribute="width" secondItem="B3E-7c-ezY" secondAttribute="height" multiplier="1:1" id="gv0-gQ-2n1"/>
+                            <constraint firstItem="bUH-0n-OWF" firstAttribute="trailing" secondItem="L2s-bA-SyU" secondAttribute="trailing" constant="16" id="mAJ-Zs-TV0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bUH-0n-OWF"/>
                     </view>
@@ -306,71 +334,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Trip length: calculating..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OM2-G4-5ob">
-                                <rect key="frame" x="16" y="194" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Train leaves at: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krB-lF-XiW">
-                                <rect key="frame" x="16" y="251" width="119" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="sqO-sE-l3Q">
-                                <rect key="frame" x="16" y="280" width="343" height="117"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <date key="date" timeIntervalSinceReferenceDate="554156744.844082">
-                                    <!--2018-07-24 20:25:44 +0000-->
-                                </date>
-                            </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alarm should ring " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9R-Kj-VBu">
-                                <rect key="frame" x="16" y="450" width="139" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="before reaching destination." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZSL-c3-T60">
-                                <rect key="frame" x="16" y="604" width="214" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="300" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fb-s2-kzr">
-                                <rect key="frame" x="16" y="479" width="343" height="117"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <date key="date" timeIntervalSinceReferenceDate="554156850.35433698">
-                                    <!--2018-07-24 20:27:30 +0000-->
-                                </date>
-                            </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Route: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7d-WC-oQn">
-                                <rect key="frame" x="16" y="85" width="69" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRY-Ja-535">
-                                <rect key="frame" x="16" y="114" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="START to END" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBS-ER-zyS">
-                                <rect key="frame" x="16" y="143" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8GS-PF-2ur">
+                                <rect key="frame" x="16" y="251.5" width="343" height="137.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Train leaves at: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krB-lF-XiW">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="sqO-sE-l3Q">
+                                        <rect key="frame" x="0.0" y="20.5" width="343" height="117"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="117" id="dKh-Rh-R76"/>
+                                        </constraints>
+                                        <date key="date" timeIntervalSinceReferenceDate="554156744.844082">
+                                            <!--2018-07-24 20:25:44 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2CU-VO-kyp">
+                                <rect key="frame" x="16" y="437" width="343" height="137.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind me in advance by: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9R-Kj-VBu">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="300" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fb-s2-kzr">
+                                        <rect key="frame" x="0.0" y="20.5" width="343" height="117"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="117" id="VYF-fg-Mn9"/>
+                                        </constraints>
+                                        <date key="date" timeIntervalSinceReferenceDate="554156850.35433698">
+                                            <!--2018-07-24 20:27:30 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VJw-R7-z1r">
+                                <rect key="frame" x="16" y="84" width="343" height="51"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRY-Ja-535">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="START to END" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBS-ER-zyS">
+                                        <rect key="frame" x="0.0" y="30.5" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip length: calculating..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OM2-G4-5ob">
+                                <rect key="frame" x="16" y="183" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8GS-PF-2ur" firstAttribute="leading" secondItem="2dk-Dr-8K7" secondAttribute="leading" constant="16" id="0ML-5z-ou1"/>
+                            <constraint firstItem="VJw-R7-z1r" firstAttribute="top" secondItem="2dk-Dr-8K7" secondAttribute="top" constant="20" id="1wY-n7-dQv"/>
+                            <constraint firstItem="2CU-VO-kyp" firstAttribute="top" secondItem="8GS-PF-2ur" secondAttribute="bottom" constant="48" id="A4f-CF-kr2"/>
+                            <constraint firstItem="2CU-VO-kyp" firstAttribute="leading" secondItem="2dk-Dr-8K7" secondAttribute="leading" constant="16" id="DHV-XS-ZhF"/>
+                            <constraint firstItem="OM2-G4-5ob" firstAttribute="leading" secondItem="2dk-Dr-8K7" secondAttribute="leading" constant="16" id="GLD-YV-1Du"/>
+                            <constraint firstItem="2dk-Dr-8K7" firstAttribute="trailing" secondItem="OM2-G4-5ob" secondAttribute="trailing" constant="16" id="SmX-va-ZGP"/>
+                            <constraint firstItem="8GS-PF-2ur" firstAttribute="top" secondItem="OM2-G4-5ob" secondAttribute="bottom" constant="48" id="YXn-SE-0xk"/>
+                            <constraint firstItem="2dk-Dr-8K7" firstAttribute="trailing" secondItem="VJw-R7-z1r" secondAttribute="trailing" constant="16" id="Ysu-WK-rEW"/>
+                            <constraint firstItem="2dk-Dr-8K7" firstAttribute="trailing" secondItem="8GS-PF-2ur" secondAttribute="trailing" constant="16" id="ZIL-Qu-aDf"/>
+                            <constraint firstItem="VJw-R7-z1r" firstAttribute="leading" secondItem="2dk-Dr-8K7" secondAttribute="leading" constant="16" id="ZKV-2e-6kV"/>
+                            <constraint firstItem="2dk-Dr-8K7" firstAttribute="trailing" secondItem="2CU-VO-kyp" secondAttribute="trailing" constant="16" id="c4c-fC-Bis"/>
+                            <constraint firstItem="OM2-G4-5ob" firstAttribute="top" secondItem="VJw-R7-z1r" secondAttribute="bottom" constant="48" id="eLi-kq-7A1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2dk-Dr-8K7"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create Alarm" id="V5k-t1-et8">
