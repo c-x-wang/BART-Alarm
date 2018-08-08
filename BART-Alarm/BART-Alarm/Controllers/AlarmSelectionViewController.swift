@@ -33,7 +33,7 @@ class AlarmSelectionViewController: UIViewController {
 //        content.subtitle = "subtitle"
         content.body = "Train will arrive at \((trip?.endLocation)!) in \(Int(alarmMinutesPicker.countDownDuration)/60) minutes"
         content.badge = 1
-//        content.sound =
+        content.sound = UNNotificationSound.default()
         
         let calendar = NSCalendar.current
         trip?.alarmTime = trainDeparturePicker.date.addingTimeInterval((self.trip?.tripLength)! - alarmMinutesPicker.countDownDuration)
