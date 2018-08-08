@@ -91,9 +91,6 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TdU-2T-EIY">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <connections>
-                                                        <segue destination="fpL-Ef-hxY" kind="show" id="Wd4-sT-mLq"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
