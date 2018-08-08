@@ -18,6 +18,7 @@ class RouteSelectionViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var mapPhoto: UIImageView!
     @IBOutlet weak var chooseRouteButton: UIButton!
+    @IBOutlet weak var chooseRouteField: UITextField!
     
     var trip: Trip?
     var route: String = ""
@@ -34,13 +35,17 @@ class RouteSelectionViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func chooseRouteTapped(_ sender: Any) {
         routeDropDown.show()
     }
+    @IBAction func chooseRouteFieldTapped(_ sender: Any) {
+//        routeDropDown.show()
+    }
     
     func setupRouteDropDown() {
         routeDropDown.anchorView = chooseRouteButton
+//        routeDropDown.anchorView = chooseRouteField
         
         routeDropDown.bottomOffset = CGPoint(x: 0, y: 30) // chooseRouteButton.bounds.height)
         
-        let apiToContact = "http://api.bart.gov/api/route.aspx?cmd=routes&key=MW9S-E7SL-26DU-VV8V&json=y"
+//        let apiToContact = "http://api.bart.gov/api/route.aspx?cmd=routes&key=MW9S-E7SL-26DU-VV8V&json=y"
         var routeNames = [String]()
         var routeNumbers = [String]()
         
@@ -91,7 +96,8 @@ class RouteSelectionViewController: UIViewController, UIScrollViewDelegate {
 //        }
         
         routeDropDown.selectionAction = { [weak self] (index, item) in
-            self?.chooseRouteButton.setTitle(item, for: .normal)
+//            self?.chooseRouteButton.setTitle(item, for: .normal)
+            self?.chooseRouteField.text = item
             self?.route = item
             self?.routeNumber = routeNumbers[index]
         }
