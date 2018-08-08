@@ -45,7 +45,7 @@
 		75B6835C211A134000D0BBD7 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75B68350211A133E00D0BBD7 /* Roboto-Light.ttf */; };
 		75B6835D211A134000D0BBD7 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75B68351211A133F00D0BBD7 /* Roboto-Bold.ttf */; };
 		75B6835E211A134000D0BBD7 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75B68352211A133F00D0BBD7 /* Roboto-Thin.ttf */; };
-		75B68360211A59B200D0BBD7 /* AlarmCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B6835F211A59B200D0BBD7 /* AlarmCreationViewController.swift */; };
+		75B68362211A5A3900D0BBD7 /* AlarmCreationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B68361211A5A3900D0BBD7 /* AlarmCreationTableViewController.swift */; };
 		75E4A14B2110CCE300B65561 /* CurrentAlarmsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4A14A2110CCE300B65561 /* CurrentAlarmsTableView.swift */; };
 		75E4A14E21121FFC00B65561 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4A14D21121FFC00B65561 /* CoreDataHelper.swift */; };
 		75E4A1502112767200B65561 /* HistoryAlarmsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4A14F2112767200B65561 /* HistoryAlarmsTableView.swift */; };
@@ -97,7 +97,7 @@
 		75B68350211A133E00D0BBD7 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		75B68351211A133F00D0BBD7 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		75B68352211A133F00D0BBD7 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
-		75B6835F211A59B200D0BBD7 /* AlarmCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCreationViewController.swift; sourceTree = "<group>"; };
+		75B68361211A5A3900D0BBD7 /* AlarmCreationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCreationTableViewController.swift; sourceTree = "<group>"; };
 		75E4A14A2110CCE300B65561 /* CurrentAlarmsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAlarmsTableView.swift; sourceTree = "<group>"; };
 		75E4A14D21121FFC00B65561 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		75E4A14F2112767200B65561 /* HistoryAlarmsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryAlarmsTableView.swift; sourceTree = "<group>"; };
@@ -194,7 +194,7 @@
 				755216992108FD760022E2C1 /* AlarmSelectionViewController.swift */,
 				7537E2632113840300A10BE7 /* DisplayAlarmViewController.swift */,
 				75B683442118FF9100D0BBD7 /* MapViewController.swift */,
-				75B6835F211A59B200D0BBD7 /* AlarmCreationViewController.swift */,
+				75B68361211A5A3900D0BBD7 /* AlarmCreationTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -442,9 +442,9 @@
 				75E4A15421136A0400B65561 /* CurrentAlarmsView.swift in Sources */,
 				7552167C21066EFD0022E2C1 /* BART_Alarm.xcdatamodeld in Sources */,
 				755216962107A11E0022E2C1 /* RouteSelectionViewController.swift in Sources */,
-				75B68360211A59B200D0BBD7 /* AlarmCreationViewController.swift in Sources */,
 				7552169A2108FD760022E2C1 /* AlarmSelectionViewController.swift in Sources */,
 				75E4A14B2110CCE300B65561 /* CurrentAlarmsTableView.swift in Sources */,
+				75B68362211A5A3900D0BBD7 /* AlarmCreationTableViewController.swift in Sources */,
 				7552167421066EFD0022E2C1 /* AppDelegate.swift in Sources */,
 				75F36125210A36FE003044D4 /* CurrentAlarmsTableViewCell.swift in Sources */,
 				752BC7A52109532B00792224 /* HomeViewController.swift in Sources */,

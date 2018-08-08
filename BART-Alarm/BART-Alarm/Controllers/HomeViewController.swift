@@ -169,18 +169,18 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.trainDepartureTimeLabel.text = "Train departure: " + formattedTrainDate
         cell.alarmTimeLabel.text = formattedAlarmDate //"Alarm: " + formattedAlarmDate
         
-//        let now = Date()
-//        if trip.alarmTime! <= now {
-//            cell.routeNameLabel.textColor = UIColor.gray
-//            cell.routeStationsLabel.textColor = UIColor.gray
-//            cell.trainDepartureTimeLabel.textColor = UIColor.gray
-//            cell.alarmTimeLabel.textColor = UIColor.gray
-//        } else {
+        let now = Date()
+        if (trip.alarmTime?.timeIntervalSince1970)! - 20 <= now.timeIntervalSince1970 {
+            cell.routeNameLabel.textColor = UIColor.gray
+            cell.routeStationsLabel.textColor = UIColor.gray
+            cell.trainDepartureTimeLabel.textColor = UIColor.gray
+            cell.alarmTimeLabel.textColor = UIColor.gray
+        } else {
             cell.routeNameLabel.textColor = UIColor.black
             cell.routeStationsLabel.textColor = UIColor.black
             cell.trainDepartureTimeLabel.textColor = UIColor.black
             cell.alarmTimeLabel.textColor = UIColor.black
-//        }
+        }
         
         return cell
 //        }
