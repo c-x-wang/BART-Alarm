@@ -18,7 +18,7 @@ class RouteSelectionViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var mapPhoto: UIImageView!
     @IBOutlet weak var chooseRouteButton: UIButton!
-    @IBOutlet weak var chooseRouteField: UITextField!
+//    @IBOutlet weak var chooseRouteField: UITextField!
     
     var trip: Trip?
     var route: String = ""
@@ -35,9 +35,9 @@ class RouteSelectionViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func chooseRouteTapped(_ sender: Any) {
         routeDropDown.show()
     }
-    @IBAction func chooseRouteFieldTapped(_ sender: Any) {
+//    @IBAction func chooseRouteFieldTapped(_ sender: Any) {
 //        routeDropDown.show()
-    }
+//    }
     
     func setupRouteDropDown() {
         routeDropDown.anchorView = chooseRouteButton
@@ -96,8 +96,8 @@ class RouteSelectionViewController: UIViewController, UIScrollViewDelegate {
 //        }
         
         routeDropDown.selectionAction = { [weak self] (index, item) in
-//            self?.chooseRouteButton.setTitle(item, for: .normal)
-            self?.chooseRouteField.text = item
+            self?.chooseRouteButton.setTitle(item, for: .normal)
+//            self?.chooseRouteField.text = item
             self?.route = item
             self?.routeNumber = routeNumbers[index]
         }
