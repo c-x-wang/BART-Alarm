@@ -171,11 +171,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let now = Date()
         if (trip.alarmTime?.timeIntervalSince1970)! - 20 <= now.timeIntervalSince1970 {
-            cell.routeNameLabel.textColor = UIColor.red
-            cell.routeStationsLabel.textColor = UIColor.red
-            cell.trainDepartureTimeLabel.textColor = UIColor.red
-            cell.alarmTimeLabel.textColor = UIColor.red
-//            tableView.reloadData()
+            cell.routeNameLabel.textColor = UIColor.gray
+            cell.routeStationsLabel.textColor = UIColor.gray
+            cell.trainDepartureTimeLabel.textColor = UIColor.gray
+            cell.alarmTimeLabel.textColor = UIColor.gray
         } else {
             cell.routeNameLabel.textColor = UIColor.black
             cell.routeStationsLabel.textColor = UIColor.black
