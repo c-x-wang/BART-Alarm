@@ -199,30 +199,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let identifier = segue.identifier else { return }
-        
-        switch identifier {
-        case "showDisplayAlarm":
-            if let indexPath = historyAlarmsTableView.indexPathForSelectedRow {
-                let selectedRow = indexPath.row
-                let vc = segue.destination as! DisplayAlarmViewController
-                vc.trip = self.trips[selectedRow]
-                print(vc.trip)
-            }
-//            let vc = segue.destination as! DisplayAlarmViewController
-//            vc.trip = trips[(historyAlarmsTableView.indexPathForSelectedRow?.row)!]
-//            print(vc.trip)
-            
-        default:
-            print("unexpected segue identifier")
-        }
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
 
     @IBAction func currentAlarmsViewButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "showDisplayAlarm", sender: sender)
-        print("display alarm")
     }
-    
     @IBAction func unwindToHomeScreen(_ segue: UIStoryboardSegue) {
         guard let identifier = segue.identifier else { return }
         
