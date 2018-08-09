@@ -26,7 +26,7 @@ class AlarmSelectionViewController: UIViewController {
     
     @IBAction func CreateButtonTapped(_ sender: Any) {
         if trainDeparturePicker.date.addingTimeInterval((self.trip?.tripLength)! - alarmMinutesPicker.countDownDuration) <= Date() {
-            let alert = UIAlertController(title: "Error", message: "The time you are trying to set the alarm to has already passed. Please try again.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Error", message: "The time you are trying to set the alarm to has already passed today. Please try again.", preferredStyle: .alert)
             
             //        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
             alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
