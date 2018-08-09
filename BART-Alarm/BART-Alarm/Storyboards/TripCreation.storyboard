@@ -82,7 +82,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" style="plain" id="qlh-km-CGg">
                             <connections>
-                                <segue destination="l3k-oh-Uyb" kind="show" identifier="showStationSelection" id="FKr-Xb-qI8"/>
+                                <action selector="nextButtonTapped:" destination="2TO-wp-VvU" id="SwU-u5-KfR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -91,6 +91,7 @@
                         <outlet property="chooseRouteButton" destination="AAq-zh-u13" id="AsV-Kw-FwK"/>
                         <outlet property="mapPhoto" destination="cYV-CU-WdE" id="8se-jp-8Jg"/>
                         <outlet property="scrollView" destination="vFD-7O-4Sl" id="w0x-CZ-9AU"/>
+                        <segue destination="l3k-oh-Uyb" kind="show" identifier="showStationSelection" id="UEF-4G-iJz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eDW-Fk-rOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -310,7 +311,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="smH-dt-lhb"/>
                         <barButtonItem key="rightBarButtonItem" title="Next" style="plain" id="AZW-UR-ayD">
                             <connections>
-                                <segue destination="WIj-3K-wSA" kind="show" identifier="showAlarmSelection" id="TgZ-sG-tP6"/>
+                                <action selector="nextButtonTapped:" destination="l3k-oh-Uyb" id="lxu-s2-35J"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -320,6 +321,7 @@
                         <outlet property="mapPhoto" destination="wPK-B0-MVO" id="2Xi-e2-qKR"/>
                         <outlet property="routeLabel" destination="kw0-57-9fg" id="far-O1-x8f"/>
                         <outlet property="scrollView" destination="B3E-7c-ezY" id="Yui-DG-vRv"/>
+                        <segue destination="WIj-3K-wSA" kind="show" identifier="showAlarmSelection" id="MZC-Tf-Ebx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4g7-oR-3A7" userLabel="First Responder" sceneMemberID="firstResponder"/>

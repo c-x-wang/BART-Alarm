@@ -148,5 +148,17 @@ class RouteSelectionViewController: UIViewController, UIScrollViewDelegate {
         }
     }
  
+    @IBAction func nextButtonTapped(_ sender: Any) {
+        if self.chooseRouteButton.currentTitle == "Choose Route" {
+            let alert = UIAlertController(title: "Error", message: "Please select all fields on this screen.", preferredStyle: .alert)
+            
+    //        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+        } else {
+            performSegue(withIdentifier: "showStationSelection", sender: sender)
+        }
+    }
     
 }

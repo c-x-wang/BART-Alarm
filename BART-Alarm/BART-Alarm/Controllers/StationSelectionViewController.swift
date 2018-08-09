@@ -186,5 +186,18 @@ class StationSelectionViewController: UIViewController, UIScrollViewDelegate {
         vc.trip = self.trip!
     }
     
+    @IBAction func nextButtonTapped(_ sender: Any) {
+        if self.chooseStartButton.currentTitle == "Choose start station" || self.chooseEndButton.currentTitle == "Choose end station" {
+            let alert = UIAlertController(title: "Error", message: "Please select all fields on this screen.", preferredStyle: .alert)
+            
+            //        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+        } else {
+            performSegue(withIdentifier: "showAlarmSelection", sender: sender)
+        }
+    }
+    
 
 }

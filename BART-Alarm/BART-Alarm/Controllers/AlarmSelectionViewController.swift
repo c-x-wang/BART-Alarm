@@ -25,31 +25,41 @@ class AlarmSelectionViewController: UIViewController {
     let notifCount = UserDefaults.standard.integer(forKey: "notifCount")
     
     @IBAction func CreateButtonTapped(_ sender: Any) {
+        if trainDeparturePicker.date.addingTimeInterval((self.trip?.tripLength)! - alarmMinutesPicker.countDownDuration) <= Date() {
+            let alert = UIAlertController(title: "Error", message: "The time you are trying to set the alarm to has already passed. Please try again.", preferredStyle: .alert)
+            
+            //        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
+        } else {
+            performSegue(withIdentifier: "unwindToHomeCreate", sender: sender)
+            
+            let content = UNMutableNotificationContent()
+            content.title = "Destination Approaching"
+            //        content.subtitle = "subtitle"
+            content.body = "Train will arrive at \((trip?.endLocation)!) in \(Int(alarmMinutesPicker.countDownDuration)/60) minutes"
+            content.badge = 1
+            content.sound = UNNotificationSound.default()
+            
+            let calendar = NSCalendar.current
+            trip?.alarmTime = trainDeparturePicker.date.addingTimeInterval((self.trip?.tripLength)! - alarmMinutesPicker.countDownDuration)
+            print(trip?.alarmTime)
+            
+            let unitFlags: Set<Calendar.Component> = [.hour, .minute]
+            let components = calendar.dateComponents(unitFlags, from: (trip?.alarmTime)!)
+            
+            UserDefaults.standard.set(notifCount + 1, forKey: "notifCount")
+            
+            let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
+            let request = UNNotificationRequest(identifier: "timerDone\(notifCount)", content: content, trigger: trigger)
+            print("timerDone\(notifCount)")
+            
+            
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        }
         
-        performSegue(withIdentifier: "unwindToHomeCreate", sender: sender)
         
-        let content = UNMutableNotificationContent()
-        content.title = "Destination Approaching"
-//        content.subtitle = "subtitle"
-        content.body = "Train will arrive at \((trip?.endLocation)!) in \(Int(alarmMinutesPicker.countDownDuration)/60) minutes"
-        content.badge = 1
-        content.sound = UNNotificationSound.default()
-        
-        let calendar = NSCalendar.current
-        trip?.alarmTime = trainDeparturePicker.date.addingTimeInterval((self.trip?.tripLength)! - alarmMinutesPicker.countDownDuration)
-        print(trip?.alarmTime)
-        
-        let unitFlags: Set<Calendar.Component> = [.hour, .minute]
-        let components = calendar.dateComponents(unitFlags, from: (trip?.alarmTime)!)
-        
-        UserDefaults.standard.set(notifCount + 1, forKey: "notifCount")
-        
-        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
-        let request = UNNotificationRequest(identifier: "timerDone\(notifCount)", content: content, trigger: trigger)
-        print("timerDone\(notifCount)")
-        
-        
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         
 //        HomeViewController().moveCurrentAlarm()
     }
