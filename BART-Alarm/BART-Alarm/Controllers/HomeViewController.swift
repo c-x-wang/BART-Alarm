@@ -27,31 +27,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        titleView.layer.shadowColor = UIColor.black.cgColor
-//        titleView.layer.shadowOpacity = 0.5
-//        titleView.layer.shadowRadius = 0.5
-//        titleView.layer.shadowOffset = CGSize(width: 0, height: 2)
-//        titleView.layer.masksToBounds = false
-
-//        currentAlarmsTableView.delegate = self
-//        currentAlarmsTableView.dataSource = self
-//        currentAlarmsTableView.rowHeight = 105
-//        currentAlarmsTableView.isScrollEnabled = false
-        
-//        currentAlarmsView.delegate = self
 
         historyAlarmsTableView.delegate = self
         historyAlarmsTableView.dataSource = self
         historyAlarmsTableView.rowHeight = 105
 
         trips = CoreDataHelper.retrieveTrips()
-        
-//        for trip in trips {
-//            if trip.modificationTime == nil {
-//                CoreDataHelper.deleteTrip(trip: trip)
-//                print("incomplete trip deleted")
-//            }
-//        }
+        print(trips)
         
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         if launchedBefore  {
@@ -71,34 +53,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-//        if trips.first != nil {
-//            currentAlarmsView.routeNameLabel.text = trips.first?.route
-//            currentAlarmsView.routeStationsLabel.text = (trips.first?.startLocation)! + " to " + (trips.first?.endLocation)!
-//            
-//            let formatter = DateFormatter()
-//            formatter.dateFormat = "h:mm a"
-//            let formattedTrainDate = formatter.string(from: (trips.first?.trainDepartureTime)!)
-//            let formattedAlarmDate = formatter.string(from: (trips.first?.alarmTime)!)
-//            currentAlarmsView.trainDepartureTimeLabel.text = "Train departure: " + formattedTrainDate
-//            currentAlarmsView.alarmTimeLabel.text = "Alarm: " + formattedAlarmDate
-//        } else {
-//            currentAlarmsView.routeNameLabel.text = ""
-//            currentAlarmsView.routeStationsLabel.text = "No current alarm to display"
-//            currentAlarmsView.trainDepartureTimeLabel.text = ""
-//            currentAlarmsView.alarmTimeLabel.text = ""
-//        }
-        
-//        currentAlarmsTableView.reloadData()
-//        for trip in trips {
-//            if trip.modificationTime == nil {
-//                CoreDataHelper.deleteTrip(trip: trip)
-//                print("incomplete trip deleted")
-//            }
-//        }
-        
-//        historyAlarmsTableView.reloadData()
-//        NotificationCenter.default.addObserver(self,selector: #selector(willEnterForeground),name: NSNotification.Name.UIApplicationWillEnterForeground,object: nil)
         
     }
     
@@ -127,36 +81,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if tableView == currentAlarmsTableView {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "CurrentAlarmsCell") as! CurrentAlarmsTableViewCell
-//
-//            let trip = trips[indexPath.row]
-//
-//            cell.routeNameLabel.text = trip.route!
-//            cell.routeStationsLabel.text = trip.startLocation! + " to " + trip.endLocation!
-//
-//
-//            let formatter = DateFormatter()
-//            formatter.dateFormat = "h:mm a"
-//            let formattedTrainDate = formatter.string(from: trip.trainDepartureTime!)
-//            let formattedAlarmDate = formatter.string(from: trip.alarmTime!)
-//            cell.trainDepartureTimeLabel.text = "Train departure: " + formattedTrainDate
-//            cell.alarmTimeLabel.text = "Alarm: " + formattedAlarmDate
-//
-//            return cell
-//
-//        }
-//        else {
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryAlarmsCell") as! HistoryAlarmsTableViewCell
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         
         let trip = trips[indexPath.row]
-        
-//        if trip.modificationTime == nil {
-//            CoreDataHelper.deleteTrip(trip: trip)
-//            print("incomplete trip deleted if")
-//            return cell
-//        }
+        print(trip)
         
         cell.routeNameLabel.text = " " + trip.route!
         cell.routeStationsLabel.text = trip.startLocation! + " to " + trip.endLocation!
