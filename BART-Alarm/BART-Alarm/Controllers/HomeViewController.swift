@@ -33,7 +33,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         historyAlarmsTableView.rowHeight = 105
 
         trips = CoreDataHelper.retrieveTrips()
-        print(trips)
+//        print(trips)
         
         let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
         if launchedBefore  {
@@ -86,7 +86,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         
         let trip = trips[indexPath.row]
-        print(trip)
+//        print(trip)
         
         cell.routeNameLabel.text = " " + trip.route!
         cell.routeStationsLabel.text = trip.startLocation! + " to " + trip.endLocation!

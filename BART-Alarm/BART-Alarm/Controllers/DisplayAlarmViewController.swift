@@ -13,6 +13,7 @@ class DisplayAlarmViewController: UIViewController {
     var trip: Trip?
 
     @IBAction func editAlarmButtonPressed(_ sender: Any) {
+        print(trip)
     }
     
     @IBAction func deleteAlarmButtonPressed(_ sender: Any) {
