@@ -44,6 +44,7 @@ class RouteSelectionViewController: UIViewController, UIScrollViewDelegate {
 //        routeDropDown.anchorView = chooseRouteField
         
         routeDropDown.bottomOffset = CGPoint(x: 0, y: 30) // chooseRouteButton.bounds.height)
+        routeDropDown.direction = .bottom
         
 //        let apiToContact = "http://api.bart.gov/api/route.aspx?cmd=routes&key=MW9S-E7SL-26DU-VV8V&json=y"
         var routeNames = [String]()

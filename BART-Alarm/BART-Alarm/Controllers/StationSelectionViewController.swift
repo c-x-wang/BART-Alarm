@@ -47,6 +47,7 @@ class StationSelectionViewController: UIViewController, UIScrollViewDelegate {
         startStationDropDown.anchorView = chooseStartButton
         
         startStationDropDown.bottomOffset = CGPoint(x: 0, y: 30) // chooseStartButton.bounds.height)
+        startStationDropDown.direction = .bottom
         
         let apiToContact = "http://api.bart.gov/api/route.aspx?cmd=routeinfo&route=" + (self.trip?.routeNumber)! + "&key=MW9S-E7SL-26DU-VV8V&json=y"
         var stationsArray = [String]()
@@ -103,6 +104,7 @@ class StationSelectionViewController: UIViewController, UIScrollViewDelegate {
         endStationDropDown.anchorView = chooseEndButton
         
         endStationDropDown.bottomOffset = CGPoint(x: 0, y: 30) //chooseEndButton.bounds.height)
+        endStationDropDown.direction = .bottom
         
         let apiToContact = "http://api.bart.gov/api/route.aspx?cmd=routeinfo&route=" + (self.trip?.routeNumber)! + "&key=MW9S-E7SL-26DU-VV8V&json=y"
         var stationsArray = [String]()
